@@ -1,0 +1,6 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="layout">
+  <layout wx:for="{{layout}}" key="color" title="{{item.title}}" desc="{{item.desc}}" color="{{item.color}}" line="{{item.icon}}" icon="{{item.icon}}" link="{{item.link}}" />
+</view>
+
+<view class="tip text-center text-grey">学在华科 · 学在数院 · 学在科协</view>

@@ -1,0 +1,35 @@
+/* components/layout/layout.wxss */
+@import '/style/color.wxss';
+@import '/style/font.wxss';
+
+.layout {
+  margin: 20rpx;
+  border-radius: 16rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.half {
+  text-align: center;
+  width: 315rpx;
+}
+
+.line {
+  width: 670rpx;
+}
+
+.layout .title {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.layout .desc {
+  font-size: 24rpx;
+}
+
+.layout .icon {
+  margin-right: 60rpx;
+  font-size: 60rpx;
+}

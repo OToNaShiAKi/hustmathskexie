@@ -1,0 +1,6 @@
+<!--miniprogram/pages/register/register.wxml-->
+<view class="layout">
+  <layout wx:for="{{layout}}" key="color" title="{{item.title}}" desc="{{item.desc}}" color="{{item.color}}" line="{{item.icon}}" icon="{{item.icon}}" link="{{item.link}}" />
+</view>
+
+<view class="tip text-center text-grey">加入科协，浪有所学！</view>

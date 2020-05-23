@@ -1,0 +1,10 @@
+/* miniprogram/pages/register/register.wxss */
+.layout {
+  display: flex;
+  padding: 30rpx 20rpx 20rpx;
+  flex-wrap: wrap;
+}
+
+.tip {
+  font-size: 24rpx;
+}

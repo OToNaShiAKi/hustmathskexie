@@ -2,7 +2,10 @@
   "pages": [
     "pages/home/home",
     "pages/register/register",
-    "pages/information/information"
+    "pages/information/information",
+    "pages/checkStatus/checkStatus",
+    "pages/manage/manage",
+    "pages/addTest/addTest"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

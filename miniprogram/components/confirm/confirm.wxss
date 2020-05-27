@@ -1,0 +1,10 @@
+/* components/confirm/confirm.wxss */
+.radios {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+
+.radios .item {
+  margin: 10rpx;
+}

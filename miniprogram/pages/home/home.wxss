@@ -1,4 +1,8 @@
 /* miniprogram/pages/home/home.wxss */
+.text-grey {
+	color: var(--gray);
+}
+
 .layout {
   display: flex;
   padding: 30rpx 20rpx 20rpx;
@@ -7,4 +11,5 @@
 
 .tip {
   font-size: 24rpx;
+  text-align: center
 }

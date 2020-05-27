@@ -1,5 +1,5 @@
 <!--components/layout/layout.wxml-->
-<view bind:tap="linkTo" class="layout bg-gradual-{{color}} light {{line ? 'line' : 'half'}}">
+<view bind:tap="linkTo" class="layout bg-gradual-{{color}} {{line ? 'line' : 'half'}}">
   <i wx:if="{{icon}}" class="iconfont icon-{{icon}} icon" />
   <view>
     <view class="title">{{title}}</view>

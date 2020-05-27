@@ -1,0 +1,21 @@
+/* miniprogram/pages/manage/manage.wxss */
+.title {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title text {
+  font-weight: bold;
+}
+
+.wishes {
+  margin-bottom: 30rpx;
+}
+
+.wishes .subheader {
+  font-weight: bold;
+  font-size: 28rpx;
+  padding: 0 20rpx 10rpx;
+}

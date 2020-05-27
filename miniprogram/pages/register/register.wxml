@@ -1,6 +1,9 @@
 <!--miniprogram/pages/register/register.wxml-->
 <view class="layout">
-  <layout wx:for="{{layout}}" key="color" title="{{item.title}}" desc="{{item.desc}}" color="{{item.color}}" line="{{item.icon}}" icon="{{item.icon}}" link="{{item.link}}" />
+  <layout wx:for="{{layout}}" wx:key="color" title="{{item.title}}" desc="{{item.desc}}" color="{{item.color}}" line="{{item.icon}}" icon="{{item.icon}}" link="{{item.link}}" />
+  <layout title="我是部长" desc="非礼勿点" color="pink" capture-catch:tap="showDialog"/>
 </view>
 
-<view class="tip text-center text-grey">加入科协，浪有所学！</view>
+<view class="tip text-grey">加入科协，浪有所学！</view>
+
+<confirm dialog="{{ dialog }}" />

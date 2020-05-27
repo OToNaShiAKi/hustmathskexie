@@ -11,7 +11,10 @@ Component({
       value: false
     },
     desc: String,
-    icon: String,
+    icon: {
+      type: String,
+      value: ''
+    },
     link: String
   },
 
@@ -20,12 +23,16 @@ Component({
    */
   methods: {
     linkTo() {
-      const link = this.data.link
-      if (link) {
+      const link = this.data.link;
+      if (link) 
         wx.navigateTo({
-          url: `/pages/${link}/${link}`,
+          url: `/pages/${link}/${link}`
         })
-      }
+      else 
+        wx.showToast({
+          title: '该功能尚未整合，请从官网使用',
+          icon: 'none'
+        })
     }
   }
 })

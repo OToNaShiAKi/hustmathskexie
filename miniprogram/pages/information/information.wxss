@@ -1,1 +1,21 @@
 /* miniprogram/pages/information/information.wxss */
+
+.checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 30rpx 10rpx;
+}
+
+.title {
+  margin: 30rpx 30rpx 10rpx;
+  font-weight: bold;
+}
+
+.checkbox .check-item {
+  width:  210rpx;
+  margin: 10rpx;
+}
+
+.submit {
+  padding: 30rpx;
+}

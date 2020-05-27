@@ -1,0 +1,18 @@
+<!--components/confirm/confirm.wxml-->
+<van-dialog
+  close-on-click-overlay
+  title="部长认证"
+  show="{{ dialog }}"
+  show-cancel-button
+  use-slot
+  bind:confirm="authentication"
+>
+  <van-radio-group data-key="department" class="radios" value="{{ department }}" bind:change="changeData">
+    <van-radio icon-size="32rpx" class="item" name="editor">编辑部</van-radio>
+    <van-radio icon-size="32rpx" class="item" name="office">策划部</van-radio>
+    <van-radio icon-size="32rpx" class="item" name="media">媒体部</van-radio>
+    <van-radio icon-size="32rpx" class="item" name="onecho">One Echo</van-radio>
+    <van-radio icon-size="32rpx" class="item" name="workshop">雁祉作坊</van-radio>
+  </van-radio-group>
+  <van-field label="认证密码" data-key="confirm"  value="{{ confirm }}" bind:input="changeData" type="password" />
+</van-dialog>

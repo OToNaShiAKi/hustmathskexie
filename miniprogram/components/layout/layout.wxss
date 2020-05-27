@@ -1,6 +1,35 @@
 /* components/layout/layout.wxss */
-@import '/style/color.wxss';
 @import '/style/font.wxss';
+
+.bg-gradual-red {
+	background-image: var(--gradualRed);
+	color: var(--white);
+}
+
+.bg-gradual-orange {
+	background-image: var(--gradualOrange);
+	color: var(--white);
+}
+
+.bg-gradual-green {
+	background-image: var(--gradualGreen);
+	color: var(--white);
+}
+
+.bg-gradual-purple {
+	background-image: var(--gradualPurple);
+	color: var(--white);
+}
+
+.bg-gradual-pink {
+	background-image: var(--gradualPink);
+	color: var(--white);
+}
+
+.bg-gradual-blue {
+	background-image: var(--gradualBlue);
+	color: var(--white);
+}
 
 .layout {
   margin: 20rpx;

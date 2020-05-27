@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "layout": "/components/layout/layout"
+    "layout": "/components/layout/layout",
+    "confirm": "/components/confirm/confirm"
   },
   "navigationBarTitleText": "报名"
 }

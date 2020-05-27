@@ -4,10 +4,23 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",
@@ -35,18 +48,41 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "报名",
 					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "填写报名信息",
+					"pathName": "pages/information/information",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "报名状态",
+					"pathName": "pages/checkStatus/checkStatus",
+					"query": "id=0bdd6b5e5ecd209c0041468d17875642",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "部长管理",
+					"pathName": "pages/manage/manage",
+					"query": "department=onecho",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "添加测试",
+					"pathName": "pages/addTest/addTest",
+					"query": "department=onecho",
 					"scene": null
 				}
 			]

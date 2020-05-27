@@ -12,7 +12,7 @@ Page({
       icon: "interest"
     }, {
       title: "学科复习",
-      desc: "学霸笔记网络于此",
+      desc: "学霸笔记网罗于此",
       color: "green"
     }, {
       title: "问题列表",

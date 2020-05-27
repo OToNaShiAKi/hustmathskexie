@@ -1,0 +1,33 @@
+/* miniprogram/pages/addTest/addTest.wxss */
+.title {
+  padding: 30rpx;
+  font-weight: bold;
+}
+
+.radios {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 30rpx 20rpx;
+}
+
+.lists {
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.times {
+  padding: 0 30rpx;
+}
+
+.times .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 50rpx;
+}
+
+.submit {
+  padding: 30rpx;
+}

@@ -1,0 +1,36 @@
+<!--miniprogram/pages/addTest/addTest.wxml-->
+<view class="title">{{ depart.name }}</view>
+
+<view>
+  <van-radio-group value="{{ type }}" data-key="type" class="radios" bind:change="changeForm">
+    <view>测试类型</view>
+    <van-radio name="face">面试</van-radio>
+    <van-radio name="pen">笔试</van-radio>
+    <van-radio name="test">实操</van-radio>
+  </van-radio-group>
+  <van-field label="测试地点" data-key="place" value="{{ place }}" bind:input="changeForm" />
+  <van-field label="每场限制人数" type="number" data-key="limit" value="{{ limit }}" bind:input="changeForm" />
+</view>
+
+<view>
+  <view class="lists">
+    <text>场次列表</text>
+    <van-button size="small" color="#fc8a2e" bind:tap="showTime">添加场次</van-button>
+  </view>
+  <view class="times" wx:if="{{ lists.length }}">
+    <view wx:for="{{ lists }}" wx:key="index" class="time">
+      <text>场次{{ index + 1 }}：</text>
+      <text>{{ item }}</text>
+      <i class="iconfont icon-delete" />
+    </view>
+  </view>
+  <view class="times" wx:else>尚未添加场次</view>
+</view>
+
+<view class="submit">
+  <van-button bind:tap="add" color="#fc8a2e" block round>提交</van-button>
+</view>
+
+<van-popup show="{{ show }}" bind:close="showTime" position="bottom" close-on-click-overlay>
+  <van-datetime-picker value="{{ timer }}" bind:cancel="showTime" bind:confirm="confirmTime"/>
+</van-popup>

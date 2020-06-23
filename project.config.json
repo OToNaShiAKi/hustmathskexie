@@ -9,6 +9,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -20,11 +21,11 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"nodeModules": true
+		"useCompilerModule": false
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",
-	"libVersion": "2.8.1",
+	"libVersion": "2.11.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -58,17 +59,17 @@
 					"scene": null
 				},
 				{
-					"id": 2,
-					"name": "填写报名信息",
+					"id": 1,
+					"name": "报名信息",
 					"pathName": "pages/information/information",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 3,
+					"id": 2,
 					"name": "报名状态",
 					"pathName": "pages/checkStatus/checkStatus",
-					"query": "id=0bdd6b5e5ecd209c0041468d17875642",
+					"query": "id=362458465ef1a883002f4e685f345430",
 					"scene": null
 				},
 				{

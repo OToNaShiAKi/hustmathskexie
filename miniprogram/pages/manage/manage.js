@@ -1,4 +1,6 @@
 // miniprogram/pages/manage/manage.js
+import { DepartFormat } from './../../utils/Format'
+
 Page({
 
   /**
@@ -17,45 +19,19 @@ Page({
     const depart = this.data.depart
     const key = options.department;
     depart.key = key;
+    depart.name = DepartFormat(key);
+    this.setData({ depart })
 
-    wx.showLoading({
+    /* wx.showLoading({
       title: '查询报名数据'
     })
 
-    if (key === 'editor') depart.name = '编辑部';
-    else if (key === 'office') depart.name = '策划部';
-    else if (key === 'media') depart.name = '媒体部';
-    else if (key === 'onecho') depart.name = 'One Echo';
-    else if (key === 'workshop') depart.name = '雁祉作坊';
-
-    const db = wx.cloud.database();
-    const recruit = db.collection('recruit');
-    recruit.get().then(res => {
-      const firstWish = []
-      const secondWish = []
-      for(let register of res.data) 
-        for (let depart in register.department) 
-          if (depart === key) {
-            if (register.department[depart].wish == '第一志愿')
-              firstWish.push(register);
-            else if (register.department[depart].wish == '第二志愿')
-              secondWish.push(register);
-            break;
-          }
-
-      wx.hideLoading()
-      wx.showToast({
-        title: '查询成功'
-      })
-      this.setData({ depart, firstWish, secondWish });
-    }).catch(err => {
-      console.log(err);
-      wx.hideLoading()
-      wx.showToast({
-        title: '查询失败',
-        icon: 'none'
-      })
-    })
+    wx.cloud.callFunction({
+      name: "allSigns",
+      data: { key }
+    }).then(res => {
+      console.log(res);
+    }) */
   },
 
   addTest() {

@@ -2,7 +2,7 @@
 .radios {
   display: flex;
   flex-wrap: wrap;
-  padding: 20rpx;
+  padding: 20rpx 20rpx 0;
 }
 
 .radios .item {

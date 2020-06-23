@@ -2,7 +2,7 @@
 <view>
   <view class="title">查询信息</view>
   <van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
-  <van-field value="{{ uid }}" maxlength="10" data-id="uid" bind:input="changeForm" label="学号" />
+  <van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
 </view>
 
 <view class="submit">
@@ -13,7 +13,7 @@
   <view class="title">查询结果</view>
   <van-tabs animated swipeable>
     <van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">
-
+      <van-steps direction="vertical" steps="{{ steps }}" active="{{ active }}" />
     </van-tab>
   </van-tabs>
 </view>

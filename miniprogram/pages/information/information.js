@@ -12,10 +12,10 @@ Page({
   data: {
     department: [],
     name: '',
-    uid: 'U',
     phone: '',
     qq: '',
     introduce: '',
+    adjustment: 'no',
     lists: {
       editor: { name: "编辑部" },
       office: { name: "策划部" },
@@ -54,8 +54,6 @@ Page({
 
   submitInfo() {
     const { lists, name, phone, qq, introduce } = this.data;
-    const uid = this.data.uid.toUpperCase();
-
     const department = {}
 
     for (let key in lists) {
@@ -69,17 +67,9 @@ Page({
       }
     }
 
-    if(!name) {
+    if(!name.length) {
       wx.showToast({
         title: '请输入姓名',
-        icon: 'none'
-      });
-      return
-    }
-
-    if(!uid.startsWith('U20')) {
-      wx.showToast({
-        title: '学号不符合规范',
         icon: 'none'
       });
       return
@@ -109,43 +99,30 @@ Page({
       return
     } 
 
-    const db = wx.cloud.database();
-    const recruit = db.collection('recruit');
-
     wx.showLoading({
       title: '正在提交信息'
     })
 
-    recruit.where({ uid }).get().then(res => {
-      const data = res.data
-
-      if(data.length > 0) throw {
-        message: '该学号已注册'
+    wx.cloud.callFunction({
+      name: "sign",
+      data: {
+        name,
+        phone,
+        qq,
+        introduce,
+        department
       }
-
-      return recruit.add({
-        data: {
-          name,
-          uid,
-          phone,
-          qq,
-          introduce,
-          department,
-          time: db.serverDate()
-        }
-      })
     }).then(res => {
-      wx.hideLoading()
+      if(res.result.status !== 200) throw res.result;
       wx.redirectTo({
-        url: '/pages/checkStatus/checkStatus?id=' + res._id,
+        url: '/pages/checkStatus/checkStatus?id=' + res.result.id
       })
     }).catch(err => {
-      wx.hideLoading()
       console.log(err);
       wx.showToast({
         title: err.message || '报名失败，请确认网络后重试',
         icon: 'none'
       })
-    })
+    }).finally(wx.hideLoading)
   }
 })

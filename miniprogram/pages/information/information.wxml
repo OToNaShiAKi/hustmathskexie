@@ -2,7 +2,6 @@
 <view>
   <view class="title">填写信息</view>
   <van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
-  <van-field value="{{ uid }}" maxlength="10" data-id="uid" bind:input="changeForm" label="学号" />
   <van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
   <van-field value="{{ qq }}" data-id="qq" bind:input="changeForm" label="QQ" />
   <van-field type="textarea" show-confirm-bar="{{ false }}" autosize value="{{ introduce }}" data-id="introduce" bind:input="changeForm" label="自我介绍" />
@@ -13,6 +12,14 @@
   <van-checkbox-group class="checkbox" value="{{ department }}" bind:change="checkDepartment" max="{{ 2 }}">
     <van-checkbox class="check-item" checked-color="{{ item.wish }}" wx:for="{{ lists }}" wx:key="index" name="{{ index }}">{{ item.name }}</van-checkbox>
   </van-checkbox-group>
+</view>
+
+<view>
+  <view class="title">接受调剂</view>
+  <van-radio-group data-id="adjustment" bind:change="changeForm" class="checkbox" value="{{ adjustment }}">
+    <van-radio class="check-item" name="no">不接受</van-radio>
+    <van-radio class="check-item" name="yes">接受</van-radio>
+  </van-radio-group>
 </view>
 
 <view class="submit">

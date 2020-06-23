@@ -8,7 +8,6 @@
   <view class="subheader">第一志愿</view>
   <van-collapse value="{{ panel }}" bind:change="unfold">
     <van-collapse-item wx:for="{{ firstWish }}" wx:key="_id" title="{{ item.name }}" name="{{ item._id }}">
-      <van-cell title="学号" value="{{ item.uid }}" />
       <van-cell title="手机" value="{{ item.phone }}" />
       <van-cell title="QQ" value="{{ item.qq }}" />
       <van-cell data-id="{{ item._id }}" bind:tap="changeStatus" is-link title="录取状态" />
@@ -20,7 +19,6 @@
   <view class="subheader">第二志愿</view>
   <van-collapse value="{{ panel }}" bind:change="unfold">
     <van-collapse-item wx:for="{{ secondWish }}" wx:key="_id" title="{{ item.name }}" name="{{ item._id }}">
-      <van-cell title="学号" value="{{ item.uid }}" />
       <van-cell title="手机" value="{{ item.phone }}" />
       <van-cell title="QQ" value="{{ item.qq }}" />
       <van-cell data-id="{{ item._id }}" bind:tap="changeStatus" is-link title="录取状态" />

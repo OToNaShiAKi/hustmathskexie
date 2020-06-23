@@ -6,12 +6,13 @@ Page({
    */
   data: {
     depart: { key: '', name: '' },
-    show: false,
     type: "face",
-    place: "",
-    limit: 5,
-    lists: [],
-    timer: new Date().getTime()
+    lists: [{
+      limit: 6,
+      place: "",
+      time: ""
+    }],
+    tip: ""
   },
 
   /**
@@ -33,28 +34,73 @@ Page({
 
   changeForm(event) {
     const key = event.currentTarget.dataset.key;
+    const index = event.currentTarget.dataset.index;
     const value = event.detail;
-    this.setData({ [key]: value })
-  },
-
-  showTime(event) {
-    const show = event.type === 'tap' ? true : false;
-    this.setData({ show })
-  },
-
-  confirmTime(event) {
-    const date = new Date(event.detail);
     const lists = this.data.lists;
-    const month = date.getMonth()
-    const day = date.getDate()
-    const hour = date.getHours().toString().padStart(2, '0')
-    const minute = date.getMinutes().toString().padStart(2, '0')
-    lists.push(`${month}月${day}日 ${hour}:${minute}`);
-    this.setData({ lists, show: false })
+    lists[index][key] = value;
+    this.setData({ lists });
   },
 
-  add() {
-    const { type, place, limit, lists } = this.data;
-    const key = this.data.depart.key;
+  changeType(event) {
+    const key = event.currentTarget.dataset.key;
+    const value = event.detail;
+    this.setData({ [key]: value });
+  },
+
+  addPlace() {
+    const lists = this.data.lists;
+    lists.push({
+      limit: 6,
+      place: "",
+      time: ""
+    })
+    this.setData({ lists })
+  },
+
+  close(event) {
+    const index = event.currentTarget.dataset.index;
+    const lists = this.data.lists;
+    if (lists.length === 1) {
+      wx.showToast({
+        title: '至少添加一场测试',
+        icon: 'none'
+      })
+      return;
+    }
+    lists.splice(index, 1);
+    this.setData({ lists })
+  },
+
+  submit() {
+    const { type, lists, tip } = this.data;
+    const department = this.data.depart.key;
+
+    const db = wx.cloud.database();
+    const examination = db.collection('examination')
+
+    for(let item of lists) 
+      if(!item.place || !item.time || !item.limit) {
+        wx.showToast({
+          title: '输入不可为空',
+          icon: 'none'
+        })
+        return;
+      }
+
+    examination.add({
+      data: {
+        type,
+        lists,
+        department,
+        time: db.serverDate(),
+        tip
+      }
+    }).then(res => {
+
+    })
+  },
+  
+  adminTest() {
+
   }
 })

@@ -1,9 +1,6 @@
 {
   "navigationBarTitleText": "报名状态",
   "usingComponents": {
-    "van-field": "@vant/weapp/field/index",
-    "van-button": "@vant/weapp/button/index",
-    "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
+    
   }
 }

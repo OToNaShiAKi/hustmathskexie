@@ -24,7 +24,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    authentication() {
+    authentication(event) {
       const password = md5(this.data.confirm);
       const department = this.data.department;
 
@@ -33,7 +33,7 @@ Component({
           title: '未选择部门',
           icon: 'none'
         })
-        return
+        return false
       }
 
       if (password === '065b01521cf7f90f97d83235ed086dea')

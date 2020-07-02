@@ -16,7 +16,8 @@ Page({
     }, {
       title: "报名须知",
       desc: "报名前一定要看哦",
-      color: "green"
+      color: "green",
+      link:"notice"
     }, {
       title: "部门简介",
       desc: "了解部门工作内容",

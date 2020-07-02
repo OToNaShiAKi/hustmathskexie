@@ -1,5 +1,7 @@
 // miniprogram/pages/manage/manage.js
-import { DepartFormat } from './../../utils/Format'
+import {
+  DepartFormat
+} from './../../utils/Format'
 
 Page({
 
@@ -7,7 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    depart: { key: '', name: ''},
+    depart: {
+      key: '',
+      name: ''
+    },
     firstWish: [],
     secondWish: []
   },
@@ -15,23 +20,28 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
+  onLoad(options) {
     const depart = this.data.depart
     const key = options.department;
     depart.key = key;
     depart.name = DepartFormat(key);
-    this.setData({ depart })
+    this.setData({
+      depart
+    })
 
-    /* wx.showLoading({
+    wx.showLoading({
       title: '查询报名数据'
     })
 
     wx.cloud.callFunction({
       name: "allSigns",
-      data: { key }
+      data: {
+        key
+      }
     }).then(res => {
       console.log(res);
-    }) */
+
+    })
   },
 
   addTest() {

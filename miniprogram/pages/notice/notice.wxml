@@ -1,0 +1,8 @@
+<!--miniprogram/pages/notice/notice.wxml-->
+<view>
+<view id="title">报名须知</view>
+  <view id="contentBox">
+<view wx:for="{{noticeContent}}" wx:key="*this">{{index+1}}. {{item}};</view>
+  </view>
+</view>
+

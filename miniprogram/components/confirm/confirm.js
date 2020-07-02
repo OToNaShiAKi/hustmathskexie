@@ -35,8 +35,10 @@ Component({
         })
         return false
       }
-
-      if (password === '065b01521cf7f90f97d83235ed086dea')
+      // false:81dc9bdb52d04dc20036dbd8313ed055    PW:1234
+      //true: 065b01521cf7f90f97d83235ed086dea
+      // if (password === '065b01521cf7f90f97d83235ed086dea')
+      if (password === '81dc9bdb52d04dc20036dbd8313ed055')
         wx.navigateTo({
           url: '/pages/manage/manage?department=' + department
         })

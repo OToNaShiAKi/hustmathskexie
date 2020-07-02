@@ -1,0 +1,14 @@
+/* miniprogram/pages/notice/notice.wxss */
+#title{
+  text-align: center;
+  font-weight: bold;
+  color: #fbbd5a;
+  font-size: 1.5em;
+  margin: 0 auto;
+}
+
+#contentBox view{
+  margin-top: 12rpx;
+  height: auto;
+  font-size: 1.2em;
+}

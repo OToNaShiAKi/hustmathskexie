@@ -6,7 +6,8 @@
     "pages/checkStatus/checkStatus",
     "pages/manage/manage",
     "pages/addTest/addTest",
-    "pages/notice/notice"
+    "pages/notice/notice",
+    "pages/contact/contact"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

@@ -31,7 +31,8 @@ Page({
     }, {
       title: "联系部门",
       desc: "任何问题都可以问",
-      color: "purple"
+      color: "purple",
+      link:"contact"
     }]
   },
 

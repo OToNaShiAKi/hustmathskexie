@@ -7,11 +7,11 @@
       <view class='title_1'>面试</view>
       <view class="person_num">{{ interview.num }}</view>
     </view>
-    <view class='detail' wx:if="{{showIndex == 1}}" wx:for="{{interview.list}}">
-    <view class="select_name" catchtap="linkto" data-id="{{item._id}}">{{item.name}}</view>
+    <view class='detail' catchtap="linkto" data-id="{{item._id}}" wx:if="{{showIndex == 1}}" wx:for="{{interview.list}}">
+    <view class="select_name" data-name="name">{{item.name}}</view>
     <view class="check_button">
-    <button type="primary">通过</button>
-    <button type="warn">退回</button>
+    <button type="primary" data-button="pass">通过</button>
+    <button type="warn" data-button="reject">退回</button>
     </view>
     </view>
   </view>
@@ -20,13 +20,25 @@
       <view class='title_1'>笔试</view>
       <view class="person_num">{{ written.num }}</view>
     </view>
-    <view class='detail' wx:if="{{showIndex == 2}}" wx:for="{{interview.list}}">{{item.name}}</view>
+    <view class='detail' catchtap="linkto" data-id="{{item._id}}" wx:if="{{showIndex == 2}}" wx:for="{{written.list}}">
+    <view class="select_name" data-name="name">{{item.name}}</view>
+    <view class="check_button">
+    <button type="primary" data-button="pass">通过</button>
+    <button type="warn" data-button="reject">退回</button>
+    </view>
+    </view>
   </view>
   <view class='select_item'>
     <view class='title' data-index='3' catchtap='panel'>
       <view class='title_1'>实操</view>
       <view class="person_num">{{ operation.num }}</view>
     </view>
-    <view class='detail' wx:if="{{showIndex == 3}}" wx:for="{{interview.list}}">{{item.name}}</view>
+    <view class='detail' catchtap="linkto" data-id="{{item._id}}" wx:if="{{showIndex == 3}}" wx:for="{{operation.list}}">
+    <view class="select_name" data-name="name">{{item.name}}</view>
+    <view class="check_button">
+    <button type="primary" data-button="pass">通过</button>
+    <button type="warn" data-button="reject">退回</button>
+    </view>
+    </view>
   </view>
 </view>

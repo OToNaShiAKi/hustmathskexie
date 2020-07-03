@@ -21,46 +21,9 @@ Page({
   onLoad: function (options) {
       const depart = this.data.depart
       const key = options.department;
-      var result,data,interview,written,operation;
-      interview={
-        num:0,
-        list:[]
-      };
-      written={
-        num:0,
-        list:[]
-      };
-      operation={
-        num:0,
-        list:[]
-      };
       depart.key = key;
       depart.name = DepartFormat(key);
-
-      wx.cloud.callFunction({
-        name: 'selectStudent'
-      }).then(res=>{
-          result=res.result;
-          data=result.result.res.data;
-          for(let i=0;i<data.length;i++){
-            switch(data[i].status){
-              case 0:
-                interview.num++;
-                interview.list.push(data[i]);
-              break;
-              case 2:
-                written.num++;
-                written.list.push(data[i]);
-              break;
-              case 4:
-                operation.num++;
-                operation.list.push(data[i]);
-              break;
-            }
-          }
-        console.log(data,interview.list)
-        this.setData({ interview,written,operation });
-        })
+      this.selectStudent();
       this.setData({ depart });
   },
 
@@ -77,11 +40,67 @@ Page({
     }
   },
 
+  selectStudent:function(){
+    let result,data,interview,written,operation;
+    interview={
+      num:0,
+      list:[]
+    };
+    written={
+      num:0,
+      list:[]
+    };
+    operation={
+      num:0,
+      list:[]
+    };
+    wx.cloud.callFunction({
+      name: 'selectStudent'
+    }).then(res=>{
+        result=res.result;
+        data=result.result.res.data;
+        for(let i=0;i<data.length;i++){
+          switch(data[i].status){
+            case 0:
+              interview.num++;
+              interview.list.push(data[i]);
+            break;
+            case 2:
+              written.num++;
+              written.list.push(data[i]);
+            break;
+            case 4:
+              operation.num++;
+              operation.list.push(data[i]);
+            break;
+          }
+        }
+      console.log(data,interview.list)
+      this.setData({ interview,written,operation });
+      })
+  },
+
   linkto:function(e){
     console.log(e);
-    wx.navigateTo({
-      url: '/pages/infoDetail/infoDetail?id=' + e.currentTarget.dataset.id
-    })
+    var button;
+    if(e.target.dataset.name){
+      wx.navigateTo({
+        url: '/pages/infoDetail/infoDetail?id=' + e.currentTarget.dataset.id
+      })
+    }else if(button=e.target.dataset.button){
+      console.log(button);
+      wx.cloud.callFunction({
+        name: "selectPassOrNot",
+        data:{
+          choice:button,
+          id:e.currentTarget.dataset.id
+        }
+      }).then(res=>{
+        this.selectStudent();
+        console.log(res);
+      })
+    }
+    
   },
 
   /**

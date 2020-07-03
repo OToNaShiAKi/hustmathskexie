@@ -15,7 +15,7 @@ Page({
     var info;
     console.log(options);
     wx.cloud.callFunction({
-      name: 'selectStudentByName',
+      name: 'selectStudentById',
       data:{
         id:options.id
       }

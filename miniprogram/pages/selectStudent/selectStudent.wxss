@@ -1,0 +1,91 @@
+/* miniprogram/pages/selectStudent/selectStudent.wxss */
+
+#title {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  font-size: 1.8em;
+  margin: 30rpx;
+  font-weight: bold;
+}
+
+.select {
+  width: 700rpx;
+  margin: 0 auto;
+}
+
+.select .select_item {
+  margin: 10rpx auto;
+}
+
+.select .select_item .title {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  color: white;
+  margin: 20rpx;
+  font-size: 1.6em;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  border-radius: 0.3em;
+
+}
+
+.select .select_item .title .title_1 {
+  width: 580rpx;
+  height: 60rpx;
+  padding-left: 20rpx;
+}
+
+.select .select_item .detail {
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx auto;
+  height: 45rpx;
+  font-size: 25rpx;
+  line-height: 40rpx;
+  text-indent: 2em;
+}
+
+.person_num {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+  background-color: wheat;
+  color: black;
+  font-size: 0.7em;
+  line-height: 40rpx;
+  padding: 0;
+  align-items: center;
+  text-align: center;
+}
+
+.select_name {
+  width: 400rpx;
+  font-weight: bold;
+  font-size:1.2em ;
+}
+
+.check_button {
+  width: 280rpx;
+  height: 40rpx;
+  display: flex;
+  margin:0;
+  margin-right: 20rpx;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+button{
+  width:40%;
+  text-align:center;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 1em;
+}
+

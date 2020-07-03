@@ -1,7 +1,7 @@
 <!--miniprogram/pages/addTest/addTest.wxml-->
 <view class="title">
   <text>{{ depart.name }}</text>
-  <van-button size="small" bind:click="adminTest" color="#fc8a2e">管理测试</van-button>
+  <van-button size="small" bind:click="adminTest" color="{{buttonColor}}">管理测试</van-button>
 </view>
 
 <van-radio-group value="{{ type }}" data-key="type" class="radios" bind:change="changeType">
@@ -15,7 +15,7 @@
 <view>
   <view class="lists">
     <text>场次列表</text>
-    <van-button size="small" color="#fc8a2e" bind:tap="addPlace">添加场次</van-button>
+    <van-button size="small" color="{{buttonColor}}" bind:tap="addPlace">添加场次</van-button>
   </view>
   <view wx:for="{{ lists }}" wx:key="index">
     <view class="place">
@@ -29,5 +29,5 @@
 </view>
 
 <view class="submit">
-  <van-button bind:tap="submit" color="#fc8a2e" block round>提交</van-button>
+  <van-button bind:tap="submit" color="{{buttonColor}}" block round>提交</van-button>
 </view>

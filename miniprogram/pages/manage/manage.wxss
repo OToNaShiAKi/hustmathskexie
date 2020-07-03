@@ -32,8 +32,12 @@
 }
 #buttonBox button{
   border-radius: 0.5em;
-  margin: 30rpx;
+  margin: 20rpx;
   padding-left: 20rpx;
   padding-right: 20rpx;
   width: 500rpx;
+}
+
+ .last{
+  margin-bottom: 90rpx;
 }

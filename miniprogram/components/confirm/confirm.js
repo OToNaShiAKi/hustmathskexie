@@ -36,7 +36,7 @@ Component({
         return false
       }
 
-      if (password === '065b01521cf7f90f97d83235ed086dea')
+      if (password === md5(1234))
         wx.navigateTo({
           url: '/pages/manage/manage?department=' + department
         })

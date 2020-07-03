@@ -1,11 +1,13 @@
 {
   "pages": [
-    "pages/home/home",
+    "pages/selectStudent/selectStudent",
     "pages/register/register",
+    "pages/manage/manage",
+    "pages/home/home",
     "pages/information/information",
     "pages/checkStatus/checkStatus",
-    "pages/manage/manage",
-    "pages/addTest/addTest"
+    "pages/addTest/addTest",
+    "pages/infoDetail/infoDetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

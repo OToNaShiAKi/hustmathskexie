@@ -1,0 +1,32 @@
+<!--miniprogram/pages/selectStudent/selectStudent.wxml-->
+<text>{{ depart.name }}</text>
+<!-- 面试->笔试->实操 -->
+<view class='select'>
+  <view class='select_item'>
+    <view class='title' data-index='1' catchtap='panel'>
+      <view class='title_1'>面试</view>
+      <view class="person_num">{{ interview.num }}</view>
+    </view>
+    <view class='detail' wx:if="{{showIndex == 1}}" wx:for="{{interview.list}}">
+    <view class="select_name" catchtap="linkto" data-id="{{item._id}}">{{item.name}}</view>
+    <view class="check_button">
+    <button type="primary">通过</button>
+    <button type="warn">退回</button>
+    </view>
+    </view>
+  </view>
+  <view class='select_item'>
+    <view class='title' data-index='2' catchtap='panel'>
+      <view class='title_1'>笔试</view>
+      <view class="person_num">{{ written.num }}</view>
+    </view>
+    <view class='detail' wx:if="{{showIndex == 2}}" wx:for="{{interview.list}}">{{item.name}}</view>
+  </view>
+  <view class='select_item'>
+    <view class='title' data-index='3' catchtap='panel'>
+      <view class='title_1'>实操</view>
+      <view class="person_num">{{ operation.num }}</view>
+    </view>
+    <view class='detail' wx:if="{{showIndex == 3}}" wx:for="{{interview.list}}">{{item.name}}</view>
+  </view>
+</view>

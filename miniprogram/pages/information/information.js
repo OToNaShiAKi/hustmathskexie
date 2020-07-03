@@ -22,7 +22,8 @@ Page({
       media: { name: "媒体部" },
       onecho: { name: "One Echo" },
       workshop: { name: "雁祉作坊" }
-    }
+    },
+    status:0
   },
 
   checkDepartment(event) {
@@ -53,7 +54,7 @@ Page({
   },
 
   submitInfo() {
-    const { lists, name, phone, qq, introduce } = this.data;
+    const { lists, name, phone, qq, introduce, status, adjustment} = this.data;
     const department = {}
 
     for (let key in lists) {
@@ -110,10 +111,13 @@ Page({
         phone,
         qq,
         introduce,
-        department
+        department,
+        adjustment,
+        status
       }
     }).then(res => {
       if(res.result.status !== 200) throw res.result;
+      console.log(res);
       wx.redirectTo({
         url: '/pages/checkStatus/checkStatus?id=' + res.result.id
       })

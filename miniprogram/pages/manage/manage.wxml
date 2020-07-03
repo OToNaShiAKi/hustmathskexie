@@ -25,3 +25,7 @@
     </van-collapse-item>
   </van-collapse>
 </view>
+
+<view>
+  <van-button size="big" style="display:inline-block;width:100%" bind:click="selectStudent" color="#fc8a2e">审核</van-button>
+</view>

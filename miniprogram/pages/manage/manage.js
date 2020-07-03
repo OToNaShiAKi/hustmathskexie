@@ -26,10 +26,6 @@ Page({
     depart.name = DepartFormat(key);
     this.setData({ depart , imgUrl , buttonColor })
 
-    wx.showLoading({
-      title: '查询报名数据'
-    })
-
     wx.cloud.callFunction({
       name: "allSigns",
       data: {

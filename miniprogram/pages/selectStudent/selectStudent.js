@@ -23,7 +23,7 @@ Page({
       const key = options.department;
       depart.key = key;
       depart.name = DepartFormat(key);
-      this.selectStudent();
+      this.selectStudent(depart.name);
       this.setData({ depart });
   },
 
@@ -40,7 +40,7 @@ Page({
     }
   },
 
-  selectStudent:function(){
+  selectStudent:function(name){
     let result,data,interview,written,operation;
     interview={
       num:0,
@@ -55,7 +55,10 @@ Page({
       list:[]
     };
     wx.cloud.callFunction({
-      name: 'selectStudent'
+      name: 'selectStudent',
+      data:{
+        name:name
+      }
     }).then(res=>{
         result=res.result;
         data=result.result.res.data;
@@ -75,7 +78,7 @@ Page({
             break;
           }
         }
-      console.log(data,interview.list)
+      console.log(data,res)
       this.setData({ interview,written,operation });
       })
   },

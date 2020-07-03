@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/selectStudent/selectStudent",
     "pages/register/register",
+    "pages/selectStudent/selectStudent",
     "pages/manage/manage",
     "pages/home/home",
     "pages/information/information",

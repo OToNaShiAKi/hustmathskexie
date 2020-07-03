@@ -1,2 +1,2 @@
 <!--pages/contact/contact.wxml-->
-<view wx:for="{{departContact}}">item</view>
+<view wx:for="{{departContact}}">{{item.department}}</view>

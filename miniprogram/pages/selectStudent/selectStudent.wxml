@@ -1,9 +1,9 @@
 <!--miniprogram/pages/selectStudent/selectStudent.wxml-->
-<text>{{ depart.name }}</text>
+<text id="title">{{ depart.name }}</text>
 <!-- 面试->笔试->实操 -->
 <view class='select'>
   <view class='select_item'>
-    <view class='title' data-index='1' catchtap='panel'>
+    <view class='title' data-index='1' catchtap='panel' style="background:{{buttonColor}}">
       <view class='title_1'>面试</view>
       <view class="person_num">{{ interview.num }}</view>
     </view>
@@ -16,7 +16,7 @@
     </view>
   </view>
   <view class='select_item'>
-    <view class='title' data-index='2' catchtap='panel'>
+    <view class='title' data-index='2' catchtap='panel'  style="background:{{buttonColor}}">
       <view class='title_1'>笔试</view>
       <view class="person_num">{{ written.num }}</view>
     </view>
@@ -29,7 +29,7 @@
     </view>
   </view>
   <view class='select_item'>
-    <view class='title' data-index='3' catchtap='panel'>
+    <view class='title' data-index='3' catchtap='panel'  style="background:{{buttonColor}}">
       <view class='title_1'>实操</view>
       <view class="person_num">{{ operation.num }}</view>
     </view>

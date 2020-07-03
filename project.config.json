@@ -86,6 +86,13 @@
 					"pathName": "pages/addTest/addTest",
 					"query": "department=onecho",
 					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "审核",
+					"pathName": "pages/infoDetail/infoDetail",
+					"query": "id=b7d9f2ea5eff4d500055b3a73d21f824",
+					"scene": 1001
 				}
 			]
 		}

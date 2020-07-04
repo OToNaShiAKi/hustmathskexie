@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/checkStatus/checkStatus",
     "pages/register/register",
     "pages/selectStudent/selectStudent",
+    "pages/information/information",
+    "pages/addTest/addTest",
+    "pages/datetest/datetest",
     "pages/manage/manage",
     "pages/home/home",
-    "pages/information/information",
-    "pages/checkStatus/checkStatus",
-    "pages/addTest/addTest",
     "pages/infoDetail/infoDetail"
   ],
   "window": {
@@ -47,6 +48,7 @@
     "van-collapse": "@vant/weapp/collapse/index",
     "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-cell": "@vant/weapp/cell/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-calendar": "@vant/weapp/calendar/index"
   }
 }

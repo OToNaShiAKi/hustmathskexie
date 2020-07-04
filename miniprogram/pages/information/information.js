@@ -22,8 +22,7 @@ Page({
       media: { name: "媒体部" },
       onecho: { name: "One Echo" },
       workshop: { name: "雁祉作坊" }
-    },
-    status:0
+    }
   },
 
   checkDepartment(event) {
@@ -54,17 +53,22 @@ Page({
   },
 
   submitInfo() {
-    const { lists, name, phone, qq, introduce, status, adjustment} = this.data;
+    const { lists, name, phone, qq, introduce, adjustment} = this.data;
     const department = {}
-
+    var status=new Object();
     for (let key in lists) {
       const wish = lists[key].wish
       if (wish) {
         department[key] = lists[key]
-        if (wish === FirstWish)
+        if (wish === FirstWish){
+          // status.push(lists[key].name+0);
+          status[lists[key].name]=0;
           department[key].wish = "第一志愿";
-        else if (wish === SecontWish)
+        }else if (wish === SecontWish){
+          // status.push(lists[key].name+0);
+          status[lists[key].name]=0;
           department[key].wish = "第二志愿";
+        }
       }
     }
 
@@ -100,6 +104,7 @@ Page({
       return
     } 
 
+    console.log(lists,status);
     wx.showLoading({
       title: '正在提交信息'
     })

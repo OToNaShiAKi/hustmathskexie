@@ -26,7 +26,7 @@ exports.main = async (event, context) => {
       message: "您尚未报名"
     }
 
-    const { name, phone, department } = lists[0];
+    const { name, phone, department, status} = lists[0];
     /* let 
     for(let key in department) {
 
@@ -34,7 +34,7 @@ exports.main = async (event, context) => {
     return {
       status: 200,
       message: "查询成功",
-      data: { name, phone, department }
+      data: { name, phone, department, status}
     }
   }).catch(err => ({
     status: err.status || 505,

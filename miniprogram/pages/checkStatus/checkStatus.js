@@ -30,8 +30,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '',
-    phone: '',
+    name: 'cyc',
+    phone: '1234',
     department: {},
     steps: [
       {
@@ -73,17 +73,18 @@ Page({
       return
     } 
 
-    if (!PhoneRule.test(phone)) {
-      wx.showToast({
-        title: '电话不符合规范',
-        icon: 'none'
-      });
-      return
-    }
+    // if (!PhoneRule.test(phone)) {
+    //   wx.showToast({
+    //     title: '电话不符合规范',
+    //     icon: 'none'
+    //   });
+    //   return
+    // }
 
     Query({ name, phone }, data => {
-      const { department } = data;
-      this.setData({ department })
+      console.log(data);
+      const { department, status } = data;
+      this.setData({ department,status })
     })
   },
 

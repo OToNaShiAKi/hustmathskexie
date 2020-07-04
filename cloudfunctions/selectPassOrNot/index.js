@@ -9,21 +9,30 @@ exports.main = async (event, context) => {
   const recruit = db.collection('recruit');
   const _=db.command;
   var result;
+  // return event;
   if(event.choice=="pass"){
-    result = await recruit.where({_id:event.id}).update({
+    await recruit.where({_id:event.id}).get().then(res=>{
+      res.data[0]['status'][event.name]+=2;
+      console.log(res.data[0]['status']);
+      result=res.data[0]['status'];
+    })
+    console.log(result);
+    return await recruit.where({_id:event.id}).update({
       data:{
-        status:_.inc(2)
+        status:result
       }
     }).then(res=>({res}));
   }else if(event.choice=="reject"){
-    result = await recruit.where({_id:event.id}).update({
+    await recruit.where({_id:event.id}).get().then(res=>{
+      res.data[0]['status'][event.name]+=1;
+      console.log(res.data[0]['status']);
+      result=res.data[0]['status'];
+    })
+    console.log(result);
+    return await recruit.where({_id:event.id}).update({
       data:{
-        status:_.inc(1)
+        status:result
       }
     }).then(res=>({res}));
-  }
-  
-  return {
-    result
   }
 }

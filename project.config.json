@@ -6,6 +6,7 @@
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
@@ -21,7 +22,8 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",
@@ -90,8 +92,8 @@
 				{
 					"id": 5,
 					"name": "审核",
-					"pathName": "pages/infoDetail/infoDetail",
-					"query": "id=b7d9f2ea5eff4d500055b3a73d21f824",
+					"pathName": "pages/selectStudent/selectStudent",
+					"query": "department=workshop",
 					"scene": 1001
 				}
 			]

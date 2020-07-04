@@ -43,6 +43,9 @@ Page({
   },
 
   selectStudent: function (name) {
+    wx.showLoading({
+      title: '正在获取报名信息'
+    });
     let result, data, interview, written, operation;
     interview = {
       num: 0,
@@ -62,8 +65,8 @@ Page({
         name: name
       }
     }).then(res => {
-      result = res.result;
-      data = result.result.res.data;
+     result = res.result;
+       data = result.result.res.data;
       for (let i = 0; i < data.length; i++) {
         switch (data[i].status) {
           case 0:
@@ -82,18 +85,30 @@ Page({
       }
       console.log(data, res)
       this.setData({ interview, written, operation });
-    })
+      wx.showToast({
+        title: '获取成功',
+        icon: 'none'
+      })
+    }).catch(err =>{
+      console.log(err);
+      wx.showToast({
+        title: '加载失败，请检查网络',
+        icon: 'none'
+      })
+    }).finally(wx.hideLoading());
   },
 
   linkto: function (e) {
-    console.log(e);
-    var button;
+    let button;
     if (e.target.dataset.name) {
       wx.navigateTo({
         url: '/pages/infoDetail/infoDetail?id=' + e.currentTarget.dataset.id
       })
     } else if (button = e.target.dataset.button) {
       console.log(button);
+      wx.showLoading({
+        title: '正在提交',
+      })
       wx.cloud.callFunction({
         name: "selectPassOrNot",
         data: {
@@ -103,7 +118,17 @@ Page({
       }).then(res => {
         this.selectStudent(this.data.depart.name);
         console.log(res);
-      })
+        wx.showToast({
+          title: '成功',
+          icon: 'success'
+        })
+      }).catch(err=>{
+        console.log(err);
+        wx.showToast({
+          title: '失败，请检查网络状态',
+          icon: 'fail'
+        })
+      }).finally(wx.hideLoading());
     }
 
   },

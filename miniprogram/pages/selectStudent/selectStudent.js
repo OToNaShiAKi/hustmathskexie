@@ -95,7 +95,7 @@ Page({
         title: '加载失败，请检查网络',
         icon: 'none'
       })
-    }).finally(wx.hideLoading());
+    }).finally(wx.hideLoading);
   },
 
   linkto:function(e){
@@ -131,7 +131,7 @@ Page({
           title: '失败，请检查网络状态',
           icon: 'fail'
         })
-      }).finally(wx.hideLoading());
+      }).finally(wx.hideLoading);
     }
 
   },

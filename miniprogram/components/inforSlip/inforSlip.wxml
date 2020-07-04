@@ -1,10 +1,12 @@
 <!--components/inforSlip/inforSlip.wxml-->
-<view>
-<view wx:if="{{!oneText}}">
-  <text>{{title}}:</text>
-  <text>{{content}}</text>
+<view class="inforSlip_box">
+<view wx:if="{{!oneText}}" class="inforSlip_slip">
+  <text class="inforSlip_title">{{title}}</text>
+  
+  <span class="inforSlip_divide"> : </span>
+  <text class="inforSlip_content">{{content}}</text>
 </view>
-<view wx:else>
-<text>{{oneContent}}</text>
+<view wx:else class="inforSlip_slip">
+<text class="inforSlip_one">{{oneContent}}</text>
 </view>
 </view>

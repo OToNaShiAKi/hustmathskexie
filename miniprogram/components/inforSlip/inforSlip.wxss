@@ -1,1 +1,27 @@
 /* components/inforSlip/inforSlip.wxss */
+.inforSlip_box{
+  width:auto;
+  height: 100rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+
+}
+
+
+
+.inforSlip_slip{
+  font-size:1.5em;
+  margin: 0 auto;
+}
+
+.inforSlip_divide{
+  color: #fc8a2e;
+  font-weight: bolder;
+}
+
+.inforSlip_title{
+  color:#fc8a2e;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

@@ -4,6 +4,12 @@
   font-weight: bold;
 }
 
+.title span {
+  color: #888;
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
 .submit {
   padding: 30rpx;
 }

@@ -1,11 +1,29 @@
 /* pages/contact/contact.wxss */
 .code{
   margin: 0 auto;
-  margin-top: 100rpx;
+  margin-top: 50rpx;
   
 }
 #code{
   height: 500rpx;
-  width: 400rpx;
+  width: 500rpx;
   margin: 0 auto;
+}
+
+#contactInfor{
+  margin-top:100rpx ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tishi{
+  width: 550rpx;
+  margin:  0 auto;
+  color:slategray;
+  text-align: center;
+}
+.codepop{
+  display: flex;
+  flex-direction: row;
 }

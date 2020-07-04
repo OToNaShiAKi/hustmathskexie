@@ -11,9 +11,9 @@
 
 <view>
   <view class="title">查询结果</view>
-  <van-tabs animated swipeable>
+  <van-tabs active animated swipeable>
     <van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">
-      <van-steps direction="vertical" steps="{{ steps }}" active="{{ status[item.name] }}" />
+      <van-steps direction="vertical" steps="{{ steps[index] }}" active="{{ status[item.name] }}" active-icon="{{steps[index][status[item.name]].activeIcon}}" active-color="{{steps[index][status[item.name]].activeColor}}"/>
     </van-tab>
   </van-tabs>
 </view>

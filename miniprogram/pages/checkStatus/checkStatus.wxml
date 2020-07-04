@@ -13,7 +13,7 @@
   <view class="title">查询结果</view>
   <van-tabs animated swipeable>
     <van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">
-      <van-steps direction="vertical" steps="{{ steps }}" active="{{ active }}" />
+      <van-steps direction="vertical" steps="{{ steps }}" active="{{ status[item.name] }}" />
     </van-tab>
   </van-tabs>
 </view>

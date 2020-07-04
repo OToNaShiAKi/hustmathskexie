@@ -27,7 +27,6 @@ exports.main = async (event, context) => {
       break;
   }
   return {
-    name,
     result
   }
 }

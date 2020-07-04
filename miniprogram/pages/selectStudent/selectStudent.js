@@ -64,14 +64,14 @@ Page({
       data: {
         name: name
       }
-    }).then(res => {
-     result = res.result;
-       data = result.result.res.data;
-      for (let i = 0; i < data.length; i++) {
-        switch (data[i].status) {
-          case 0:
-            interview.num++;
-            interview.list.push(data[i]);
+    }).then(res=>{
+        result=res.result;
+        data=result.result.res.data;
+        for(let i=0;i<data.length;i++){
+          switch(data[i].status[name]){
+            case 0:
+              interview.num++;
+              interview.list.push(data[i]);
             break;
           case 2:
             written.num++;
@@ -98,9 +98,11 @@ Page({
     }).finally(wx.hideLoading());
   },
 
-  linkto: function (e) {
-    let button;
-    if (e.target.dataset.name) {
+  linkto:function(e){
+    const {depart}=this.data;
+    console.log(e);
+    var button;
+    if(e.target.dataset.name){
       wx.navigateTo({
         url: '/pages/infoDetail/infoDetail?id=' + e.currentTarget.dataset.id
       })
@@ -111,11 +113,12 @@ Page({
       })
       wx.cloud.callFunction({
         name: "selectPassOrNot",
-        data: {
-          choice: button,
-          id: e.currentTarget.dataset.id
+        data:{
+          name:depart.name,
+          choice:button,
+          id:e.currentTarget.dataset.id
         }
-      }).then(res => {
+      }).then(res=>{
         this.selectStudent(this.data.depart.name);
         console.log(res);
         wx.showToast({
@@ -132,53 +135,4 @@ Page({
     }
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

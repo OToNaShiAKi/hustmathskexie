@@ -148,9 +148,6 @@ Page({
 
   },
 
-  adminTest() {
-
-  },
   
   onInput(event) {
     this.setData({

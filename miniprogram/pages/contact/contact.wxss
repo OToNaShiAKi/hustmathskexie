@@ -1,1 +1,11 @@
 /* pages/contact/contact.wxss */
+.code{
+  margin: 0 auto;
+  margin-top: 100rpx;
+  
+}
+#code{
+  height: 500rpx;
+  width: 400rpx;
+  margin: 0 auto;
+}

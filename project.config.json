@@ -95,6 +95,13 @@
 					"pathName": "pages/selectStudent/selectStudent",
 					"query": "department=workshop",
 					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "联系部门",
+					"pathName": "pages/contact/contact",
+					"query": "",
+					"scene": 1001
 				}
 			]
 		}

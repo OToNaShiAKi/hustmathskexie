@@ -1,2 +1,16 @@
 <!--pages/contact/contact.wxml-->
-<view wx:for="{{departContact}}">{{item.department}}</view>
+<van-tabs active="{{tabActive}}" swipeable color="#fc8a2e">
+  <van-tab title="{{item.departCN}}" wx:for="{{departContact}}" wx:key="department">
+  <view id="code">
+  <van-image show-menu-by-longpress="{{item.canDownload}}" width="400rpx" height="400rpx" src="{{item.imgUrl}}" custom-class="code" alt="{{item.departCN}}" radius="1em" use-error-slot>
+<text slot="error">加载失败,请检查网络状态</text>
+  </van-image>
+  </view>
+<view id="contactInfor">
+  <inforSlip title="招新群号" content="{{item.recruitGroup}}" oneText="{{!item.canDownload}}" oneContent="本部门暂无招新群"></inforSlip>
+  <inforSlip title="部长姓名" content="{{item.secretary}}"></inforSlip>
+  <inforSlip title="部长手机号" content="{{item.phone}}"></inforSlip>
+  <inforSlip title="部长QQ号" content="{{item.qq}}"></inforSlip>
+</view>
+  </van-tab>
+</van-tabs>

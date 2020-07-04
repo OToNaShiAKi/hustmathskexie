@@ -1,11 +1,18 @@
 // miniprogram/pages/addTest/addTest.js
+import {
+  DepartColor
+} from './../../utils/FormatColor';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    depart: { key: '', name: '' },
+    buttonColor: "",
+    depart: {
+      key: '',
+      name: ''
+    },
     type: "face",
     lists: [{
       limit: 6,
@@ -39,9 +46,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
+  onLoad(options) {
     const depart = this.data.depart
     const key = options.department;
+    const buttonColor = DepartColor(key);
     depart.key = key;
 
     if (key === 'editor') depart.name = '编辑部';
@@ -50,7 +58,10 @@ Page({
     else if (key === 'onecho') depart.name = 'One Echo';
     else if (key === 'workshop') depart.name = '雁祉作坊';
 
-    this.setData({ depart })
+    this.setData({
+      depart,
+      buttonColor
+    })
   },
 
   changeForm(event) {
@@ -59,13 +70,17 @@ Page({
     const value = event.detail;
     const lists = this.data.lists;
     lists[index][key] = value;
-    this.setData({ lists });
+    this.setData({
+      lists
+    });
   },
 
   changeType(event) {
     const key = event.currentTarget.dataset.key;
     const value = event.detail;
-    this.setData({ [key]: value });
+    this.setData({
+      [key]: value
+    });
   },
 
   addPlace() {
@@ -75,7 +90,9 @@ Page({
       place: "",
       date: ""
     })
-    this.setData({ lists })
+    this.setData({
+      lists
+    })
   },
 
   close(event) {
@@ -89,11 +106,17 @@ Page({
       return;
     }
     lists.splice(index, 1);
-    this.setData({ lists })
+    this.setData({
+      lists
+    })
   },
 
   submit() {
-    const { type, lists, tip } = this.data;
+    const {
+      type,
+      lists,
+      tip
+    } = this.data;
     const department = this.data.depart.key;
 
     console.log(lists);
@@ -124,7 +147,7 @@ Page({
       
 
   },
-  
+
   adminTest() {
 
   },

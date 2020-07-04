@@ -1,12 +1,14 @@
 // miniprogram/pages/manage/manage.js
-import { DepartFormat } from './../../utils/Format'
-
+import { DepartFormat } from './../../utils/Format';
+import { DepartColor } from './../../utils/FormatColor';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    buttonColor:"",
+    imgUrl:"",
     depart: { key: '', name: ''},
     firstWish: [],
     secondWish: []
@@ -18,9 +20,11 @@ Page({
   onLoad (options) {
     const depart = this.data.depart;
     const key = options.department;
+    const imgUrl =`http://hustmaths.top/img_weixin/departlogos/${key}_bgc.png`;
+    const buttonColor = DepartColor(key);
     depart.key = key;
     depart.name = DepartFormat(key);
-    this.setData({ depart })
+    this.setData({ depart , imgUrl , buttonColor })
 
     /* wx.showLoading({
       title: '查询报名数据'

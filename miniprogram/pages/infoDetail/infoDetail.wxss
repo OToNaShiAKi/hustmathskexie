@@ -1,1 +1,48 @@
 /* miniprogram/pages/infoDetail/infoDetail.wxss */
+#selfInfor {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 0.8em;
+  width: 700rpx;
+  height: 80vh;
+  background-color: #fff;
+  box-shadow: 0 8px 12px #ebedf0;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}
+
+#selfInfor>view {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgba(69, 90, 100, 0.6);
+  text-align: center;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+
+}
+
+#selfInfor>view>view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#selfInfor>view>view>view {
+  padding: 10rpx;
+  font-size: 1.2em;
+  padding-left: 40rpx;
+}
+
+.tiaoji{
+  font-size: 1.4em;
+  margin: 0 auto;
+  color: gray;
+}

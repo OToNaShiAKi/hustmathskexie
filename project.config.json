@@ -6,6 +6,7 @@
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
@@ -21,9 +22,9 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"useIsolateContext": true
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",

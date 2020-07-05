@@ -1,7 +1,26 @@
-<van-panel title="面试" desc="7月6日18：00" status="未开始" use-footer-slot>
-  <view>限制人数：6</view>
-  <view>备注：无</view>
-  <view slot="footer">
-    <van-button size="large" type="danger">选择</van-button>
-  </view>
-</van-panel>
+
+<van-collapse custom-class="k" value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item content-class="kgggg" title="面试" name="1">
+  <van-panel title="面试" desc="7月6日18：00" status="未开始" use-footer-slot>
+    <view class="kgggg">限制人数：6</view>
+    <view>备注：无</view>
+  </van-panel>
+  </van-collapse-item>
+  <van-collapse-item title="笔试" name="2">
+  <van-card
+  num="2"
+  desc="地点：dafa 时间：1月4日"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+/>
+<van-skeleton title row="3" loading="{{false}}">
+<view>
+<view>地点：dafa</view>
+<view>时间：1月4日</view>
+</view>
+</van-skeleton>
+  </van-collapse-item>
+  <van-collapse-item title="实操" name="3" disabled>
+    线上拓客，随时预约，贴心顺手的开单收银
+  </van-collapse-item>
+</van-collapse>

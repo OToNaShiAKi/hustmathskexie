@@ -1,7 +1,5 @@
 // miniprogram/pages/addTest/addTest.js
-import {
-  DepartColor
-} from './../../utils/FormatColor';
+import { DepartColor } from './../../utils/FormatColor';
 Page({
 
   /**
@@ -150,6 +148,12 @@ Page({
 
   },
 
+  adminTest:function (event){
+    console.log(event,this.data);
+    wx.navigateTo({
+      url: '/pages/adminTest/adminTest?department='+this.data.depart.key,
+    })
+  },
   
   onInput(event) {
     this.setData({

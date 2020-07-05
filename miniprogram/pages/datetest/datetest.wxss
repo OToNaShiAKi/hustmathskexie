@@ -1,1 +1,11 @@
 /* miniprogram/pages/datetest/datetest.wxss */
+/* .kgggg view{
+  background-color: rgba(rgb(230, 141, 141), rgb(83, 155, 83), rgb(18, 53, 63), 0.1);
+  font-size: 2px;
+  /* color: rebeccapurple; */
+/* } */
+.content-class{
+  background-color: blueviolet;
+  font-size: 2px;
+  color: rebeccapurple;
+}

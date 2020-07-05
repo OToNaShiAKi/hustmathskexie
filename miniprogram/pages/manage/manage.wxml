@@ -1,10 +1,10 @@
 <!--miniprogram/pages/manage/manage.wxml-->
 <view class="title">
-  <text>{{ depart.name }}</text>
+	<text>{{ depart.name }}</text>
 </view>
 
 
 <view id="buttonBox" style="background-image:url('{{imgUrl}}')">
- <van-button bind:click="addTest" color="{{buttonColor}}">添加测试</van-button>
-  <van-button  bind:click="selectStudent" class="last" color="{{buttonColor}}">审核</van-button>
+	<van-button bind:click="addTest" color="{{buttonColor}}">添加测试</van-button>
+	<van-button bind:click="selectStudent" class="last" color="{{buttonColor}}">审核</van-button>
 </view>

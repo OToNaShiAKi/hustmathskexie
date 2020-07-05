@@ -127,17 +127,9 @@ Page({
   },
 
   checkStatus() {
-    let {
+    var {
       onceClick
     } = this.data;
-    if (onceClick) {
-      onceClick = false;
-      this.setData({
-        onceClick
-      });
-    } else {
-      return;
-    }
     const {
       name,
       phone
@@ -163,6 +155,17 @@ Page({
       phone
     }, data => {
       console.log(this.data);
+      if (this.data.status == 504) {
+        return;
+      }
+      if (onceClick == 0) {
+        onceClick = 1;
+        this.setData({
+          onceClick
+        });
+      } else {
+        return;
+      }
       const {
         department,
         status

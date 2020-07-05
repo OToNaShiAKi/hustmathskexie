@@ -10,11 +10,11 @@ exports.main = async (event, context) => {
 
   result = examination.add({
     data: {
-      type:event.type,
-      lists:event.lists,
-      department:event.department,
+      type: event.type,
+      lists: event.lists,
+      department: event.department,
       time: db.serverDate(),
-      tip:event.tip
+      tip: event.tip
     }
   }).then(res => {
     res

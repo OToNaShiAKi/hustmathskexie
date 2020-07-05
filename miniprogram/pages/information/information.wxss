@@ -12,7 +12,7 @@
 }
 
 .checkbox .check-item {
-  width:  210rpx;
+  width: 210rpx;
   margin: 10rpx;
 }
 

@@ -10,7 +10,7 @@
 		<view class='detail' catchtap="linkto" data-id="{{item._id}}" wx:if="{{showIndex == 1}}" wx:for="{{interview.list}}">
 			<view class="select_name" data-name="name">{{item.name}}</view>
 			<view class="check_button">
-				<button class="pass" type="primary" data-button="pass" ></button>
+				<button class="pass" type="primary" data-button="pass"></button>
 				<button class="reject" type="warn" data-button="reject"></button>
 			</view>
 		</view>

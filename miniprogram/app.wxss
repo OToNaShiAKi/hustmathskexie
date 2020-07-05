@@ -1,6 +1,5 @@
-
 page {
-  --red: #e54d42;
+	--red: #e54d42;
 	--orange: #f37b1d;
 	--yellow: #fbbd08;
 	--olive: #8dc63f;
@@ -54,7 +53,7 @@ page {
 	--grayShadow: rgba(114, 130, 138, 0.2);
 	--blackShadow: rgba(26, 26, 26, 0.2);
 
-  background-color: var(--ghostWhite);
+	background-color: var(--ghostWhite);
 	font-size: 28rpx;
 	color: var(--black);
 	font-family: Helvetica Neue, Helvetica, sans-serif;

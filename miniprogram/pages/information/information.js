@@ -17,11 +17,21 @@ Page({
     introduce: '',
     adjustment: 'no',
     lists: {
-      editor: { name: "编辑部" },
-      office: { name: "策划部" },
-      media: { name: "媒体部" },
-      onecho: { name: "One Echo" },
-      workshop: { name: "雁祉作坊" }
+      editor: {
+        name: "编辑部"
+      },
+      office: {
+        name: "策划部"
+      },
+      media: {
+        name: "媒体部"
+      },
+      onecho: {
+        name: "One Echo"
+      },
+      workshop: {
+        name: "雁祉作坊"
+      }
     }
   },
 
@@ -30,11 +40,11 @@ Page({
     const lists = this.data.lists;
 
     for (let key in lists) {
-      if(key === value[0]) 
+      if (key === value[0])
         lists[key].wish = FirstWish;
-      else if(key === value[1])
+      else if (key === value[1])
         lists[key].wish = SecontWish;
-      else 
+      else
         lists[key].wish = '';
     }
 
@@ -53,32 +63,39 @@ Page({
   },
 
   submitInfo() {
-    const { lists, name, phone, qq, introduce, adjustment} = this.data;
+    const {
+      lists,
+      name,
+      phone,
+      qq,
+      introduce,
+      adjustment
+    } = this.data;
     const department = {}
-    var status=new Object();
+    var status = new Object();
     for (let key in lists) {
       const wish = lists[key].wish
       if (wish) {
         department[key] = lists[key]
-        if (wish === FirstWish){
+        if (wish === FirstWish) {
           // status.push(lists[key].name+0);
-          status[lists[key].name]=0;
+          status[lists[key].name] = 0;
           department[key].wish = "第一志愿";
-        }else if (wish === SecontWish){
+        } else if (wish === SecontWish) {
           // status.push(lists[key].name+0);
-          status[lists[key].name]=0;
+          status[lists[key].name] = 0;
           department[key].wish = "第二志愿";
         }
       }
     }
 
-    if(!name.length) {
+    if (!name.length) {
       wx.showToast({
         title: '请输入姓名',
         icon: 'none'
       });
       return
-    } 
+    }
 
     if (!PhoneRule.test(phone)) {
       wx.showToast({
@@ -86,7 +103,7 @@ Page({
         icon: 'none'
       });
       return
-    } 
+    }
 
     if (!QQRule.test(qq)) {
       wx.showToast({
@@ -94,7 +111,7 @@ Page({
         icon: 'none'
       });
       return
-    } 
+    }
 
     if (!Object.keys(department).length) {
       wx.showToast({
@@ -102,9 +119,9 @@ Page({
         icon: 'none'
       });
       return
-    } 
+    }
 
-    console.log(lists,status);
+    console.log(lists, status);
     wx.showLoading({
       title: '正在提交信息'
     })

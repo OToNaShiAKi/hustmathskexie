@@ -1,12 +1,12 @@
 <!--miniprogram/pages/checkStatus/checkStatus.wxml-->
 <view>
-  <view class="title">查询信息</view>
-  <van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
-  <van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
+	<view class="title">查询信息</view>
+	<van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
+	<van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
 </view>
 
 <view class="submit">
-  <van-button bind:tap="checkStatus" color="#fc8a2e" block round>查询</van-button>
+	<van-button bind:tap="checkStatus" color="#fc8a2e" block round>查询</van-button>
 </view>
 
 <view>

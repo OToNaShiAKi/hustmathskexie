@@ -1,6 +1,10 @@
 // miniprogram/pages/selectStudent/selectStudent.js
-import { DepartFormat } from './../../utils/Format'
-import { DepartColor } from './../../utils/FormatColor';
+import {
+  DepartFormat
+} from './../../utils/Format'
+import {
+  DepartColor
+} from './../../utils/FormatColor';
 
 Page({
 
@@ -8,11 +12,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    buttonColor:"",
-    depart: { key: '', name: '' },
-    interview: { num: 0, list: [] },
-    written: { num: 0, list: [] },
-    operation: { num: 0, list: [] },
+    buttonColor: "",
+    depart: {
+      key: '',
+      name: ''
+    },
+    interview: {
+      num: 0,
+      list: []
+    },
+    written: {
+      num: 0,
+      list: []
+    },
+    operation: {
+      num: 0,
+      list: []
+    },
     showIndex: 0
   },
 
@@ -26,7 +42,10 @@ Page({
     depart.key = key;
     depart.name = DepartFormat(key);
     this.selectStudent(depart.name);
-    this.setData({ depart , buttonColor });
+    this.setData({
+      depart,
+      buttonColor
+    });
   },
 
   panel: function (e) {
@@ -64,14 +83,14 @@ Page({
       data: {
         name: name
       }
-    }).then(res=>{
-        result=res.result;
-        data=result.result.res.data;
-        for(let i=0;i<data.length;i++){
-          switch(data[i].status[name]){
-            case 0:
-              interview.num++;
-              interview.list.push(data[i]);
+    }).then(res => {
+      result = res.result;
+      data = result.result.res.data;
+      for (let i = 0; i < data.length; i++) {
+        switch (data[i].status[name]) {
+          case 0:
+            interview.num++;
+            interview.list.push(data[i]);
             break;
           case 2:
             written.num++;
@@ -84,12 +103,16 @@ Page({
         }
       }
       console.log(data, res)
-      this.setData({ interview, written, operation });
+      this.setData({
+        interview,
+        written,
+        operation
+      });
       wx.showToast({
         title: '获取成功',
         icon: 'none'
       })
-    }).catch(err =>{
+    }).catch(err => {
       console.log(err);
       wx.showToast({
         title: '加载失败，请检查网络',
@@ -98,11 +121,13 @@ Page({
     }).finally(wx.hideLoading);
   },
 
-  linkto:function(e){
-    const {depart}=this.data;
+  linkto: function (e) {
+    const {
+      depart
+    } = this.data;
     console.log(e);
     var button;
-    if(e.target.dataset.name){
+    if (e.target.dataset.name) {
       wx.navigateTo({
         url: '/pages/infoDetail/infoDetail?id=' + e.currentTarget.dataset.id
       })
@@ -113,19 +138,19 @@ Page({
       })
       wx.cloud.callFunction({
         name: "selectPassOrNot",
-        data:{
-          name:depart.name,
-          choice:button,
-          id:e.currentTarget.dataset.id
+        data: {
+          name: depart.name,
+          choice: button,
+          id: e.currentTarget.dataset.id
         }
-      }).then(res=>{
+      }).then(res => {
         this.selectStudent(this.data.depart.name);
         console.log(res);
         wx.showToast({
           title: '成功',
           icon: 'success'
         })
-      }).catch(err=>{
+      }).catch(err => {
         console.log(err);
         wx.showToast({
           title: '失败，请检查网络状态',

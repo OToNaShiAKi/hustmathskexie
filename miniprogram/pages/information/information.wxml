@@ -1,35 +1,35 @@
 <!--miniprogram/pages/information/information.wxml-->
 <view>
-  <view class="title">填写信息</view>
-  <van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
-  <van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
-  <van-field value="{{ qq }}" data-id="qq" bind:input="changeForm" label="QQ" />
-  <van-field type="textarea" show-confirm-bar="{{ false }}" autosize value="{{ introduce }}" data-id="introduce" bind:input="changeForm" label="自我介绍" />
+	<view class="title">填写信息</view>
+	<van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
+	<van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
+	<van-field value="{{ qq }}" data-id="qq" bind:input="changeForm" label="QQ" />
+	<van-field type="textarea" show-confirm-bar="{{ false }}" autosize value="{{ introduce }}" data-id="introduce" bind:input="changeForm" label="自我介绍" />
 </view>
 
 <view>
-  <view class="title">选择部门</view>
-  <van-checkbox-group class="checkbox" value="{{ department }}" bind:change="checkDepartment" max="{{ 2 }}">
-    <van-checkbox class="check-item" checked-color="{{ item.wish }}" wx:for="{{ lists }}" wx:key="index" name="{{ index }}">{{ item.name }}</van-checkbox>
-  </van-checkbox-group>
+	<view class="title">选择部门</view>
+	<van-checkbox-group class="checkbox" value="{{ department }}" bind:change="checkDepartment" max="{{ 2 }}">
+		<van-checkbox class="check-item" checked-color="{{ item.wish }}" wx:for="{{ lists }}" wx:key="index" name="{{ index }}">{{ item.name }}</van-checkbox>
+	</van-checkbox-group>
 </view>
 
 <view>
-  <view class="title">接受调剂</view>
-  <van-radio-group data-id="adjustment" bind:change="changeForm" class="checkbox" value="{{ adjustment }}">
-    <van-radio class="check-item" name="no">不接受</van-radio>
-    <van-radio class="check-item" name="yes">接受</van-radio>
-  </van-radio-group>
+	<view class="title">接受调剂</view>
+	<van-radio-group data-id="adjustment" bind:change="changeForm" class="checkbox" value="{{ adjustment }}">
+		<van-radio class="check-item" name="no">不接受</van-radio>
+		<van-radio class="check-item" name="yes">接受</van-radio>
+	</van-radio-group>
 </view>
 
 <view class="submit">
-  <van-button bind:tap="submitInfo" color="#fc8a2e" block round>提交</van-button>
+	<van-button bind:tap="submitInfo" color="#fc8a2e" block round>提交</van-button>
 </view>
 
 <view>
-  <view class="title">志愿分级</view>
-  <van-checkbox-group value="{{ ['FF9100', 'FFD180'] }}" class="checkbox">
-    <van-checkbox class="check-item" name="FF9100" checked-color="#FF9100">第一志愿</van-checkbox>
-    <van-checkbox class="check-item" name="FFD180" checked-color="#FFD180">第二志愿</van-checkbox>
-  </van-checkbox-group>
+	<view class="title">志愿分级</view>
+	<van-checkbox-group value="{{ ['FF9100', 'FFD180'] }}" class="checkbox">
+		<van-checkbox class="check-item" name="FF9100" checked-color="#FF9100">第一志愿</van-checkbox>
+		<van-checkbox class="check-item" name="FFD180" checked-color="#FFD180">第二志愿</van-checkbox>
+	</van-checkbox-group>
 </view>

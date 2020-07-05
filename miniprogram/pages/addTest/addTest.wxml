@@ -1,39 +1,39 @@
 <!--miniprogram/pages/addTest/addTest.wxml-->
 <view class="title">
-  <text>{{ depart.name }}</text>
-  <van-button size="small" bind:click="adminTest" color="{{buttonColor}}">管理测试</van-button>
+	<text>{{ depart.name }}</text>
+	<van-button size="small" bind:click="adminTest" color="{{buttonColor}}">管理测试</van-button>
 </view>
 
 <van-radio-group value="{{ type }}" data-key="type" class="radios" bind:change="changeType">
-  <view>测试类型</view>
-  <van-radio name="face">面试</van-radio>
-  <van-radio name="pen">笔试</van-radio>
-  <van-radio name="test">实操</van-radio>
+	<view>测试类型</view>
+	<van-radio name="face">面试</van-radio>
+	<van-radio name="pen">笔试</van-radio>
+	<van-radio name="test">实操</van-radio>
 </van-radio-group>
 <van-field type="textarea" autosize label="备注" data-key="tip" value="{{ tip }}" bind:change="changeType" />
 
 <view>
-  <view class="lists">
-    <text>场次列表</text>
-    <van-button size="small" color="{{buttonColor}}" bind:tap="addPlace">添加场次</van-button>
-  </view>
-  <view wx:for="{{ lists }}" wx:key="index">
-    <view class="place">
-      <text>场次{{ index + 1}}</text>
-      <text class="iconfont icon-close" data-index="{{ index }}" bind:tap="close">取消</text>
-    </view>
-    <van-field label="地点" data-key="place" data-index="{{ index }}" value="{{ item.place }}" bind:change="changeForm"/>
+	<view class="lists">
+		<text>场次列表</text>
+		<van-button size="small" color="{{buttonColor}}" bind:tap="addPlace">添加场次</van-button>
+	</view>
+	<view wx:for="{{ lists }}" wx:key="index">
+		<view class="place">
+			<text>场次{{ index + 1}}</text>
+			<text class="iconfont icon-close" data-index="{{ index }}" bind:tap="close">取消</text>
+		</view>
+		<van-field label="地点" data-key="place" data-index="{{ index }}" value="{{ item.place }}" bind:change="changeForm" />
 
-    <van-cell title="时间" value="{{ item.date }}" bind:click="onDisplay" />
-    <van-popup show="{{ show }}" bind:close="onClose" round position="bottom" custom-style="height: 60%" bind:close="onClose">
-    <van-datetime-picker type="datetime" data-id="{{index+1}}" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" formatter="{{ formatter }}" show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
-    </van-popup>
+		<van-cell title="时间" value="{{ item.date }}" bind:click="onDisplay" />
+		<van-popup show="{{ show }}" bind:close="onClose" round position="bottom" custom-style="height: 60%" bind:close="onClose">
+			<van-datetime-picker type="datetime" data-id="{{index+1}}" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" formatter="{{ formatter }}" show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+		</van-popup>
 
-    <van-field label="限制人数" data-key="limit" data-index="{{ index }}" value="{{ item.limit }}" bind:change="changeForm" />
-  </view>
+		<van-field label="限制人数" data-key="limit" data-index="{{ index }}" value="{{ item.limit }}" bind:change="changeForm" />
+	</view>
 </view>
 
 
 <view class="submit">
-  <van-button bind:tap="submit" color="{{buttonColor}}" block round>提交</van-button>
+	<van-button bind:tap="submit" color="{{buttonColor}}" block round>提交</van-button>
 </view>

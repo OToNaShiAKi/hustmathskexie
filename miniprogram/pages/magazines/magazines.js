@@ -11,13 +11,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
+  onLoad(options) {
     wx.cloud.callFunction({
       name: "allMagazines"
     }).then(res => {
       if (res.result.status !== 200) throw res.result;
       const magazines = res.result.lists;
-      this.setData({ magazines })
+      this.setData({
+        magazines
+      })
     }).catch(err => {
       console.log(err);
       wx.showToast({

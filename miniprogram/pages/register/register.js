@@ -37,6 +37,8 @@ Page({
   },
 
   showDialog() {
-    this.setData({ dialog: true })
+    this.setData({
+      dialog: true
+    })
   }
 })

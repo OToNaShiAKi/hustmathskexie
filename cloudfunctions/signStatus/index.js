@@ -11,22 +11,27 @@ exports.main = async (event, context) => {
   const query = {};
   if (event.id) {
     query._id = event.id
-  } else if(event.name && event.phone) {
+  } else if (event.name && event.phone) {
     query.name = event.name
     query.phone = event.phone
   } else throw {
     status: 503,
     message: "请输入正确查询信息"
   }
-  
+
   const result = await recruit.where(query).get().then(res => {
     const lists = res.data
-    if(lists.length === 0) throw {
+    if (lists.length === 0) throw {
       status: 504,
       message: "您尚未报名"
     }
 
-    const { name, phone, department, status} = lists[0];
+    const {
+      name,
+      phone,
+      department,
+      status
+    } = lists[0];
     /* let 
     for(let key in department) {
 
@@ -34,7 +39,12 @@ exports.main = async (event, context) => {
     return {
       status: 200,
       message: "查询成功",
-      data: { name, phone, department, status}
+      data: {
+        name,
+        phone,
+        department,
+        status
+      }
     }
   }).catch(err => ({
     status: err.status || 505,

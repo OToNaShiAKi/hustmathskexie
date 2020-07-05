@@ -24,8 +24,7 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"useIsolateContext": true
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",

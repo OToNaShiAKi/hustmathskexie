@@ -1,29 +1,31 @@
 <!--pages/contact/contact.wxml-->
+<view id="all" >
 <van-tabs active="{{tabActive}}" swipeable color="#fc8a2e" duration="0.1s" lazy-render="false" type="card" >
   <van-tab title="{{item.departCN}}" wx:for="{{departContact}}" wx:key="department">
   <view id="code">
-  <van-image bindlongpress="outBox" data-flag="{{item.canDownload}}" width="500rpx" height="500rpx" src="{{item.imgUrl}}" custom-class="code" alt="{{item.departCN}}" radius="1em" use-error-slot use-loading-slot>
+  <van-image bindlongpress="outBox"  data-flag="{{item.canDownload}}" width="500rpx" height="560rpx" src="{{item.imgUrl}}" custom-class="code" alt="{{item.departCN}}" radius="1em" use-error-slot use-loading-slot>
 <text slot="error">加载失败,请检查网络状态</text>
   </van-image>
-  <view class="tishi" wx:if="{{item.canDownload}}">提示：长按二维码扫描和保存，长按文字复制</view>
+  <view class="tishi" wx:if="{{item.canDownload}}">提示：长按保存二维码，长按文字复制</view>
   <view class="tishi" wx:else>提示:长按文字复制</view>
   </view>
  
 <view id="contactInfor">
-  <inforSlip title="招新群号" content="{{item.recruitGroup}}" oneText="{{!item.canDownload}}" oneContent="本部门暂无招新群"></inforSlip>
-  <inforSlip title="部长姓名" content="{{item.secretary}}"></inforSlip>
-  <inforSlip title="部长手机号" content="{{item.phone}}"></inforSlip>
-  <inforSlip title="部长QQ号" content="{{item.qq}}"></inforSlip>
+  <inforSlip title="招新群号" content="{{item.recruitGroup}}" oneText="{{!item.canDownload}}" oneContent="本部门暂无招新群" ></inforSlip>
+  <inforSlip title="部长姓名" content="{{item.secretary}}"  ></inforSlip>
+  <inforSlip title="部长手机号" content="{{item.phone}}" ></inforSlip>
+  <inforSlip title="部长QQ号" content="{{item.qq}}"  ></inforSlip>
 </view>
-  </van-tab>
-</van-tabs>
 <van-popup
   show="{{ showPop }}"
   round
-  position="bottom"
-  custom-style="height: auto"
+ position="bottom"
+  custom-style="height:15%"
   bind:close="onClose"
   custom-class="codePop">
-  <van-cell title="扫描二维码" size="large" bind:click="scan" center clickable />
-  <van-cell title="下载二维码"  size="large" bind:click="download" center clickable />
+  <van-cell title="下载二维码"  size="large" bind:click="download" data-img="{{item.imgUrl}}" center clickable title-class="down" custom-class="downs" />
 </van-popup>
+  </van-tab>
+  
+</van-tabs>
+</view>

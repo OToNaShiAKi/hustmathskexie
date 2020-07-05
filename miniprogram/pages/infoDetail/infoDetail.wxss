@@ -41,7 +41,7 @@
   padding-left: 40rpx;
 }
 
-.tiaoji{
+.tiaoji {
   font-size: 1.4em;
   margin: 0 auto;
   color: gray;

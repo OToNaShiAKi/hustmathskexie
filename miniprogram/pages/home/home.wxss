@@ -1,6 +1,6 @@
 /* miniprogram/pages/home/home.wxss */
 .text-grey {
-	color: var(--gray);
+  color: var(--gray);
 }
 
 .layout {

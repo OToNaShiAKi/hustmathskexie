@@ -66,7 +66,7 @@
 .select_name {
   width: 360rpx;
   font-weight: bold;
-  font-size:1.3em ;
+  font-size: 1.3em;
   margin: 0;
 }
 
@@ -74,15 +74,15 @@
   width: 320rpx;
   height: 60rpx;
   display: flex;
-  margin:0;
+  margin: 0;
   margin-right: 20rpx;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-button{
-  width:40%;
-  text-align:center;
+button {
+  width: 40%;
+  text-align: center;
   height: 60rpx;
   line-height: 60rpx;
   padding: 0;
@@ -90,13 +90,14 @@ button{
   font-size: 1em;
 }
 
-.pass::after{
+.pass::after {
   content: "通过";
   font-size: 2.5em;
   line-height: 200%;
   padding-right: 40%;
 }
-.reject::after{
+
+.reject::after {
   content: "拒绝";
   font-size: 2.5em;
   line-height: 200%;

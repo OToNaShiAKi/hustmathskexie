@@ -1,15 +1,22 @@
 // miniprogram/pages/manage/manage.js
-import { DepartFormat } from './../../utils/Format';
-import { DepartColor } from './../../utils/FormatColor';
+import {
+  DepartFormat
+} from './../../utils/Format';
+import {
+  DepartColor
+} from './../../utils/FormatColor';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    buttonColor:"",
-    imgUrl:"",
-    depart: { key: '', name: ''},
+    buttonColor: "",
+    imgUrl: "",
+    depart: {
+      key: '',
+      name: ''
+    },
     firstWish: [],
     secondWish: []
   },
@@ -17,14 +24,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad (options) {
+  onLoad(options) {
     const depart = this.data.depart;
     const key = options.department;
-    const imgUrl =`http://hustmaths.top/img_weixin/departlogos/${key}_bgc.png`;
+    const imgUrl = `http://hustmaths.top/img_weixin/departlogos/${key}_bgc.png`;
     const buttonColor = DepartColor(key);
     depart.key = key;
     depart.name = DepartFormat(key);
-    this.setData({ depart , imgUrl , buttonColor })
+    this.setData({
+      depart,
+      imgUrl,
+      buttonColor
+    })
 
     /* wx.showLoading({
       title: '查询报名数据'
@@ -32,10 +43,12 @@ Page({
 */
     wx.cloud.callFunction({
       name: "allSigns",
-      data: { key }
+      data: {
+        key
+      }
     }).then(res => {
       console.log(res);
-    }) 
+    })
   },
 
   addTest() {
@@ -45,7 +58,7 @@ Page({
     })
   },
 
-  selectStudent(){
+  selectStudent() {
     const depart = this.data.depart.key;
     wx.navigateTo({
       url: '/pages/selectStudent/selectStudent?department=' + depart

@@ -1,20 +1,20 @@
 <!--miniprogram/pages/checkStatus/checkStatus.wxml-->
 <view>
-  <view class="title">查询信息</view>
-  <van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
-  <van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
+	<view class="title">查询信息</view>
+	<van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
+	<van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
 </view>
 
 <view class="submit">
-  <van-button bind:tap="checkStatus" color="#fc8a2e" block round>查询</van-button>
+	<van-button bind:tap="checkStatus" color="#fc8a2e" block round>查询</van-button>
 </view>
 
 <view>
-<text>点击节点即可选择测试场次</text>
-  <view class="title">查询结果</view>
-  <van-tabs active animated swipeable>
-    <van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">
-      <van-steps direction="vertical" steps="{{ steps[index] }}" active="{{ status[item.name] }}" active-icon="{{steps[index][status[item.name]].activeIcon}}" active-color="{{steps[index][status[item.name]].activeColor}}" data-active="{{ status[item.name] }}" data-icon="{{steps[index][status[item.name]].activeIcon}}" data-index="{{index}}" bind:click-step="linkToSelect"/>
-    </van-tab>
-  </van-tabs>
+	<text>点击节点即可选择测试场次</text>
+	<view class="title">查询结果</view>
+	<van-tabs active animated swipeable>
+		<van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">
+			<van-steps direction="vertical" steps="{{ steps[index] }}" active="{{ status[item.name] }}" active-icon="{{steps[index][status[item.name]].activeIcon}}" active-color="{{steps[index][status[item.name]].activeColor}}" data-active="{{ status[item.name] }}" data-icon="{{steps[index][status[item.name]].activeIcon}}" data-index="{{index}}" bind:click-step="linkToSelect" />
+		</van-tab>
+	</van-tabs>
 </view>

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info:[]
+    info: []
   },
 
   /**
@@ -16,13 +16,15 @@ Page({
     console.log(options);
     wx.cloud.callFunction({
       name: 'selectStudentById',
-      data:{
-        id:options.id
+      data: {
+        id: options.id
       }
-    }).then(res=>{
-      info=res.result.result.res.data[0];
+    }).then(res => {
+      info = res.result.result.res.data[0];
       console.log(info);
-      this.setData({info});
+      this.setData({
+        info
+      });
     })
   },
 

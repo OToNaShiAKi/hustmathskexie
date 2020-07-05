@@ -7,12 +7,12 @@ cloud.init()
 exports.main = async (event, context) => {
   const db = cloud.database();
   const recruit = db.collection('recruit');
-  
+
   const result = await recruit.get().then(res => {
     const firstWish = []
     const secondWish = []
-    for(let register of res.data) 
-      for (let depart in register.department) 
+    for (let register of res.data)
+      for (let depart in register.department)
         if (depart === key) {
           if (register.department[depart].wish == '第一志愿')
             firstWish.push(register);
@@ -24,7 +24,11 @@ exports.main = async (event, context) => {
     wx.showToast({
       title: '查询成功'
     })
-    this.setData({ depart, firstWish, secondWish });
+    this.setData({
+      depart,
+      firstWish,
+      secondWish
+    });
   }).catch(err => {
     wx.showToast({
       title: '查询失败',

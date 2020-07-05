@@ -8,7 +8,12 @@ exports.main = async (event, context) => {
   const db = cloud.database();
   const examination = db.collection('examination');
 
-  result=await examination.where({department:event.department,type:event.type}).get().then(res=>({res}));
+  result = await examination.where({
+    department: event.department,
+    type: event.type
+  }).get().then(res => ({
+    res
+  }));
 
   return result;
 }

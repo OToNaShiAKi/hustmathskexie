@@ -8,10 +8,12 @@ exports.main = async (event, context) => {
   const db = cloud.database();
   const recruit = db.collection('recruit');
 
-  const result = await recruit.where({ phone: event.phone }).get().then(res => {
+  const result = await recruit.where({
+    phone: event.phone
+  }).get().then(res => {
     const lists = res.data
 
-    if(lists.length > 0) throw {
+    if (lists.length > 0) throw {
       status: 501,
       message: '该手机号已注册'
     }
@@ -20,7 +22,9 @@ exports.main = async (event, context) => {
     delete data.userInfo;
     data.time = db.serverDate();
 
-    return recruit.add({ data });
+    return recruit.add({
+      data
+    });
   }).then(res => ({
     status: 200,
     message: '报名成功',

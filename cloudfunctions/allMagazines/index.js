@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
 
   const result = await magazine.field("title issue cover").get().then(res => {
     const lists = res.data;
-    if(lists.length === 0) throw {
+    if (lists.length === 0) throw {
       status: 201,
       message: "无杂志数据"
     }

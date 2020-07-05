@@ -1,5 +1,7 @@
 // miniprogram/pages/addTest/addTest.js
-import { DepartColor } from './../../utils/FormatColor';
+import {
+  DepartColor
+} from './../../utils/FormatColor';
 Page({
 
   /**
@@ -17,22 +19,22 @@ Page({
       place: "",
       date: ""
     }],
-    tip:'',
+    tip: '',
     minHour: 10,
     maxHour: 20,
     minDate: new Date().getTime(),
-    maxDate: new Date().getTime()+5184000000,//最多两个月
+    maxDate: new Date().getTime() + 5184000000, //最多两个月
     currentDate: new Date().getTime(),
     formatter(type, value) {
       if (type === 'year') {
         return `${value}年`;
       } else if (type === 'month') {
         return `${value}月`;
-      }else if (type === 'day'){
+      } else if (type === 'day') {
         return `${value}日`;
-      }else if(type === 'hour'){
+      } else if (type === 'hour') {
         return `${value}时`;
-      }else if(type === 'minute'){
+      } else if (type === 'minute') {
         return `${value}分`;
       }
       return value;
@@ -118,8 +120,8 @@ Page({
     const department = this.data.depart.key;
 
     console.log(lists);
-    for(let item of lists) {
-      if(!item.place || !item.date || !item.limit) {
+    for (let item of lists) {
+      if (!item.place || !item.date || !item.limit) {
         wx.showToast({
           title: '输入不可为空',
           icon: 'none'
@@ -127,58 +129,62 @@ Page({
         return;
       }
       wx.cloud.callFunction({
-        name:"addExamination",
-        data:{
+        name: "addExamination",
+        data: {
           type,
-          lists:item,
+          lists: item,
           department,
           tip,
-          registerNum:0,
-          registerPerson:[]
+          registerNum: 0,
+          registerPerson: []
         }
-      }).then(res=>{
+      }).then(res => {
         wx.showToast({
           title: '添加成功',
-          icon:"success"
+          icon: "success"
         })
         wx.navigateBack();
       })
     }
-      
+
 
   },
 
-  adminTest:function (event){
-    console.log(event,this.data);
+  adminTest: function (event) {
+    console.log(event, this.data);
     wx.navigateTo({
-      url: '/pages/adminTest/adminTest?department='+this.data.depart.key,
+      url: '/pages/adminTest/adminTest?department=' + this.data.depart.key,
     })
   },
-  
+
   onInput(event) {
     this.setData({
       currentDate: event.detail,
     });
   },
   onDisplay() {
-    this.setData({ show: true });
+    this.setData({
+      show: true
+    });
   },
   onClose() {
-    this.setData({ show: false });
+    this.setData({
+      show: false
+    });
   },
   formatDate(date) {
     date = new Date(date);
     var minute;
-    if(date.getMinutes()<10){
-      minute ='0' + date.getMinutes();
-    }else{
-      minute=date.getMinutes();
+    if (date.getMinutes() < 10) {
+      minute = '0' + date.getMinutes();
+    } else {
+      minute = date.getMinutes();
     }
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getHours()}:${minute}`;
   },
   onConfirm(event) {
-    const lists=this.data.lists;
-    lists[event.currentTarget.dataset.id-1].date=this.formatDate(event.detail);
+    const lists = this.data.lists;
+    lists[event.currentTarget.dataset.id - 1].date = this.formatDate(event.detail);
     this.setData({
       show: false,
       lists

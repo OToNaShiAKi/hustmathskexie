@@ -1,28 +1,28 @@
 <!--miniprogram/pages/infoDetail/infoDetail.wxml-->
 <view id="selfInfor">
-<view>
-<view class="title">个人信息</view>
-<view>
-  <view>姓名：{{info.name}}</view>
-  <view>电话：{{info.phone}}</view>
-  <view>QQ：{{info.qq}}</view>
-  <view>自我介绍：{{info.introduce}}</view>
-</view>
-</view>
-<view>
-  <view class="title">选择部门</view>
-  <view>
-    <view wx:for="{{info.department}}" wx:key="item">
-      <view wx:if="{{item.wish==='第一志愿'}}">第一志愿：{{item.name}}</view>
-    </view>
-    <view wx:for="{{info.department}}"  wx:key="item">
-      <view wx:if="{{item.wish==='第二志愿'}}">第二志愿：{{item.name}}</view>
-    </view>
-  </view>
-</view>
+	<view>
+		<view class="title">个人信息</view>
+		<view>
+			<view>姓名：{{info.name}}</view>
+			<view>电话：{{info.phone}}</view>
+			<view>QQ：{{info.qq}}</view>
+			<view>自我介绍：{{info.introduce}}</view>
+		</view>
+	</view>
+	<view>
+		<view class="title">选择部门</view>
+		<view>
+			<view wx:for="{{info.department}}" wx:key="item">
+				<view wx:if="{{item.wish==='第一志愿'}}">第一志愿：{{item.name}}</view>
+			</view>
+			<view wx:for="{{info.department}}" wx:key="item">
+				<view wx:if="{{item.wish==='第二志愿'}}">第二志愿：{{item.name}}</view>
+			</view>
+		</view>
+	</view>
 
-<view>
-  <view class="tiaoji" wx:if="{{info.adjustment!=='yes'}}">不接受调剂</view>
-  <view class="tiaoji" wx:else>接受调剂</view>
-</view>
+	<view>
+		<view class="tiaoji" wx:if="{{info.adjustment!=='yes'}}">不接受调剂</view>
+		<view class="tiaoji" wx:else>接受调剂</view>
+	</view>
 </view>

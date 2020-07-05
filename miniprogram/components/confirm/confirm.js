@@ -42,7 +42,9 @@ Component({
         })
 
       else {
-        this.setData({ confirm: '' })
+        this.setData({
+          confirm: ''
+        })
         wx.showToast({
           title: '认证密码错误',
           icon: 'none'
@@ -52,7 +54,9 @@ Component({
 
     changeData(event) {
       const key = event.currentTarget.dataset.key;
-      this.setData({ [key]: event.detail });
+      this.setData({
+        [key]: event.detail
+      });
     }
   }
 })

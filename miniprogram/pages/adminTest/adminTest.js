@@ -1,4 +1,6 @@
-import { DepartColor } from "../../utils/FormatColor";
+import {
+  DepartColor
+} from "../../utils/FormatColor";
 
 // miniprogram/pages/adminTest/adminTest.js
 Page({
@@ -7,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    buttonColor:'',
+    buttonColor: '',
 
   },
 
@@ -16,18 +18,20 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
-    const department=options.department;
-    const buttonColor=DepartColor(department);
+    const department = options.department;
+    const buttonColor = DepartColor(department);
     wx.cloud.callFunction({
-      name:'selectExams',
-      data:{
-        department:department
+      name: 'selectExams',
+      data: {
+        department: department
       }
-    }).then(res=>{
-      const data=res.result.res.data;
+    }).then(res => {
+      const data = res.result.res.data;
       console.log(res.result.res.data)
     })
-    this.setData({buttonColor});
+    this.setData({
+      buttonColor
+    });
   },
 
   /**

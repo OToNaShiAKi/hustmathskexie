@@ -12,7 +12,8 @@
   margin-top: 50rpx;
   margin-bottom: 50rpx;
 }
-.ti{
+
+.ti {
   color: #586069;
   margin: 0 auto;
   text-align: center;
@@ -42,21 +43,21 @@
   height: auto;
 }
 
-#selfInfor>view>view view{
+#selfInfor>view>view view {
   text-align: center;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
 
 
-.tiaoji{
+.tiaoji {
   font-size: 1.4em;
   margin: 0 auto;
   color: gray;
   padding-bottom: 40rpx;
 }
 
-#introduction{
+#introduction {
   padding-left: 20rpx;
   display: flex;
   flex-direction: column;
@@ -64,7 +65,8 @@
   align-items: center;
   margin-left: 30rpx;
 }
-.introdu{
+
+.introdu {
   font-size: 1.3em;
   margin: 0 auto;
   text-align: center;
@@ -72,7 +74,7 @@
   color: #fc8a2e;
 }
 
-#introduce #big{
+#introduce #big {
   display: inline-block;
   font-size: 1.2em;
   height: fit-content;
@@ -82,27 +84,30 @@
   text-align: left;
 }
 
-#willBox #willwill #will1{
+#willBox #willwill #will1 {
   font-size: 1.2em;
   margin: 0 auto;
 }
+
 #willBox #willwill1 {
   font-size: 1.2em;
   margin: 0 auto
 }
-#willwill1 #will1 span{
+
+#willwill1 #will1 span {
   color: #fc8a2e;
 }
 
-#willBox #willwill #will2{
+#willBox #willwill #will2 {
   font-size: 1.2em;
   margin: 0 auto;
 }
+
 #willBox #willwill2 {
   font-size: 1.2em;
   margin: 0 auto
 }
-#willwill2 #will2 span{
+
+#willwill2 #will2 span {
   color: #fc8a2e;
 }
-

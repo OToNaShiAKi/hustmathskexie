@@ -1,0 +1,20 @@
+/* components/cover/cover.wxss */
+.cover {
+  width: 335rpx;
+  margin: 20rpx 20rpx;
+}
+
+.info {
+  text-align: center;
+}
+
+.info .title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #555;
+}
+
+.info .desc {
+  font-size: 26rpx;
+  color: #999;
+}

@@ -122,12 +122,6 @@ Page({
 
   checkStatus() {
     var {onceClick}=this.data;
-    if(onceClick==0){
-        onceClick=1;
-        this.setData({onceClick});
-    }else{
-        return;
-    }
     const { name, phone } = this.data;
     if(!name.length) {
       wx.showToast({
@@ -147,6 +141,15 @@ Page({
 
     Query({ name, phone }, data => {
       console.log(this.data);
+      if(this.data.status==504){
+        return;
+      }
+      if(onceClick==0){
+          onceClick=1;
+          this.setData({onceClick});
+      }else{
+          return;
+      }
       const { department, status } = data;
       const { steps }=this.data;
       for(let item in department){
@@ -164,9 +167,11 @@ Page({
           let s=status[department[item].name];
           steps[item][s].activeIcon='success';
           steps[item][s].activeColor='#38f';
-          steps[item][s+1].desc='';
-          for(let i=s+2;i<4;i++){
-            steps[item].pop();
+          if(s<3){
+            steps[item][s+1].desc='';
+            for(let i=s+2;i<4;i++){
+              steps[item].pop();
+            }
           }
         }
         console.log(item,steps[item]);

@@ -1,0 +1,5 @@
+/* miniprogram/pages/magazines/magazines.wxss */
+page {
+  display: flex;
+  flex-wrap: wrap;
+}

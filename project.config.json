@@ -22,6 +22,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
@@ -95,6 +96,13 @@
 					"pathName": "pages/selectStudent/selectStudent",
 					"query": "department=workshop",
 					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "期刊杂志",
+					"pathName": "pages/magazines/magazines",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

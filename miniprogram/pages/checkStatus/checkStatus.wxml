@@ -6,7 +6,7 @@
 </view>
 
 <view class="submit">
-  <van-button bind:tap="checkStatus" disabled="{{!onceClick}}" color="#fc8a2e" block round>查询</van-button>
+  <van-button bind:tap="checkStatus" color="#fc8a2e" block round>查询</van-button>
 </view>
 
 <view>

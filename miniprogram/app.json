@@ -1,8 +1,6 @@
 {
   "pages": [
-    "pages/checkStatus/checkStatus",
     "pages/register/register",
-    "pages/datetest/datetest",
     "pages/selectTestTime/selectTestTime",
     "pages/selectStudent/selectStudent",
     "pages/information/information",
@@ -12,7 +10,8 @@
     "pages/datetest/datetest",
     "pages/manage/manage",
     "pages/home/home",
-    "pages/infoDetail/infoDetail"
+    "pages/infoDetail/infoDetail",
+    "pages/checkStatus/checkStatus"
 
   ],
   "window": {

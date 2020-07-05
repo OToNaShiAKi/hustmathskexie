@@ -33,7 +33,7 @@ Page({
     name: 'cyc',
     phone: '1234',
     department: {},
-    onceClick:0,
+    onceClick:true,
     steps: {
         'editor':[
           {
@@ -121,9 +121,9 @@ Page({
   },
 
   checkStatus() {
-    var {onceClick}=this.data;
-    if(onceClick==0){
-        onceClick=1;
+   let {onceClick}=this.data;
+    if(onceClick){
+        onceClick=false;
         this.setData({onceClick});
     }else{
         return;

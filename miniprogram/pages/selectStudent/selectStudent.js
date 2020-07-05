@@ -44,7 +44,7 @@ Page({
 
   selectStudent: function (name) {
     wx.showLoading({
-      title: '正在获取报名信息'
+      title: '正在获取信息'
     });
     let result, data, interview, written, operation;
     interview = {

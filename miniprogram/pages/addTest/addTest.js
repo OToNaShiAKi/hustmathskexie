@@ -179,6 +179,5 @@ Page({
       show: false,
       lists
     });
-    console.log(event);
   },
 })

@@ -13,6 +13,9 @@ Page({
    */
   onLoad: function (options) {
     let info;
+    wx.showLoading({
+      title: '获取中',
+    })
     console.log(options);
     wx.cloud.callFunction({
       name: 'selectStudentById',
@@ -21,8 +24,17 @@ Page({
       }
     }).then(res=>{
       info=res.result.result.res.data[0];
-      console.log(info);
       this.setData({info});
+      wx.showToast({
+        title: '获取完成',
+        duration:800
+      })
+    }).catch(err=>{
+      console.log(err);
+      
+      wx.showToast({
+        title: '获取失败，请检查网络状态',
+      });
     })
   },
 

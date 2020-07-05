@@ -24,6 +24,14 @@ Component({
       type: Boolean,
       value: false
     },
+    fontColor:{
+      type:String,
+      value:"#fc8a2e"
+    },
+    fontSize:{
+      type:String,
+      value:"1.5em"
+    }
   },
 
   /**
@@ -56,8 +64,6 @@ Component({
             wx.setClipboardData({
               data: event.currentTarget.dataset.ctn.toString()
             }).then(res => {
-              console.log(res);
-
               wx.showToast({
                 title: "已复制到剪切板",
                 duration: 800

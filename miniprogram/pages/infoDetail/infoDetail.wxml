@@ -2,21 +2,25 @@
 <view id="selfInfor">
 <view>
 <view class="title">个人信息</view>
+<span class="ti">（长按复制）</span>
 <view>
-  <view>姓名：{{info.name}}</view>
-  <view>电话：{{info.phone}}</view>
-  <view>QQ：{{info.qq}}</view>
-  <view>自我介绍：{{info.introduce}}</view>
+<inforSlip title="姓名" content="{{info.name}}" fontSize="1.2em"/>
+<inforSlip title="电话" content="{{info.phone}}" fontSize="1.2em"/>
+<inforSlip title="QQ" content="{{info.qq}}" fontSize="1.2em"/>
+<text class="introdu">自我介绍</text>
+<view id="introduce">
+<text class="big">{{info.introduce}}</text>
+</view>
 </view>
 </view>
 <view>
   <view class="title">选择部门</view>
-  <view>
+  <view id="willBox">
     <view wx:for="{{info.department}}" wx:key="item">
-      <view wx:if="{{item.wish==='第一志愿'}}">第一志愿：{{item.name}}</view>
+      <view wx:if="{{item.wish==='第一志愿'}}" class="will"><span>第一志愿 ：</span>{{item.name}}</view>
     </view>
     <view wx:for="{{info.department}}"  wx:key="item">
-      <view wx:if="{{item.wish==='第二志愿'}}">第二志愿：{{item.name}}</view>
+      <view wx:if="{{item.wish==='第二志愿'}}" class="will"><span>第二志愿 ：</span>{{item.name}}</view>
     </view>
   </view>
 </view>

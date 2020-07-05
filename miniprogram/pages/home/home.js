@@ -26,7 +26,8 @@ Page({
     }, {
       title: "期刊杂志",
       desc: "学术&文艺尽在掌握",
-      color: "purple"
+      color: "purple",
+      link: "magazines"
     }, {
       title: "科协书屋",
       desc: "借书不跑图书馆",

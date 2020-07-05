@@ -1,0 +1,2 @@
+<!--miniprogram/pages/magazines/magazines.wxml-->
+<cover wx:for="{{ magazines }}" wx:key="_id" />

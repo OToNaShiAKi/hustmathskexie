@@ -5,7 +5,8 @@
     "pages/information/information",
     "pages/checkStatus/checkStatus",
     "pages/manage/manage",
-    "pages/addTest/addTest"
+    "pages/addTest/addTest",
+    "pages/magazines/magazines"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",
@@ -45,6 +46,7 @@
     "van-collapse": "@vant/weapp/collapse/index",
     "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-cell": "@vant/weapp/cell/index",
-    "van-dialog": "@vant/weapp/dialog/index"
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-image": "@vant/weapp/image/index"
   }
 }

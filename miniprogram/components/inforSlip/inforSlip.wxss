@@ -15,11 +15,11 @@
   width: auto;
 }
 
-.inforSlip_divide{
-  font-weight: bolder;
-}
+/* .inforSlip_divide{
+ 
+} */
 
 .inforSlip_title{
-  font-weight: bold;
+  /* font-weight: bold; */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

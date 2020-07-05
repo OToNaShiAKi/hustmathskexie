@@ -9,18 +9,18 @@
 <inforSlip title="QQ" content="{{info.qq}}" fontSize="1.2em"/>
 <text class="introdu">自我介绍</text>
 <view id="introduce">
-<text class="big">{{info.introduce}}</text>
+<text id="big" >{{info.introduce}}</text>
 </view>
 </view>
 </view>
 <view>
   <view class="title">选择部门</view>
   <view id="willBox">
-    <view wx:for="{{info.department}}" wx:key="item">
-      <view wx:if="{{item.wish==='第一志愿'}}" class="will"><span>第一志愿 ：</span>{{item.name}}</view>
+    <view wx:for="{{info.department}}" wx:key="item" id="willwill2">
+      <view wx:if="{{item.wish==='第一志愿'}}" id="will2"><span>第一志愿 ：</span>{{item.name}}</view>
     </view>
-    <view wx:for="{{info.department}}"  wx:key="item">
-      <view wx:if="{{item.wish==='第二志愿'}}" class="will"><span>第二志愿 ：</span>{{item.name}}</view>
+    <view wx:for="{{info.department}}"  wx:key="item" id="willwill1">
+      <view wx:if="{{item.wish==='第二志愿'}}" id="will1"><span>第二志愿 ：</span>{{item.name}}</view>
     </view>
   </view>
 </view>

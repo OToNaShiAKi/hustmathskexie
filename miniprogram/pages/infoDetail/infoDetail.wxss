@@ -43,7 +43,7 @@
 }
 
 #selfInfor>view>view view{
-  padding-left: 20rpx;
+  text-align: center;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
@@ -69,21 +69,40 @@
   margin: 0 auto;
   text-align: center;
   width: auto;
-  font-weight: bold;
   color: #fc8a2e;
 }
 
-.big{
+#introduce #big{
+  display: inline-block;
   font-size: 1.2em;
   height: fit-content;
-  width: 60%;
+  line-height: 55rpx;
+  width: 80%;
   white-space: pre-wrap;
+  text-align: left;
 }
 
- .will{
+#willBox #willwill #will1{
   font-size: 1.2em;
+  margin: 0 auto;
 }
-.will span{
+#willBox #willwill1 {
+  font-size: 1.2em;
+  margin: 0 auto
+}
+#willwill1 #will1 span{
   color: #fc8a2e;
-  font-weight: bold;
 }
+
+#willBox #willwill #will2{
+  font-size: 1.2em;
+  margin: 0 auto;
+}
+#willBox #willwill2 {
+  font-size: 1.2em;
+  margin: 0 auto
+}
+#willwill2 #will2 span{
+  color: #fc8a2e;
+}
+

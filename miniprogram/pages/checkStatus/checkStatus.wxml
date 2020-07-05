@@ -10,7 +10,7 @@
 </view>
 
 <view>
-<text>点击节点即可选择测试场次</text>
+<text class="spans">点击节点即可选择测试场次</text>
   <view class="title">查询结果</view>
   <van-tabs active animated swipeable>
     <van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">

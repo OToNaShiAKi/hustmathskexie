@@ -1,6 +1,6 @@
 <!--pages/contact/contact.wxml-->
 <view id="all" >
-<van-tabs active="{{tabActive}}" swipeable color="#fc8a2e" duration="0.1s" lazy-render="false" type="card" >
+<van-tabs active="{{tabActive}}" swipeable color="#fc8a2e" lazy-render="false" >
   <van-tab title="{{item.departCN}}" wx:for="{{departContact}}" wx:key="department">
   <view id="code">
   <van-image bindlongpress="outBox"  data-flag="{{item.canDownload}}" width="500rpx" height="560rpx" src="{{item.imgUrl}}" custom-class="code" alt="{{item.departCN}}" radius="1em" use-error-slot use-loading-slot>

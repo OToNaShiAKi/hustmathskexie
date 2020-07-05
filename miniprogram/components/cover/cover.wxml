@@ -1,0 +1,8 @@
+<!--components/cover/cover.wxml-->
+<view class="cover">
+  <van-image width="100%" fit="cover" radius="20rpx" height="400rpx" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+  <view class="info">
+    <view class="title">《数说 · 数海拾贝》</view>
+    <view class="desc">第5期</view>
+  </view>
+</view>

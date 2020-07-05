@@ -11,8 +11,8 @@
     "pages/manage/manage",
     "pages/home/home",
     "pages/infoDetail/infoDetail",
-    "pages/checkStatus/checkStatus"
-
+    "pages/checkStatus/checkStatus",
+    "pages/magazines/magazines"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",
@@ -54,6 +54,7 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-dialog": "@vant/weapp/dialog/index",
     "van-calendar": "@vant/weapp/calendar/index",
-    "van-panel": "@vant/weapp/panel/index"
+    "van-panel": "@vant/weapp/panel/index",
+    "van-image": "@vant/weapp/image/index"
   }
 }

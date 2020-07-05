@@ -23,7 +23,8 @@
 			"outputPath": ""
 		},
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"useIsolateContext": true
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",
@@ -107,7 +108,13 @@
 					"id": 7,
 					"name": "个人信息",
 					"pathName": "pages/infoDetail/infoDetail",
-					"query": "id=b7d9f2ea5f018dc5006e04140c9a8016",
+					"query": "id=b7d9f2ea5f018dc5006e04140c9a8016"
+				},
+				{
+					"id": -1,
+					"name": "期刊杂志",
+					"pathName": "pages/magazines/magazines",
+					"query": "",
 					"scene": null
 				}
 			]

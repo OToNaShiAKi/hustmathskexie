@@ -10,10 +10,11 @@
 </view>
 
 <view>
+<text>点击节点即可选择测试场次</text>
   <view class="title">查询结果</view>
   <van-tabs active animated swipeable>
     <van-tab wx:for="{{ department }}" wx:key="index" title="{{ item.name }}" name="{{ index }}">
-      <van-steps direction="vertical" steps="{{ steps[index] }}" active="{{ status[item.name] }}" active-icon="{{steps[index][status[item.name]].activeIcon}}" active-color="{{steps[index][status[item.name]].activeColor}}"/>
+      <van-steps direction="vertical" steps="{{ steps[index] }}" active="{{ status[item.name] }}" active-icon="{{steps[index][status[item.name]].activeIcon}}" active-color="{{steps[index][status[item.name]].activeColor}}" data-active="{{ status[item.name] }}" data-icon="{{steps[index][status[item.name]].activeIcon}}" data-index="{{index}}" bind:click-step="linkToSelect"/>
     </van-tab>
   </van-tabs>
 </view>

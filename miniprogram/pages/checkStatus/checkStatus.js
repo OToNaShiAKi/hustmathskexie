@@ -33,7 +33,7 @@ Page({
     name: 'cyc',
     phone: '1234',
     department: {},
-    
+    onceClick:0,
     steps: {
         'editor':[
           {
@@ -121,6 +121,13 @@ Page({
   },
 
   checkStatus() {
+    var {onceClick}=this.data;
+    if(onceClick==0){
+        onceClick=1;
+        this.setData({onceClick});
+    }else{
+        return;
+    }
     const { name, phone } = this.data;
     if(!name.length) {
       wx.showToast({
@@ -173,5 +180,17 @@ Page({
     const key = event.currentTarget.dataset.id;
     const value = event.detail;
     this.setData({[key]: value});
+  },
+
+  linkToSelect(event){
+    console.log(event);
+    const{name}=this.data;
+    if(event.detail!=event.currentTarget.dataset.active||event.currentTarget.dataset.icon=="cross"||event.detail==3){
+      return;
+    }
+    console.log(1);
+    wx.navigateTo({
+      url: '/pages/selectTestTime/selectTestTime?testType='+event.detail+"&department="+event.currentTarget.dataset.index+"&name="+name,
+    })
   }
 })

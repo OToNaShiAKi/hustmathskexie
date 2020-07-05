@@ -134,7 +134,9 @@ Page({
           type,
           lists:item,
           department,
-          tip
+          tip,
+          registerNum:0,
+          registerPerson:[]
         }
       }).then(res=>{
         wx.showToast({

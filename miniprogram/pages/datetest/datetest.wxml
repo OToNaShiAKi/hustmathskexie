@@ -1,1 +1,7 @@
-<van-steps steps="{{ steps }}" active="{{ active }}" active-icon="{{steps[active].activeIcon}}"/>
+<van-panel title="面试" desc="7月6日18：00" status="未开始" use-footer-slot>
+  <view>限制人数：6</view>
+  <view>备注：无</view>
+  <view slot="footer">
+    <van-button size="large" type="danger">选择</van-button>
+  </view>
+</van-panel>

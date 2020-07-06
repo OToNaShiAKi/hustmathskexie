@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "cover": "/components/cover/cover"
+    "cover": "/components/cover/cover",
+    "readBox": "/components/readBox/readBox"
   }
 }

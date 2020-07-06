@@ -8,6 +8,15 @@ Page({
     magazines: []
   },
 
+ /**
+  * 事件
+  */
+
+toMagazine(event){
+  console.log(event.detail);
+  
+},
+
   /**
    * 生命周期函数--监听页面加载
    */

@@ -9,8 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    buttonColor: '',
-    department:'',
+    buttonColor: '#0060c7',
+    department:'onecho',
     navData: [{
       text: '面试'
     }, {

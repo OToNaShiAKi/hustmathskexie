@@ -14,7 +14,10 @@ page {
   width: 100%;
   text-align: center;
   color: black;
+  background-color: #F1F1F1;
   box-sizing: border-box;
+  border-bottom: 5rpx solid;
+  box-shadow: 0px 5px 5px #888888;
   border-radius: 4%/20%;
   padding: 0 20rpx;
   overflow: hidden;
@@ -34,11 +37,12 @@ page {
 }
 
 .nav-item.active {
-  border-radius: 16%/20%;
+  border-radius: 16% 16% 0 0/20% 20% 0 0;
+  color: white;
 }
 
 .tab-box {
-  padding-top: 80rpx;
+  padding-top: 90rpx;
   height: 100%;
   box-sizing: border-box;
 }
@@ -46,6 +50,7 @@ page {
 .tab-content {
   overflow-y: scroll;
 }
+
 
 .onecho {
   background-color: #0060c7;

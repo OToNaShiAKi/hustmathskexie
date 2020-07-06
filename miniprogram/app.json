@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/datetest/datetest",
     "pages/register/register",
     "pages/adminTest/adminTest",
+    "pages/home/home",
+    "pages/datetest/datetest",
     "pages/checkStatus/checkStatus",
     "pages/selectTestTime/selectTestTime",
     "pages/selectStudent/selectStudent",

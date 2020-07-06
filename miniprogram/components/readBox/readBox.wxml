@@ -1,0 +1,10 @@
+<!--components/readBox/readBox.wxml-->
+<view class="readBox">
+<view>我是傻逼</view>
+<view class="readContent">
+<view hidden="{{item !== showPage}}" wx:for="{{pageArr}}" wx:key="*this">
+<van-image  width="750rpx" height="1062rpx"  fit="contain" src="http://hustmaths.top/img_weixin/magazine/19/Vol.19-page%20({{item}}).jpg" lazy-load  />
+</view >
+</view>
+<view>有一说一</view>
+</view>

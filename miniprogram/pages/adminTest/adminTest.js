@@ -10,6 +10,7 @@ Page({
    */
   data: {
     buttonColor: '',
+    department:'',
     navData: [{
       text: '面试'
     }, {

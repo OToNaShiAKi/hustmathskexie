@@ -116,6 +116,13 @@
 					"pathName": "pages/magazines/magazines",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "杂志",
+					"pathName": "pages/magazines/magazines",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

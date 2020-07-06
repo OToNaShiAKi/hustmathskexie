@@ -1,11 +1,46 @@
 /* miniprogram/pages/datetest/datetest.wxss */
-/* .kgggg view{
-  background-color: rgba(rgb(230, 141, 141), rgb(83, 155, 83), rgb(18, 53, 63), 0.1);
-  font-size: 2px;
-  /* color: rebeccapurple; */
-/* } */
-.content-class{
-  background-color: blueviolet;
-  font-size: 2px;
-  color: rebeccapurple;
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  height: 80rpx;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 16px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+.nav-item.active {
+  color: red;
+}
+
+.tab-box {
+  padding-top: 80rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.tab-content {
+  overflow-y: scroll;
 }

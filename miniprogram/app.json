@@ -1,19 +1,19 @@
 {
   "pages": [
     "pages/register/register",
+    "pages/adminTest/adminTest",
+    "pages/checkStatus/checkStatus",
+    "pages/datetest/datetest",
     "pages/selectTestTime/selectTestTime",
     "pages/selectStudent/selectStudent",
     "pages/information/information",
     "pages/addTest/addTest",
     "pages/notice/notice",
     "pages/contact/contact",
-    "pages/datetest/datetest",
     "pages/manage/manage",
     "pages/home/home",
     "pages/infoDetail/infoDetail",
-    "pages/checkStatus/checkStatus",
-    "pages/magazines/magazines",
-    "pages/adminTest/adminTest"
+    "pages/magazines/magazines"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",
@@ -57,6 +57,7 @@
     "van-panel": "@vant/weapp/panel/index",
     "van-image": "@vant/weapp/image/index",
     "van-card": "@vant/weapp/card/index",
-    "van-skeleton": "@vant/weapp/skeleton/index"
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-divider": "@vant/weapp/divider/index"
   }
 }

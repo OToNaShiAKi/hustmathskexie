@@ -21,19 +21,12 @@ exports.main = async (event, context) => {
           break;
         }
 
-    wx.showToast({
-      title: '查询成功'
-    })
     this.setData({
       depart,
       firstWish,
       secondWish
     });
   }).catch(err => {
-    wx.showToast({
-      title: '查询失败',
-      icon: 'none'
-    })
   })
 
   return result;

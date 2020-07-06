@@ -37,14 +37,6 @@ Page({
       buttonColor
     })
 
-    wx.cloud.callFunction({
-      name: "allSigns",
-      data: {
-        key
-      }
-    }).then(res => {
-      console.log(res);
-    })
   },
 
   addTest() {

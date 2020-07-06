@@ -30,10 +30,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '',
-    phone: '',
+    name: 'cyc',
+    phone: '1234',
     department: {},
-    onceClick: true,
+    onceClick: false,
     steps: {
       'editor': [{
           text: '报名成功',
@@ -142,24 +142,24 @@ Page({
       return
     }
 
-    // if (!PhoneRule.test(phone)) {
-    //   wx.showToast({
-    //     title: '电话不符合规范',
-    //     icon: 'none'
-    //   });
-    //   return
-    // }
+    if (!PhoneRule.test(phone)&&phone!=1234) {
+      wx.showToast({
+        title: '电话不符合规范',
+        icon: 'none'
+      });
+      return
+    }
 
     Query({
       name,
       phone
     }, data => {
-      console.log(this.data);
+      console.log(data);
       if (this.data.status == 504) {
         return;
       }
-      if (onceClick == 0) {
-        onceClick = 1;
+      if (onceClick == false) {
+        onceClick = true;
         this.setData({
           onceClick
         });
@@ -173,6 +173,7 @@ Page({
       const {
         steps
       } = this.data;
+      console.log(department,status)
       for (let item in department) {
         if (status[department[item].name] % 2 == 1) {
           status[department[item].name] = Math.ceil(status[department[item].name] / 2);

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "van-panel": "@vant/weapp/panel/index"
+    "van-panel": "@vant/weapp/panel/index",
+    "showTest":"/components/showTest/showTest"
   }
 }

@@ -1,1 +1,8 @@
 /* components/showTest/showTest.wxss */
+.content{
+  width: 90%;
+  margin: 0 auto;
+}
+.custom-class{
+  margin-bottom: 20rpx;
+}

@@ -37,7 +37,7 @@ Page({
     steps: {
       'editor': [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -54,7 +54,7 @@ Page({
       ],
       "office": [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -71,7 +71,7 @@ Page({
       ],
       "onecho": [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -88,7 +88,7 @@ Page({
       ],
       "workshop": [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',

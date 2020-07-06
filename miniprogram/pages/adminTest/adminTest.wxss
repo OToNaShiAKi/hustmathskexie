@@ -35,7 +35,6 @@ page {
 
 .nav-item.active {
   border-radius: 16%/20%;
-  color: white;
 }
 
 .tab-box {

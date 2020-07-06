@@ -13,7 +13,8 @@
     "pages/manage/manage",
     "pages/home/home",
     "pages/infoDetail/infoDetail",
-    "pages/magazines/magazines"
+    "pages/magazines/magazines",
+    "pages/magazineContent/magazineContent"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

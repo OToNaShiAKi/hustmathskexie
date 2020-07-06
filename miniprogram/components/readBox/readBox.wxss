@@ -12,4 +12,12 @@
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  overflow: hidden;
+  width: 750rpx;
+  height: 1062rpx;
+}
+
+.swiper-item{
+  width: 750rpx;
+  height: 1062rpx;
 }

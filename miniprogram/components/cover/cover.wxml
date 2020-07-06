@@ -1,6 +1,8 @@
 <!--components/cover/cover.wxml-->
 <view class="cover">
-	<van-image width="100%" fit="cover" radius="20rpx" height="400rpx" src="https://img.yzcdn.cn/vant/cat.jpeg" bind:click="clicked" />
+	<van-image width="100%" fit="cover" radius="20rpx" height="400rpx" src="{{cover}}" bind:click="clicked" use-loading-slot >
+	 <van-loading slot="loading" type="spinner" size="20" vertical />
+	 </van-image>
 	<view class="info">
 		<view class="title">《{{title}}》</view>
 		<view class="desc">第{{issue}}期</view>

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "期刊杂志",
   "usingComponents": {
     "cover": "/components/cover/cover",
     "readBox": "/components/readBox/readBox"

@@ -4,14 +4,19 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title:{
-      type:String,
-      value:"标题"
+    title: {
+      type: String,
+      value: "标题"
     },
-    issue:{
-      type:Number,
-      value:0
-    }
+    issue: {
+      type: Number,
+      value: 0
+    },
+    cover: {
+      type: String,
+      value: ""
+    },
+    pageNum: Number
   },
 
   /**
@@ -25,15 +30,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    clicked(){
+    clicked() {
       const detail = {
-        issue:this.properties.issue
+        issue: this.properties.issue,
+        pageNum: this.properties.pageNum
       };
       const option = {};
-      console.log(1);
-      
       this.triggerEvent('clicks', detail, option);
-      
+
     }
   }
 })

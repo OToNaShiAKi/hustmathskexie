@@ -138,9 +138,9 @@ Page({
         status
       }
     }).then(res => {
-      if(res.result.status !== 200) throw res.result;
+      if (res.result.status !== 200) throw res.result;
       wx.redirectTo({
-        url: '/pages/checkStatus/checkStatus?id=' + res.result.id
+        url: '/pages/checkStatus/checkStatus?name=' + name + '&phone=' + phone
       })
     }).catch(err => {
       console.log(err);

@@ -1,10 +1,14 @@
 <!--components/showTest/showTest.wxml-->
 <view wx:for="{{testList}}" wx:key="index">
-	<van-panel wx:if="{{true}}" title="{{item.type}}" desc="{{item.lists.date}}" status="未开始" use-footer-slot>
-		<view>地点：{{item.lists.place}}</view>
-		<view>限制人数：{{item.lists.limit}}</view>
-		<view>已选择人数：{{item.registeredNum||0}}</view>
-		<view>备注：{{item.tip}}</view>
+	<van-panel custom-class="custom-class" wx:if="{{item.expired}}" title="{{item.type}}" desc="{{item.lists.date}}" status="未开始" data-date="{{item.lists.date}}" use-footer-slot>
+		<view class="content">
+			<view>地点：{{item.lists.place}}</view>
+			<view>限制人数：{{item.lists.limit}}</view>
+			<view>已选择人数：{{item.registeredNum||0}}</view>
+			<view wx:if="{{identify=='admin'}}">待测试人列表：<text wx:for="{{item.registeredPerson}}" wx:key="{{index}}">{{item}} </text></view>
+			<view>备注：{{item.tip}}</view>
+		</view>
+
 		<view wx:if="{{identify=='student'}}" slot="footer">
 			<van-button size="large" type="danger" disabled="{{item.fullPerson}}" data-id="{{item._id}}" bind:tap="chooseTest">选择</van-button>
 		</view>

@@ -37,7 +37,7 @@ Page({
     steps: {
       'editor': [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -54,7 +54,7 @@ Page({
       ],
       "office": [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -71,7 +71,7 @@ Page({
       ],
       "onecho": [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -88,7 +88,7 @@ Page({
       ],
       "workshop": [{
           text: '报名成功',
-          desc: '待审核',
+          desc: '等待面试通知',
         },
         {
           text: '面试',
@@ -108,22 +108,14 @@ Page({
   },
 
   onLoad(options) {
-    if (!options.id) return;
+    console.log(options);
+    if (!options.name) return;
 
-    Query({
-      id: options.id
-    }, data => {
-      const {
-        name,
-        phone,
-        department
-      } = data;
-      this.setData({
-        name,
-        phone,
-        department
-      })
+    this.setData({
+      name: options.name,
+      phone: options.phone
     })
+    this.checkStatus();
   },
 
   checkStatus() {
@@ -142,7 +134,7 @@ Page({
       return
     }
 
-    if (!PhoneRule.test(phone)&&phone!=1234) {
+    if (!PhoneRule.test(phone) && phone != 1234) {
       wx.showToast({
         title: '电话不符合规范',
         icon: 'none'
@@ -173,7 +165,7 @@ Page({
       const {
         steps
       } = this.data;
-      console.log(department,status)
+      console.log(department, status)
       for (let item in department) {
         if (status[department[item].name] % 2 == 1) {
           status[department[item].name] = Math.ceil(status[department[item].name] / 2);

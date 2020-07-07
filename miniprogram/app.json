@@ -2,8 +2,9 @@
   "pages": [
     "pages/register/register",
     "pages/adminTest/adminTest",
-    "pages/checkStatus/checkStatus",
+    "pages/home/home",
     "pages/datetest/datetest",
+    "pages/checkStatus/checkStatus",
     "pages/selectTestTime/selectTestTime",
     "pages/selectStudent/selectStudent",
     "pages/information/information",
@@ -11,7 +12,6 @@
     "pages/notice/notice",
     "pages/contact/contact",
     "pages/manage/manage",
-    "pages/home/home",
     "pages/infoDetail/infoDetail",
     "pages/magazines/magazines",
     "pages/magazineContent/magazineContent"

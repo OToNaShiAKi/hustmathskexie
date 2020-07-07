@@ -10,7 +10,8 @@ exports.main = async (event, context) => {
   const _ = db.command;
   // return event;
   result = await examination.where({
-    registeredPerson: event.name
+    registeredPerson: event.name,
+    department:event.department
   }).get().then(res => ({
     res
   }));

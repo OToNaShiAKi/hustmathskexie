@@ -37,29 +37,29 @@ Page({
       buttonColor
     })
 
-  },
+},
 
-  addTest() {
-    const depart = this.data.depart.key;
-    wx.navigateTo({
-      url: '/pages/addTest/addTest?department=' + depart
-    })
-  },
+addTest() {
+  const depart = this.data.depart.key;
+  wx.navigateTo({
+    url: '/pages/addTest/addTest?department=' + depart
+  })
+},
 
-  selectStudent() {
-    const depart = this.data.depart.key;
-    wx.navigateTo({
-      url: '/pages/selectStudent/selectStudent?department=' + depart
-    })
-  },
+selectStudent() {
+  const depart = this.data.depart.key;
+  wx.navigateTo({
+    url: '/pages/selectStudent/selectStudent?department=' + depart
+  })
+},
 
-  unfold(event) {
-    this.setData({
-      panel: event.detail,
-    });
-  },
+unfold(event) {
+  this.setData({
+    panel: event.detail,
+  });
+},
 
-  changeStatus(event) {
-    const id = event.currentTarget.dataset.id
-  }
+changeStatus(event) {
+  const id = event.currentTarget.dataset.id
+}
 })

@@ -1,8 +1,23 @@
 <!--components/readBox/readBox.wxml-->
 <view class="readBox">
+<cover-view class="head" hidden="{{!menuOn}}">
+<van-button icon="label-o" bind:click="help" size="small" custom-class="helpButton">帮助</van-button>
+</cover-view>
 <swiper class="readContent" current="{{showPage}}" bind:change="changed">
 <swiper-item  class="swiper-item" wx:for="{{pageArr}}" wx:key="*this" item-id="*this" bind:tap="taped"  >
-<van-image  width="750rpx" height="1062rpx"  fit="contain" src="{{urlHead}}/{{issue}}/Vol.{{issue}}-page%20({{item}}).jpg" lazy-load  />
+<van-image width="750rpx" height="1062rpx" wx:if="{{isLoad[index]}}" fit="contain" src="{{head}}{{item}}{{imgType}}" lazy-load use-loading-slot>
+<van-loading slot="loading" type="spinner" size="20" vertical />
+</van-image>
 </swiper-item>
 </swiper>
+<view class="foot" hidden="{{!menuOn}}">
+    <slider bindchange="changePage" value="{{showPage+1}}" min="1" block-color="#353b48" max="{{pageNum}}" block-size="12" show-value activeColor="#0984e3" />
+</view>
+<van-overlay show="{{ helpShow }}" bind:click="onClickHide">
+<view class="helpContent">
+<view class="helpLeft"><text class="set">上一页</text></view>
+<view class="helpMiddle"><text class="set">菜 单</text></view>
+<view class="helpRight"><text class="set">下一页</text></view>
+</view>
+</van-overlay>
 </view>

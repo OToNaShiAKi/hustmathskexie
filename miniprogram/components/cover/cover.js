@@ -33,7 +33,8 @@ Component({
     clicked() {
       const detail = {
         issue: this.properties.issue,
-        pageNum: this.properties.pageNum
+        pageNum: this.properties.pageNum,
+        title:this.properties.title
       };
       const option = {};
       this.triggerEvent('clicks', detail, option);

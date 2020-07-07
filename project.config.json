@@ -121,7 +121,7 @@
 					"id": 9,
 					"name": "杂志内容",
 					"pathName": "pages/magazineContent/magazineContent",
-					"query": "issue=15&pageNum=56",
+					"query": "issue=15&pageNum=39",
 					"scene": null
 				}
 			]

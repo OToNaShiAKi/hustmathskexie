@@ -15,9 +15,9 @@ Page({
   toMagazine(event) {
     const issue = event.detail.issue;
     const pageNum = event.detail.pageNum;
-    
+    const title = event.detail.title;
     wx.navigateTo({
-      url: '/pages/magazineContent/magazineContent?issue=' + issue+ '&pageNum=' + pageNum
+      url: '/pages/magazineContent/magazineContent?issue=' + issue+ '&pageNum=' + pageNum + '&title=' +title
     });
   },
 

@@ -25,6 +25,7 @@ page {
   top: 0;
   left: 0;
   z-index: 99;
+ 
 }
 
 .nav-item {
@@ -45,6 +46,7 @@ page {
 
 .tab-content {
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .onecho {

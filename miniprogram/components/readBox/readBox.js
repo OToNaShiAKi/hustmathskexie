@@ -21,18 +21,51 @@ Component({
     pageArr: [],
     showPage: 0,
     menuOn: true,
+    helpShow: false,
+    indicatorDots: true,
+    isLoad: [],
+    imgUrl: [],
+    head: "",
     //放图片的地方
-    urlHead: "http://hustmaths.top/img_weixin/magazine"
+    urlHead: "http://hustmaths.top/img_weixin/magazine",
+    //图片格式 
+    imgType: `).jpg`
   },
-
+  observers: {
+    'showPage': function (showPage) {
+      let isLoad = this.data.isLoad;
+      if (showPage - 3 <= 0) {
+        for (let i = 0; i <= showPage; i++) {
+          isLoad[i] = true;
+        }
+      } else if ((this.data.pageNum - 1) - showPage <= 3) {
+        for (let i = showPage; i < this.data.pageNum; i++) {
+          isLoad[i] = true;
+        }
+      } else {
+        for (let i = showPage - 3; i <= showPage + 3; i++) {
+          isLoad[i] = true;
+        }
+      };
+      this.setData({
+        isLoad
+      });
+    }
+  },
   lifetimes: {
     ready() {
       let pageArr = this.data.pageArr;
+      let isLoad = this.data.isLoad;
       let showPage = 0;
+      let head = `${this.data.urlHead}/${this.properties.issue}/Vol.${this.properties.issue}-page%20(`;
       for (let i = 0; i < this.properties.pageNum; i++) {
         pageArr.push(i + 1);
+        isLoad.push(false);
       };
+
       this.setData({
+        isLoad,
+        head,
         pageArr,
         showPage
       });
@@ -58,27 +91,14 @@ Component({
           });
         } else {
           this.setData({
-            menuOn: !this.data.menuOn,
-            menuOn:this.data.menuOn
+            menuOn: !this.data.menuOn
           });
-          const detail = {
-            nowPage: this.data.showPage + 1,
-          };
-          const option = {};
-          this.triggerEvent('clicks', detail, option);
         }
       } else {
         this.setData({
           menuOn: !this.data.menuOn
         });
         console.log(2);
-
-        const detail = {
-          nowPage: this.data.showPage + 1,
-          menuOn:this.data.menuOn
-        };
-        const option = {};
-        this.triggerEvent('close', detail, option);
       }
     },
     changed(event) {
@@ -90,6 +110,22 @@ Component({
       } else {
         return;
       }
+    },
+    help(event) {
+      this.setData({
+        helpShow: true
+      });
+    },
+    onClickHide() {
+      this.setData({
+        helpShow: false
+      });
+    },
+    changePage(event) {
+      this.setData({
+        showPage: event.detail.value - 1
+      })
+
     }
   }
 })

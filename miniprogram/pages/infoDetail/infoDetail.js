@@ -16,7 +16,6 @@ Page({
     wx.showLoading({
       title: '获取中',
     })
-    console.log(options);
     wx.cloud.callFunction({
       name: 'selectStudentById',
       data: {

@@ -108,7 +108,6 @@ Page({
   },
 
   onLoad(options) {
-    console.log(options);
     if (!options.name) return;
 
     this.setData({
@@ -146,7 +145,6 @@ Page({
       name,
       phone
     }, data => {
-      console.log(data);
       if (this.data.status == 504) {
         return;
       }
@@ -165,7 +163,6 @@ Page({
       const {
         steps
       } = this.data;
-      console.log(department, status)
       for (let item in department) {
         if (status[department[item].name] % 2 == 1) {
           status[department[item].name] = Math.ceil(status[department[item].name] / 2);
@@ -188,9 +185,7 @@ Page({
             }
           }
         }
-        console.log(item, steps[item]);
       }
-      console.log(status, steps);
       this.setData({
         department,
         status,
@@ -208,14 +203,12 @@ Page({
   },
 
   linkToSelect(event) {
-    console.log(event);
     const {
       name
     } = this.data;
     if (event.detail != event.currentTarget.dataset.active || event.currentTarget.dataset.icon == "cross" || event.detail == 3) {
       return;
     }
-    console.log(1);
     wx.navigateTo({
       url: '/pages/selectTestTime/selectTestTime?testType=' + event.detail + "&department=" + event.currentTarget.dataset.index + "&name=" + name,
     })

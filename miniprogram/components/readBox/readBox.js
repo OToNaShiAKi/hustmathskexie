@@ -98,7 +98,6 @@ Component({
         this.setData({
           menuOn: !this.data.menuOn
         });
-        console.log(2);
       }
     },
     changed(event) {

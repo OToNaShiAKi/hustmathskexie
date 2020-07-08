@@ -88,13 +88,11 @@ Component({
         for (let item of result) {
           z=item.lists.date.split('/');
           item.lists.date=z[0]+"月"+z[1]+"日"+z[2];
-          console.log(item.lists.date)
         }
         this.setData({
           testList: result,
           name: this.data.name
         });
-        console.log(result, this.data);
       })
     },
   },
@@ -105,7 +103,6 @@ Component({
   methods: {
 
     chooseTest: function (event) {
-      console.log(event);
       const {
         name,
         department
@@ -118,7 +115,6 @@ Component({
           department
         }
       }).then(res => {
-        console.log(res.result.text);
         if (typeof (res.result.text) !== 'undefined') {
           wx.showModal({
             title: '友情提示',
@@ -157,14 +153,12 @@ Component({
       let date1_ = `${year1}/${dateList1[0].padStart(2,"0")}/${dateList1[1].padStart(2, "0")} ${dateList1[2].padStart(4, "0")}:00`;
       const dateList2 = date2.split("/");
       let date2_ = `${year2}/${dateList2[0].padStart(2,"0")}/${dateList2[1].padStart(2, "0")} ${dateList2[2].padStart(4, "0")}:00`;
-      console.log(date1_, date2_);
       const date_1 = new Date(date1_);
       const date_2 = new Date(date2_);
       return date_1.getTime() >= date_2.getTime() ? true : false;
     },
 
     infoTest(event){
-      console.log(event);
       let date=event.currentTarget.dataset.date;
       date=date.replace('月','/');
       date=date.replace('日','/');

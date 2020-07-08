@@ -29,7 +29,6 @@ Page({
   onLoad: function (options) {
     const department = options.department;
     const buttonColor = DepartColor(department);
-    console.log(options,buttonColor);
     this.setData({
       department: options.department,
       name: options.name,
@@ -54,7 +53,6 @@ Page({
   },
 
   switchTab(event) {
-    console.log(event);
     var cur = event.detail.current;
     var singleNavWidth = this.data.windowWidth / 5;
     this.setData({

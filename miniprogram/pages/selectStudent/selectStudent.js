@@ -49,7 +49,6 @@ Page({
   },
 
   panel: function (e) {
-    console.log(e);
     if (e.currentTarget.dataset.index != this.data.showIndex) {
       this.setData({
         showIndex: e.currentTarget.dataset.index
@@ -102,7 +101,6 @@ Page({
             break;
         }
       }
-      console.log(data, res)
       this.setData({
         interview,
         written,
@@ -125,14 +123,12 @@ Page({
     const {
       depart
     } = this.data;
-    console.log(e);
     var button;
     if (e.target.dataset.name) {
       wx.navigateTo({
         url: '/pages/infoDetail/infoDetail?id=' + e.currentTarget.dataset.id
       })
     } else if (button = e.target.dataset.button) {
-      console.log(button);
       wx.showLoading({
         title: '正在提交',
       })
@@ -145,7 +141,6 @@ Page({
         }
       }).then(res => {
         this.selectStudent(this.data.depart.name);
-        console.log(res);
         wx.showToast({
           title: '成功',
           icon: 'success'

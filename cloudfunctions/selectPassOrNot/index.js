@@ -15,10 +15,8 @@ exports.main = async (event, context) => {
       _id: event.id
     }).get().then(res => {
       res.data[0]['status'][event.name] += 2;
-      console.log(res.data[0]['status']);
       result = res.data[0]['status'];
     })
-    console.log(result);
     return await recruit.where({
       _id: event.id
     }).update({
@@ -33,10 +31,8 @@ exports.main = async (event, context) => {
       _id: event.id
     }).get().then(res => {
       res.data[0]['status'][event.name] += 1;
-      console.log(res.data[0]['status']);
       result = res.data[0]['status'];
     })
-    console.log(result);
     return await recruit.where({
       _id: event.id
     }).update({

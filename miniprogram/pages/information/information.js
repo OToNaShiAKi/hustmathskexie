@@ -119,9 +119,7 @@ Page({
         icon: 'none'
       });
       return
-    }
-
-    console.log(lists, status);
+    };
     wx.showLoading({
       title: '正在提交信息'
     })

@@ -119,7 +119,6 @@ Page({
     } = this.data;
     const department = this.data.depart.key;
 
-    console.log(lists);
     for (let item of lists) {
       if (!item.place || !item.date || !item.limit) {
         wx.showToast({

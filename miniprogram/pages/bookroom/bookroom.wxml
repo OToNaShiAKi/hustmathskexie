@@ -1,0 +1,27 @@
+<!--miniprogram/pages/bookroom/bookroom.wxml-->
+<view class="container" style="height:{{height}}">
+	<view class="title">图书管理系统</view>
+	<van-tabs animated type="card" color="#007BFF">
+		<van-tab title="主页">
+			<view class="homepage">
+				<view class="welcome">本系统用于数学与统计学院图书借阅管理</view>
+				<view class="welcome">如需查阅可借书籍请点立即使用</view>
+				<view class="welcome" style="font-size:11px">
+        <view>本系统只提供查询服务</view>	
+        <view>如需借书请先联系好管理员，等待书屋开启时去取书</view>
+        <view>联系方式在右👉</view>
+        </view>
+				<view class="button">
+					<van-button size="large" round color="#007BFF" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"><view style="font-size:50rpx;">立即使用</view></van-button>
+				</view>
+			</view>
+		</van-tab>
+		<van-tab title="关于我们">
+			<view class="homepage">
+				<view class="welcome">科协联系人qq：</view>
+				<view class="welcome">办公部qq：</view>
+			</view>
+		</van-tab>
+	</van-tabs>
+	<view class="address">本系统由one-echo开发</view>
+</view>

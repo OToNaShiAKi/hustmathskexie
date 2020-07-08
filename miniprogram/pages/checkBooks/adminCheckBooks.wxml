@@ -1,0 +1,32 @@
+<!--miniprogram/pages/checkBooks/adminCheckBooks.wxml-->
+<view class="container" style="height:{{height}}px">
+	<view class="title">科协书屋管理员系统</view>
+	<van-tabs animated color="#007BFF">
+		<van-tab title="管理图书">
+			<view class="search">
+				<van-search value="{{ value }}" bind:change="onChange" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+					<view slot="action" style="background-color:#007bff;color:white;padding:0 32rpx;border-radius:8%/14%;" bind:tap="addBook">添加</view>
+				</van-search>
+			</view>
+			<view>
+				<van-row style="text-align:center;">
+					<van-col span="3">#</van-col>
+					<van-col span="15">书籍</van-col>
+					<van-col span="3">总数</van-col>
+					<van-col span="3">剩余</van-col>
+				</van-row>
+			</view>
+			<view class="booklists" wx:for="{{booklists}}" wx:key="index">
+				<van-row custom-class="booklists" style="text-align:center;">
+					<van-col span="3">{{index+1}}</van-col>
+					<van-col span="15">{{item.name}}</van-col>
+					<van-col span="3">{{item.totalNum}}</van-col>
+					<van-col span="3">{{item.totalNum-item.borrowNum}}</van-col>
+				</van-row>
+			</view>
+		</van-tab>
+		<van-tab title="管理借阅人员">
+		</van-tab>
+	</van-tabs>
+	<view class="address">本系统由one-echo开发</view>
+</view>

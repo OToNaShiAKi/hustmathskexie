@@ -1,7 +1,7 @@
 // miniprogram/pages/addTest/addTest.js
 import {
   DepartColor
-} from './../../utils/FormatColor';
+} from '../../utils/FormatColor';
 Page({
 
   /**

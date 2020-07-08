@@ -31,7 +31,8 @@ Page({
     }, {
       title: "科协书屋",
       desc: "借书不跑图书馆",
-      color: "pink"
+      color: "pink",
+      link: "bookroom"
     }]
   }
 })

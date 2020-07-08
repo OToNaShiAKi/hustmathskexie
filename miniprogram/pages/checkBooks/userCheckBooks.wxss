@@ -1,0 +1,40 @@
+/* miniprogram/pages/userCheckBooks/userCheckBooks.wxss */
+.container {
+  background-color: #F8F9FA;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.userInfo{
+  width:fit-content;
+  height: fit-content;
+}
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  margin-bottom: 0;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  text-align: center;
+}
+.search{
+  width: max-content;
+  height: fit-content;
+}
+.booklists{
+  min-height: 50rpx;
+  width: 100%;
+  margin-top: 10rpx;
+}
+.list{
+  padding:0 20rpx;
+  padding-top: 50rpx;
+  font-size: small;
+  color: #007bff;
+}

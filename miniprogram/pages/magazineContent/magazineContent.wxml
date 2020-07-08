@@ -1,0 +1,3 @@
+<!--pages/magazineContent/magazineContent.wxml-->
+
+<readBox  pageNum="{{pageNum}}" issue="{{issue}}" />

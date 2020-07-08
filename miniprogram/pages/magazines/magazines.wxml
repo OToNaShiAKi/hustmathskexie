@@ -1,3 +1,2 @@
 <!--miniprogram/pages/magazines/magazines.wxml-->
-<!-- <cover wx:for="{{ magazines }}" wx:key="_id" bind:clicks="toMagazine" /> -->
-<readBox />
+<cover wx:for="{{ magazines }}" wx:key="_id" bind:clicks="toMagazine" title="{{item.title}}" issue="{{item.issue}}" cover="{{item.cover}}" pageNum="{{item.pageNum}}" />

@@ -118,10 +118,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "杂志",
-					"pathName": "pages/magazines/magazines",
-					"query": "",
+					"id": 9,
+					"name": "杂志内容",
+					"pathName": "pages/magazineContent/magazineContent",
+					"query": "issue=15&pageNum=39",
 					"scene": null
 				}
 			]

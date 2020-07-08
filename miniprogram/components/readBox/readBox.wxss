@@ -4,12 +4,79 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
 }
+
+.helpButton{
+  position: absolute;
+  right: 20rpx;
+  top: 4rpx;
+  border:none;
+}
+
 .readContent{
+  position: relative;
+  top: 50rpx;
+  left: 0;
+  z-index: 0;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
+  overflow: hidden;
+  width: 750rpx;
+  height: 1062rpx;
+}
+
+.swiper-item{
+  width: 750rpx;
+  height: 1062rpx;
+}
+
+.head {
+  position: absolute;
+  top: 0;
+  width: 750rpx;
+  height:80rpx;
+}
+
+.foot{
+  position: absolute;
+bottom: 0;
+  width: 750rpx;
+  height:150rpx;
+  background:#f5f6fa;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+.helpContent{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.helpLeft{
+  width: 80px;
+  background-color:rgba(246, 229, 141,0.4);
+}
+
+ .helpMiddle{
+  width: 750rpx;
+  background: rgba(199, 236, 238,0.4);
+}
+.helpRight{
+  width: 80px;
+  background:rgba(126, 214, 223,0.4);
+ 
+}
+.set{
+  display: block;
+  height: 100%;
+  color: white;
+  writing-mode:tb-rl;
+  text-align: center;
+  font-size:2em;
+  margin: 0 auto;
+  
 }

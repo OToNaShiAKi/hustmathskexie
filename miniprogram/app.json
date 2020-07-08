@@ -17,7 +17,8 @@
     "pages/manage/manage",
     "pages/infoDetail/infoDetail",
     "pages/magazines/magazines",
-    "pages/checkBooks/userCheckBooks"
+    "pages/checkBooks/userCheckBooks",
+    "pages/magazineContent/magazineContent"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

@@ -1,1 +1,14 @@
-<showTest testType="2" department="onecho" name="" identify="admin" />
+<van-dialog
+  use-slot
+  show="{{ show }}"
+  confirm-button-open-type="getUserInfo"
+  bind:close="onClose"
+  bind:getuserinfo="getUserInfo"
+>
+<van-row style="text-align:center;">
+  <van-col span="6">书籍</van-col>
+  <van-col span="6">借出日期</van-col>
+  <van-col span="6">归还日期</van-col>
+  <van-col span="6">当前状态</van-col>
+</van-row>
+</van-dialog>

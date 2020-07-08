@@ -1,0 +1,63 @@
+<!--miniprogram/pages/userCheckBooks/userCheckBooks.wxml-->
+<view class="container" style="height:{{height}}px;">
+<view class="header">
+<view class="userInfo">
+		<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+		<view class="userinfo-nickname">{{userInfo.nickName}}</view>
+	</view>
+	<view class="search">
+		<van-search value="{{ value }}" data-key="value" background="#F8F9FA" bind:change="changeData" placeholder="请输入搜索关键词" bind:search="onSearch" />
+	</view>
+</view>
+	
+	<view class="booklists">
+		<van-row style="text-align:center;">
+			<van-col span="3">#</van-col>
+			<van-col span="15">书籍</van-col>
+			<van-col span="6">状态</van-col>
+		</van-row>
+	</view>
+	<view class="booklists" wx:for="{{booklists}}" wx:key="index">
+		<van-row style="text-align:center;">
+			<van-col span="3">{{index+1}}</van-col>
+			<van-col span="15">{{item.name}}</van-col>
+			<van-col span="6">{{item.totalNum>item.borrowNum?'可借阅':'可预约'}}</van-col>
+		</van-row>
+	</view>
+</view>
+<van-popup show="{{ show }}" position="left" custom-style="width: 40%;height:100%;" bind:close="onClose">
+	<view class="userInfo">
+		<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+		<view class="userinfo-nickname">{{userInfo.nickName}}</view>
+	</view>
+	<view class="list" bindtap="showBorrowBook">
+		查询已借书籍
+	</view>
+	<view class="list" bindtap="adminSignIn">
+		管理员登陆入口
+	</view>
+</van-popup>
+<van-dialog use-slot show="{{ dialog }}" customStyle="padding-top:20rpx">
+	<view>
+		<van-row style="text-align:center;">
+			<van-col span="6">书籍</van-col>
+			<van-col span="6">借出日期</van-col>
+			<van-col span="6">归还日期</van-col>
+			<van-col span="6">当前状态</van-col>
+		</van-row>
+	</view>
+	<view wx:for="{{borrowBooklists}}" wx:key="index">
+		<van-row style="text-align:center;">
+			<van-col span="6">{{item.name}}</van-col>
+			<van-col span="6">{{item.borrowTime}}</van-col>
+			<van-col span="6">{{item.expiredTime}}</van-col>
+			<van-col span="6">{{status}}</van-col>
+		</van-row>
+	</view>
+</van-dialog>
+
+<van-dialog use-slot id="van-dialog">
+	<van-cell-group>
+		<van-field label="管理员密码" data-key="confirm" bind:input="changeData" value="{{ confirm }}" type="password" />
+	</van-cell-group>
+</van-dialog>

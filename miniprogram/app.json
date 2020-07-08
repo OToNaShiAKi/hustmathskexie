@@ -1,19 +1,23 @@
 {
   "pages": [
+    "pages/bookroom/bookroom",
+    "pages/checkBooks/adminCheckBooks",
+    "pages/addSomething/addBooks",
+    "pages/datetest/datetest",
+    "pages/home/home",
     "pages/register/register",
     "pages/adminTest/adminTest",
-    "pages/home/home",
-    "pages/datetest/datetest",
     "pages/checkStatus/checkStatus",
     "pages/selectTestTime/selectTestTime",
     "pages/selectStudent/selectStudent",
     "pages/information/information",
-    "pages/addTest/addTest",
+    "pages/addSomething/addTest",
     "pages/notice/notice",
     "pages/contact/contact",
     "pages/manage/manage",
     "pages/infoDetail/infoDetail",
     "pages/magazines/magazines",
+    "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent"
   ],
   "window": {
@@ -23,7 +27,8 @@
   "tabBar": {
     "color": "#808080",
     "selectedColor": "#fc8a2e",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "assets/home.png",
@@ -59,6 +64,11 @@
     "van-image": "@vant/weapp/image/index",
     "van-card": "@vant/weapp/card/index",
     "van-skeleton": "@vant/weapp/skeleton/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-search": "@vant/weapp/search/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
   }
 }

@@ -1,0 +1,42 @@
+/* miniprogram/pages/bookroom/bookroom.wxss */
+.container {
+  background-color: #F8F9FA;
+}
+
+.title {
+  color: #007bff !important;
+  font-weight: 300 !important;
+  text-align: center !important;
+  font-size: 40rpx;
+  padding-top: 20rpx;
+  margin-bottom: 25rpx;
+  line-height: 1.2;
+}
+
+.homepage {
+  margin-top: 18%;
+  text-align: center;
+}
+
+.homepage .welcome{
+  font-size: 18px;
+  margin-bottom: 2%;
+  color: #17a2b8;
+  font-weight: 300;
+}
+
+.button{
+  margin:0 70rpx;
+  margin-top: 32%;
+}
+
+.address{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: #F8F9FA;
+  font-size: 10px;
+  color: #007bff;
+  margin-bottom: 20rpx;
+}

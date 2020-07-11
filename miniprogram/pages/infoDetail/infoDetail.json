@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "inforSlip":"./../../components/inforSlip/inforSlip"
+    "infor-slip":"./../../components/inforSlip/inforSlip"
   }
 }

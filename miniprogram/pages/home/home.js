@@ -9,7 +9,8 @@ Page({
       title: "兴趣小组课堂",
       desc: "哪科不会点播哪科",
       color: "orange",
-      icon: "interest"
+      icon: "interest",
+      link:"interest"
     }, {
       title: "学科复习",
       desc: "学霸笔记网罗于此",

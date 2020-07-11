@@ -18,7 +18,8 @@
     "pages/bookroom/bookroom",
     "pages/checkBooks/adminCheckBooks",
     "pages/addSomething/addBooks",
-    "pages/datetest/datetest"
+    "pages/datetest/datetest",
+    "pages/interest/interest"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

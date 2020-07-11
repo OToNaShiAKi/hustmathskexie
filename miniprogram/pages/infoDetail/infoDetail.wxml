@@ -4,9 +4,9 @@
 		<view class="title">个人信息</view>
 		<span class="ti">（长按复制）</span>
 		<view>
-			<inforSlip title="姓名" content="{{info.name}}" fontSize="1.2em" />
-			<inforSlip title="电话" content="{{info.phone}}" fontSize="1.2em" />
-			<inforSlip title="QQ" content="{{info.qq}}" fontSize="1.2em" />
+			<infor-slip title="姓名" content="{{info.name}}" font-size="1.2em" />
+			<infor-slip title="电话" content="{{info.phone}}" font-size="1.2em" />
+			<infor-slip title="QQ" content="{{info.qq}}" font-size="1.2em" />
 			<text class="introdu">自我介绍</text>
 			<view id="introduce">
 				<text id="big" >{{info.introduce}}</text>

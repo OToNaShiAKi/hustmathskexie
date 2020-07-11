@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "联系部门",
   "usingComponents": {
-    "inforSlip":"./../../components/inforSlip/inforSlip",
+    "infor-slip":"./../../components/inforSlip/inforSlip",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-image": "@vant/weapp/image/index",

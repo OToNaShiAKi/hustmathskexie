@@ -86,7 +86,7 @@
 				{
 					"id": 4,
 					"name": "添加测试",
-					"pathName": "pages/addTest/addTest",
+					"pathName": "pages/addSomething/addTest",
 					"query": "department=onecho",
 					"scene": null
 				},
@@ -122,6 +122,13 @@
 					"name": "杂志内容",
 					"pathName": "pages/magazineContent/magazineContent",
 					"query": "issue=15&pageNum=39",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "兴趣小组",
+					"pathName": "pages/interest/interest",
+					"query": "",
 					"scene": null
 				}
 			]

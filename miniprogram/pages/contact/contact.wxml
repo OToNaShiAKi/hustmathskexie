@@ -11,10 +11,10 @@
   </view>
  
 <view id="contactInfor">
-  <inforSlip title="招新群号" content="{{item.recruitGroup}}" oneText="{{!item.canDownload}}" oneContent="本部门暂无招新群" ></inforSlip>
-  <inforSlip title="部长姓名" content="{{item.secretary}}"  ></inforSlip>
-  <inforSlip title="部长手机号" content="{{item.phone}}" ></inforSlip>
-  <inforSlip title="部长QQ号" content="{{item.qq}}"  ></inforSlip>
+  <infor-slip title="招新群号" content="{{item.recruitGroup}}" one-text="{{!item.canDownload}}" oneContent="本部门暂无招新群" ></infor-slip>
+  <infor-slip title="部长姓名" content="{{item.secretary}}"  ></infor-slip>
+  <infor-slip title="部长手机号" content="{{item.phone}}" ></infor-slip>
+  <infor-slip title="部长QQ号" content="{{item.qq}}"  ></infor-slip>
 </view>
 <van-popup
   show="{{ showPop }}"

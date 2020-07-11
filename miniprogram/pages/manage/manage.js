@@ -42,7 +42,7 @@ Page({
 addTest() {
   const depart = this.data.depart.key;
   wx.navigateTo({
-    url: '/pages/addTest/addTest?department=' + depart
+    url: '/pages/addSomething/addTest?department=' + depart
   })
 },
 

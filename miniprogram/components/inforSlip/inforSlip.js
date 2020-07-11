@@ -20,10 +20,6 @@ Component({
       type: String | Number,
       value: "我不可复制"
     },
-    eventBreak: {
-      type: Boolean,
-      value: false
-    },
     fontColor:{
       type:String,
       value:"#fc8a2e"

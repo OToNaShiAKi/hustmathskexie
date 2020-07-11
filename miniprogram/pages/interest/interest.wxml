@@ -1,6 +1,6 @@
 <!--pages/interest/interest.wxml-->
 <van-collapse value="{{ activename }}" bind:change="onChange">
-  <van-collapse-item title="{{item.issue}}" name="{{index}}" wx:for="{{group}}" wx:key="timeset">
+  <van-collapse-item title="{{item.issue}}" name="{{index}}" wx:for="{{group}}" wx:key="timeset" clickable>
   <van-card
   lazy-load
   thumb="{{item.cover}}"

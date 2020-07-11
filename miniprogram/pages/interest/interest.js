@@ -6,12 +6,10 @@ Page({
    */
   data: {
     group:[],
-    activename:[],
+    activename:[0,1,2],
     color:"#30336b"
   },
   onChange(event) {
-    console.log(event);
-    
     this.setData({
       activename: event.detail,
     });
@@ -27,7 +25,6 @@ Page({
       name: "getInterest"
     }).then(res => {
       const group = res.result;
-      console.log(res);
       this.setData({
         group
       });

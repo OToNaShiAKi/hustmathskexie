@@ -12,5 +12,8 @@
 		<view wx:if="{{identify=='student'}}" slot="footer">
 			<van-button size="large" type="danger" disabled="{{item.fullPerson}}" data-id="{{item._id}}" bind:tap="chooseTest" custom-class="myBtn" round color="#fc8a2e">选择</van-button>
 		</view>
+		<view wx:if="{{identify=='admin'}}" slot="footer">
+			<van-button size="large" type="daadminnger" data-id="{{item._id}}" bind:tap="removeTest" custom-class="myBtn" round color="{{buttonColor}}">删除</van-button>
+		</view>
 	</van-panel>
 </view>

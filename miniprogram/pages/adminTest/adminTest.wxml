@@ -8,7 +8,7 @@
 
 	<swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
 		<swiper-item wx:for="{{[0,1,2]}}" wx:key="index" class="tab-content">
-			<showTest testType="{{item}}" department="{{department}}" name="{{name}}" identify="admin" />
+			<showTest testType="{{item}}" department="{{department}}" name="{{name}}" identify="admin" buttonColor="{{buttonColor}}" />
 		</swiper-item>
 	</swiper>
 

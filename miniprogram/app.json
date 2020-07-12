@@ -1,7 +1,11 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/register/register",
+    "pages/home/home",
+    "pages/bookroom/bookroom",
+    "pages/checkBooks/adminCheckBooks",
+    "pages/addSomething/addBooks",
+    "pages/datetest/datetest",
     "pages/adminTest/adminTest",
     "pages/checkStatus/checkStatus",
     "pages/selectTestTime/selectTestTime",
@@ -15,10 +19,6 @@
     "pages/magazines/magazines",
     "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent",
-    "pages/bookroom/bookroom",
-    "pages/checkBooks/adminCheckBooks",
-    "pages/addSomething/addBooks",
-    "pages/datetest/datetest",
     "pages/interest/interest"
   ],
   "window": {

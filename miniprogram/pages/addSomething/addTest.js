@@ -22,6 +22,7 @@ Page({
       place: "",
       date: ""
     }],
+    currentIndex:0,
     tip: '',
     minHour: 10,
     maxHour: 20,
@@ -157,8 +158,11 @@ Page({
       currentDate: event.detail,
     });
   },
-  onDisplay() {
+  onDisplay(event) {
+    console.log(event.currentTarget.dataset);
+    var currentIndex=event.currentTarget.dataset.index;
     this.setData({
+      currentIndex,
       show: true
     });
   },
@@ -179,7 +183,8 @@ Page({
   },
   onConfirm(event) {
     const lists = this.data.lists;
-    lists[event.currentTarget.dataset.id - 1].date = this.formatDate(event.detail);
+    console.log(lists,event.currentTarget);
+    lists[event.currentTarget.dataset.id].date = this.formatDate(event.detail);
     this.setData({
       show: false,
       lists

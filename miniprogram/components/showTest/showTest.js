@@ -19,6 +19,10 @@ Component({
     identify: {
       type: String,
       value: 'student'
+    },
+    buttonColor:{
+      type:String,
+      value:"#fc8a2e"
     }
   },
 
@@ -32,6 +36,15 @@ Component({
   pageLifetimes: {
 
     show: function () {
+      this.showTest();
+    }
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    showTest: function () {
       var testType, result;
       switch (this.data.testType) {
         case 0:
@@ -86,8 +99,8 @@ Component({
         //转化时间格式为xx月xx日xx:xx
         var z;
         for (let item of result) {
-          z=item.lists.date.split('/');
-          item.lists.date=z[0]+"月"+z[1]+"日"+z[2];
+          z = item.lists.date.split('/');
+          item.lists.date = z[0] + "月" + z[1] + "日" + z[2];
         }
         this.setData({
           testList: result,
@@ -95,12 +108,6 @@ Component({
         });
       })
     },
-  },
-
-  /**
-   * 组件的方法列表
-   */
-  methods: {
 
     chooseTest: function (event) {
       const {
@@ -158,11 +165,23 @@ Component({
       return date_1.getTime() >= date_2.getTime() ? true : false;
     },
 
-    infoTest(event){
-      let date=event.currentTarget.dataset.date;
-      date=date.replace('月','/');
-      date=date.replace('日','/');
+    infoTest(event) {
+      let date = event.currentTarget.dataset.date;
+      date = date.replace('月', '/');
+      date = date.replace('日', '/');
+    },
 
+    removeTest(event) {
+      wx.cloud.callFunction({
+        name: "removeTest",
+        data: {
+          _id: event.currentTarget.dataset.id
+        }
+      });
+      wx.showToast({
+        title: '删除测试成功',
+      });
+      this.showTest();
     }
   }
 })

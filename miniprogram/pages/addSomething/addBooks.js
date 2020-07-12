@@ -34,7 +34,6 @@ Page({
   },
 
   submit: function () {
-    console.log(this.data)
     const {
       booklists
     } = this.data;

@@ -9,7 +9,6 @@ exports.main = async (event, context) => {
   const book_lists = db.collection('bookroom_book');
   const _ = db.command;
   var duplicate = false;
-  console.log(event.booklists)
   for (item of event.booklists) {
     result = await book_lists.add({
       data: {
@@ -19,7 +18,6 @@ exports.main = async (event, context) => {
         status: 1
       }
     }).then(res => {
-      console.log(res)
       duplicate = false;
     }).catch(() => {
       //存在同名的书，即相同的书，则在totalNum上加上新增的totalNum

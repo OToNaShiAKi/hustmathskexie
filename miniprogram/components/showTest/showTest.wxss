@@ -1,9 +1,16 @@
 /* components/showTest/showTest.wxss */
 .content{
+  display: flex;
+  flex-direction: column;
   width: 90%;
   margin: 0 auto;
+}
+.content>view{
+margin: 2rpx;
+font-size: 1.1em;
 }
 .custom-class{
   margin-bottom: 20rpx;
   box-shadow: 0px 3px 3px #888888;
 }
+

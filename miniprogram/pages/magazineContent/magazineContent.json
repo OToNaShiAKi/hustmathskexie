@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "readBox":"./../../components/readBox/readBox",
-    "van-image": "@vant/weapp/image/index"
+    "van-image": "@vant/weapp/image/index",
+    "van-button": "@vant/weapp/button/index"
+
   }
 }

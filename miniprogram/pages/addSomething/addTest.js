@@ -2,6 +2,9 @@
 import {
   DepartColor
 } from '../../utils/FormatColor';
+import {
+ DepartFormat
+} from '../../utils/Format';
 Page({
 
   /**
@@ -51,13 +54,7 @@ Page({
     const key = options.department;
     const buttonColor = DepartColor(key);
     depart.key = key;
-
-    if (key === 'editor') depart.name = '编辑部';
-    else if (key === 'office') depart.name = '策划部';
-    else if (key === 'media') depart.name = '媒体部';
-    else if (key === 'onecho') depart.name = 'One Echo';
-    else if (key === 'workshop') depart.name = '雁祉作坊';
-
+    depart.name = DepartFormat(key);
     this.setData({
       depart,
       buttonColor

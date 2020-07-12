@@ -9,7 +9,6 @@ exports.main = async (event, context) => {
   const book_lists = db.collection("bookroom_book");
 
   var result;
-  console.log(event)
   if (event.name != null) {
     await book_lists.where({
       name: db.RegExp({
@@ -17,12 +16,10 @@ exports.main = async (event, context) => {
         options: 'i',
       })
     }).get().then(res => {
-      console.log(res);
       result = res;
     })
   } else {
     await book_lists.get().then(res => {
-      console.log(res);
       result = res;
     })
   }

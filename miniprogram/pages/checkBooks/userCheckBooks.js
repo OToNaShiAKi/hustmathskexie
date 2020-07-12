@@ -28,7 +28,6 @@ Page({
     wx.cloud.callFunction({
       name:"getBooks"
     }).then(res=>{
-      console.log(res);
       this.setData({
         booklists:res.result.data
       })
@@ -39,19 +38,16 @@ Page({
     const {
       value
     } = this.data;
-    // console.log(this.data);
     var reg_value=".*";
     for(let i=0;i<value.length;i++){
       reg_value+=value[i]+".*";
     }
-    console.log(reg_value)
     wx.cloud.callFunction({
       name:"getBooks",
       data:{
         name:reg_value
       }
     }).then(res=>{
-      console.log(res)
       this.setData({
         booklists:res.result.data
       })
@@ -70,6 +66,14 @@ Page({
     })
   },
   showBorrowBook: function () {
+    if(this.data.borrowBooklists.length===0){
+      wx.showToast({
+        title: '书籍已全部归还',
+        duration:800,
+        icon:'none'
+      })
+      return;
+    }
     this.setData({
       dialog: true
     });
@@ -92,7 +96,6 @@ Page({
   },
 
   changeData(event) {
-    // console.log(event)
     const key = event.currentTarget.dataset.key;
     this.setData({
       [key]: event.detail

@@ -1,7 +1,7 @@
 <!--miniprogram/pages/bookroom/bookroom.wxml-->
 <view class="container" style="height:{{height}}">
 	<view class="title">图书管理系统</view>
-	<van-tabs animated type="card" color="#007BFF">
+	<van-tabs animated color="#007BFF">
 		<van-tab title="主页">
 			<view class="homepage">
 				<view class="welcome">本系统用于数学与统计学院图书借阅管理</view>
@@ -19,7 +19,7 @@
 		<van-tab title="关于我们">
 			<view class="homepage">
 				<view class="welcome">科协联系人qq：</view>
-				<view class="welcome">办公部qq：</view>
+				<view class="welcome">媒体部qq：</view>
 			</view>
 		</van-tab>
 	</van-tabs>

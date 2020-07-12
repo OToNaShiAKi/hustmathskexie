@@ -30,8 +30,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: 'cyc',
-    phone: '1234',
+    name: '',
+    phone: '',
     department: {},
     onceClick: false,
     steps: {

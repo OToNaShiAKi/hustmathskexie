@@ -19,7 +19,6 @@ Page({
     wx.cloud.callFunction({
       name:"getBooks"
     }).then(res=>{
-      console.log(res);
       this.setData({
         booklists:res.result.data
       })
@@ -30,19 +29,16 @@ Page({
     const {
       value
     } = this.data;
-    // console.log(this.data);
     var reg_value=".*";
     for(let i=0;i<value.length;i++){
       reg_value+=value[i]+".*";
     }
-    console.log(reg_value)
     wx.cloud.callFunction({
       name:"getBooks",
       data:{
         name:reg_value
       }
     }).then(res=>{
-      console.log(res)
       this.setData({
         booklists:res.result.data
       })

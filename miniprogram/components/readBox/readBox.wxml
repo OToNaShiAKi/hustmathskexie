@@ -1,8 +1,8 @@
 <!--components/readBox/readBox.wxml-->
 <view class="readBox">
-<cover-view class="head" hidden="{{!menuOn}}">
+<view class="head" hidden="{{!menuOn}}">
 <van-button icon="label-o" bind:click="help" size="small" custom-class="helpButton">帮助</van-button>
-</cover-view>
+</view>
 <swiper class="readContent" current="{{showPage}}" bind:change="changed">
 <swiper-item  class="swiper-item" wx:for="{{pageArr}}" wx:key="*this" item-id="*this" bind:tap="taped"  >
 <van-image width="750rpx" height="1062rpx" wx:if="{{isLoad[index]}}" fit="contain" src="{{head}}{{item}}{{imgType}}" lazy-load use-loading-slot>
@@ -11,7 +11,7 @@
 </swiper-item>
 </swiper>
 <view class="foot" hidden="{{!menuOn}}">
-    <slider bindchange="changePage" value="{{showPage+1}}" min="1" block-color="#353b48" max="{{pageNum}}" block-size="12" show-value activeColor="#0984e3" />
+    <slider bindchange="changePage" value="{{showPage+1}}" min="1" block-color="#353b48" max="{{pageNum}}" block-size="16" show-value activeColor="#0984e3" />
 </view>
 <van-overlay show="{{ helpShow }}" bind:click="onClickHide">
 <view class="helpContent">

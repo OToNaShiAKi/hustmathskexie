@@ -24,15 +24,15 @@
 		</view>
 		<van-field label="地点" data-key="place" data-index="{{ index }}" value="{{ item.place }}" bind:change="changeForm" />
 
-		<van-cell title="时间" value="{{ item.date }}" bind:click="onDisplay" />
-		<van-popup show="{{ show }}" bind:close="onClose" round position="bottom" custom-style="height: 60%" bind:close="onClose">
-			<van-datetime-picker type="datetime" data-id="{{index+1}}" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" formatter="{{ formatter }}" show="{{ show }}" bind:cancel="onClose" bind:confirm="onConfirm" />
-		</van-popup>
+		<van-cell title="时间" value="{{ item.date }}" data-index="{{ index }}" bind:click="onDisplay" />
 
 		<van-field label="限制人数" data-key="limit" data-index="{{ index }}" value="{{ item.limit }}" bind:change="changeForm" />
 	</view>
 </view>
 
+<van-popup show="{{ show }}" bind:close="onClose" round position="bottom" custom-style="height: 60%" bind:close="onClose">
+	<van-datetime-picker type="datetime" data-id="{{currentIndex}}" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" formatter="{{ formatter }}" show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+</van-popup>
 
 <view class="submit">
 	<van-button bind:tap="submit" color="{{buttonColor}}" block round>提交</van-button>

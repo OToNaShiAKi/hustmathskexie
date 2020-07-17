@@ -89,7 +89,7 @@ Page({
     data = data.split("\n");
     data = data.map(parseFloat);
     console.log(data);
-    const tmp = GetDataResult({measureArr:data},{delta:0.01});
+    const tmp = GetDataResult({measureArr:data},{delta:0.005});
     // const n = data.length;
     // const average = this.count(data) / n;
     // let tmp = 0;

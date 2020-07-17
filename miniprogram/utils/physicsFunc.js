@@ -45,8 +45,8 @@ const GetDataResult = (optionA = {}, optionB = {}) => {
   }
   if (!UABox.status) {
     UA = 0;
-    simgaX = UABox.UA;
-    simgaMeanX = UABox.UA;
+    simgaX = UABox.simgaX;
+    simgaMeanX = UABox.simgaMeanX;
   } else {
     UA = UABox.UA;
     simgaX = UABox.simgaX;
@@ -67,17 +67,19 @@ const GetDataResult = (optionA = {}, optionB = {}) => {
 const _getUA = ({
   measureArr = {}
 } = []) => {
+  
   const simgaXBox = _getSigmaX(measureArr);
   if (simgaXBox.status) {
-    const n = simgaXBox.simgaX.length;
+    const n = simgaXBox.newArr.length;
+    console.log(n);
+    const simgaMeanX = simgaXBox.simgaX / Math.sqrt(n);
     let UA;
     if (TP_N_P95.has(n)) {
-      UA = TP_N_P95.get(n);
+      UA = TP_N_P95.get(n)*simgaMeanX;
     } else {
       UA = "次数无效";
       simgaXBox.status = false;
     }
-    const simgaMeanX = simgaXBox.simgaX / Math.sqrt(n);
     simgaXBox.simgaMeanX = simgaMeanX;
     simgaXBox.UA = UA;
   };

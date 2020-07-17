@@ -23,7 +23,8 @@ Page({
       title: "物理实验数据处理",
       desc: "省去计算烦恼，让发丝更飘逸",
       color: "red",
-      icon: "physical"
+      icon: "physical",
+      link:'physical'
     }, {
       title: "期刊杂志",
       desc: "学术&文艺尽在掌握",

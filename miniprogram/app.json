@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/register/register",
+    "pages/physical/physical",
     "pages/home/home",
+    "pages/register/register",
     "pages/bookroom/bookroom",
     "pages/checkBooks/adminCheckBooks",
     "pages/addSomething/addBooks",

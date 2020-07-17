@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/physical/physical",
+    "pages/physical/try/physical",
     "pages/home/home",
     "pages/register/register",
     "pages/bookroom/bookroom",

@@ -1,6 +1,12 @@
 // miniprogram/pages/physical/physical.js
-const PI = 3.1415926;
-const G = 9.79163
+import {
+  PI,
+  G
+} from "./../../../utils/physicsVar"
+import {
+  LinearFunc,
+  GetDataResult
+} from "./../../../utils/physicsFunc";
 Page({
 
   /**
@@ -17,6 +23,10 @@ Page({
         value: 'elasticBall',
         name: '弹性球速度及恢复系数'
       },
+      {
+        value: 'linearFunc',
+        name: '线性拟合函数'
+      }
     ]
   },
 
@@ -54,6 +64,21 @@ Page({
           case 'elasticBall':
             this.geteOfBall(value)
             break;
+          case 'linearFunc':
+            LinearFunc([{
+              xNum: 0.37229,
+              yNum: 0.88504
+            }, {
+              xNum: 0.32950,
+              yNum: 0.74096
+            }, {
+              xNum: 0.24414,
+              yNum: 0.74686
+            }, {
+              xNum: 0.18234,
+              yNum: 0.76381
+            }]);
+            break;
         }
         return;
       }
@@ -63,14 +88,18 @@ Page({
   getUncertainty: function (data) {
     data = data.split("\n");
     data = data.map(parseFloat);
-    const n = data.length;
-    const average = this.count(data) / n;
-    let tmp = 0;
-    for (let i = 0; i < n; i++) {
-      tmp += (average - data[i]) * (average - data[i]);
-    }
-    tmp /= (n * (n - 1));
-    tmp = Math.pow(tmp, 0.5);
+    console.log(data);
+    const tmp = GetDataResult({measureArr:data},{delta:0.01});
+    // const n = data.length;
+    // const average = this.count(data) / n;
+    // let tmp = 0;
+    // for (let i = 0; i < n; i++) {
+    //   tmp += (average - data[i]) * (average - data[i]);
+    // }
+    // tmp /= (n * (n - 1));
+    // tmp = Math.pow(tmp, 0.5);
+    console.log(tmp);
+    
     this.setData({
       answer: tmp
     })
@@ -78,23 +107,25 @@ Page({
   geteOfBall: function (data) {
     data = data.split("\n");
     const n = data.length;
-    let begin, last, tmp=[],answer='',exp;
+    let begin, last, tmp = [],
+      answer = '',
+      exp;
     for (let i = 0; i < n; i++) {
       begin = data[i].indexOf(';');
       last = data[i].lastIndexOf('E');
-      exp=parseInt(data[i].substr(last+2));
+      exp = parseInt(data[i].substr(last + 2));
       data[i] = parseFloat(data[i].substr(begin + 1, last - begin - 1));
-      data[i]/=Math.pow(10,exp);
+      data[i] /= Math.pow(10, exp);
     }
-    for(let i=0;i<n;i++){
-      tmp.push(0.5*G*data[i]*data[i]*0.25);
+    for (let i = 0; i < n; i++) {
+      tmp.push(0.5 * G * data[i] * data[i] * 0.25);
     }
-    for(let i=0;i<n-1;i++){
-      answer+="入射速度："+tmp[i].toString().substr(0,7)+"恢复系数e："+(tmp[i+1]/tmp[i]).toString().substr(0,7);
+    for (let i = 0; i < n - 1; i++) {
+      answer += "入射速度：" + tmp[i].toString().substr(0, 7) + "恢复系数e：" + (tmp[i + 1] / tmp[i]).toString().substr(0, 7);
     }
     console.log(answer)
     this.setData({
-      answer:answer
+      answer: answer
     })
   },
   count: function (data) {

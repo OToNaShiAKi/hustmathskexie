@@ -1,0 +1,14 @@
+/* pages/departInfor/departInfor.wxss */
+.boxed{
+  margin: 0;
+  padding: 0;
+}
+.allde{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.imggg{
+  height: 1195rpx;
+  width: 750rpx;
+}

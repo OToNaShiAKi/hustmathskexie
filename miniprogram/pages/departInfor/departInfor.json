@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "部门简介",
+  "usingComponents": {
+    "van-image": "@vant/weapp/image/index"
+  }
+}

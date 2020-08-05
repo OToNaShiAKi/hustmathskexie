@@ -22,9 +22,9 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"useIsolateContext": true
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",
@@ -129,6 +129,12 @@
 					"name": "兴趣小组",
 					"pathName": "pages/interest/interest",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "部门简介",
+					"pathName": "pages/departInfor/departInfor",
 					"scene": null
 				}
 			]

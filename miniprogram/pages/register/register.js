@@ -21,7 +21,8 @@ Page({
     }, {
       title: "部门简介",
       desc: "了解部门工作内容",
-      color: "blue"
+      color: "blue",
+      link:"departInfor"
     }, {
       title: "查询报名状态",
       desc: "面试时间和录取状态都在里面",

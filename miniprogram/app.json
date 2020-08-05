@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/departInfor/departInfor",
     "pages/register/register",
     "pages/bookroom/bookroom",
     "pages/checkBooks/adminCheckBooks",
@@ -20,8 +21,7 @@
     "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent",
     "pages/interest/interest",
-    "pages/physical/try/physical",
-    "pages/departInfor/departInfor"
+    "pages/physical/try/physical"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

@@ -1,5 +1,5 @@
 <!--pages/departInfor/departInfor.wxml-->
 
 <view class="boxed allde">
-<image mode="widthFix" wx:for="{{img}}" wx:key="*this" src="{{urlHead+item}}" class="boxed imggg" bindload="loaded" />
+<image mode="widthFix" wx:for="{{img}}" catchtap="register" wx:key="*this" src="{{urlHead+item}}" class="boxed imggg" bindload="loaded" />
 </view>

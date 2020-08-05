@@ -1,4 +1,5 @@
 // pages/departInfor/departInfor.js
+var app;
 Page({
 
   /**
@@ -27,57 +28,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app=wx.getSystemInfoSync();
     wx.showLoading({
       title: '加载中',
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  register:function (event){
+    if(event.currentTarget.offsetTop>100)return;
+    let {x,y}=event.detail;
+    let width=app.windowWidth;
+    let height=width*1.6;
+    x/=width;
+    y/=height;
+    if(x<0.82&&x>0.18&&y<0.80&&y>0.70){
+      wx.navigateTo({
+        url: '/pages/information/information'
+      })
+    }
   }
 })

@@ -20,7 +20,7 @@ Page({
   },
   data: {
     urlHead: "cloud://hustmathskexie-ccc2t.6875-hustmathskexie-ccc2t-1302087472/departImage/inforImage_",
-    img: ["1.png", "2.png", "3.png", "4.png", "5.png"],
+    img: ["1.gif", "2.png", "3.png", "4.png", "5.png"],
     led: 0
   },
 

@@ -1,6 +1,13 @@
 <!--pages/interest/interest.wxml-->
+<van-notice-bar
+  color="#1989fa"
+  background="#ecf9ff"
+  mode="closeable"
+  text="长按即可复制下述信息(B站指bilibili弹幕网)"
+  custom-class="ntc"
+/>
 <van-collapse value="{{ activename }}" bind:change="onChange">
-  <van-collapse-item title="{{item.issue}}" name="{{index}}" wx:for="{{group}}" wx:key="timeset" clickable>
+  <van-collapse-item title="{{item.issue}}" name="{{index}}" wx:for="{{group}}" wx:key="BVnumber" clickable>
   <van-card
   lazy-load
   thumb="{{item.cover}}"
@@ -10,9 +17,6 @@
 <infor-slip font-size="1.1em" font-color="{{color}}" title="主讲人" content="{{item.people}}" />
 <infor-slip font-size="1.1em" font-color="{{color}}" title="时间" content="{{item.time}}" />
 <infor-slip font-size="1.1em" font-color="{{color}}" title="B站BV号" content="{{item.BVnumber}}" />
-</view>
-<view slot="footer">
-<infor-slip font-size="1.1em" font-color="#ecf0f1" one-text="{{true}}" one-content="(上述信息皆可长按复制，B站指bilibili弹幕网)" />
 </view>
 </van-card>
   </van-collapse-item>

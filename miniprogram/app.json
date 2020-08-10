@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/physical/try/physical",
     "pages/home/home",
     "pages/register/register",
     "pages/bookroom/bookroom",
@@ -20,7 +21,6 @@
     "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent",
     "pages/interest/interest",
-    "pages/physical/try/physical",
     "pages/departInfor/departInfor"
   ],
   "window": {

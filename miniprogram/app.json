@@ -2,6 +2,7 @@
   "pages": [
     "pages/physical/try/physical",
     "pages/home/home",
+    "pages/departInfor/departInfor",
     "pages/register/register",
     "pages/bookroom/bookroom",
     "pages/checkBooks/adminCheckBooks",

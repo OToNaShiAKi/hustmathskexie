@@ -3,7 +3,7 @@
 <van-tabs active="{{tabActive}}" swipeable color="#fc8a2e" lazy-render="false" >
   <van-tab title="{{item.departCN}}" wx:for="{{departContact}}" wx:key="department">
   <view id="code">
-  <van-image bindlongpress="outBox"  data-flag="{{item.canDownload}}" width="500rpx" height="560rpx" src="{{item.imgUrl}}" custom-class="code" alt="{{item.departCN}}" radius="1em" use-error-slot use-loading-slot>
+  <van-image bindlongpress="outBox"  data-flag="{{item.canDownload}}" width="500rpx" height="580rpx" src="{{item.imgUrl}}" custom-class="code" alt="{{item.departCN}}" radius="1em" use-error-slot use-loading-slot>
 <text slot="error">加载失败,请检查网络状态</text>
   </van-image>
   <view class="tishi" wx:if="{{item.canDownload}}">提示：长按保存二维码，长按文字复制</view>

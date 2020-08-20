@@ -53,12 +53,14 @@ const GetDataResult = (optionA = {}, optionB = {}) => {
     simgaMeanX = UABox.simgaMeanX;
   };
   const UX = Math.sqrt(UA ** 2 + UB ** 2);
+  const UrX=(UX/mean *100).toString()+"%";
   return {
     newArr,
     mean,
     UX,
     UA,
     UB,
+    UrX,
     simgaX,
     simgaMeanX
   };

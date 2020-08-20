@@ -16,7 +16,7 @@ exports.main = async (event, context) => {
      ele.time = `${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日`;
    })
    group.sort((a,b)=>{
-     return a.timeset-b.timeset;
+     return b.timeset-a.timeset;
    })
    return group;
    }).catch(err => err);

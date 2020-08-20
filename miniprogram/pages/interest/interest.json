@@ -4,6 +4,7 @@
     "van-collapse": "@vant/weapp/collapse/index",
     "van-collapse-item": "@vant/weapp/collapse-item/index",
     "van-card": "@vant/weapp/card/index",
-    "infor-slip": "./../../components/inforSlip/inforSlip"
+    "infor-slip": "./../../components/inforSlip/inforSlip",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
   }
 }

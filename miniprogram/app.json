@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/physical/try/physical",
     "pages/home/home",
     "pages/departInfor/departInfor",
     "pages/register/register",
@@ -20,8 +21,7 @@
     "pages/magazines/magazines",
     "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent",
-    "pages/interest/interest",
-    "pages/physical/try/physical"
+    "pages/interest/interest"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

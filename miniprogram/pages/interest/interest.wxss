@@ -1,1 +1,4 @@
 /* pages/interest/interest.wxss */
+.ntc{
+  background-color:#ecf9ff !important;
+}

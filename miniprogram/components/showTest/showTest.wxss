@@ -5,7 +5,7 @@
   width: 90%;
   margin: 0 auto;
 }
-.content>view{
+.content view{
 margin: 2rpx;
 font-size: 1.1em;
 }

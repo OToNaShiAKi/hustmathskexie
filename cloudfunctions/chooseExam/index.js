@@ -11,7 +11,8 @@ exports.main = async (event, context) => {
   // return event;
   result = await examination.where({
     registeredPerson: event.name,
-    department:event.department
+    department:event.department,
+    type:event.type
   }).get().then(res => ({
     res
   }));

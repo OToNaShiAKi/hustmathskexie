@@ -20,9 +20,9 @@ Component({
       type: String,
       value: 'student'
     },
-    buttonColor:{
-      type:String,
-      value:"#fc8a2e"
+    buttonColor: {
+      type: String,
+      value: "#fc8a2e"
     }
   },
 
@@ -111,15 +111,29 @@ Component({
 
     chooseTest: function (event) {
       const {
+        testType,
         name,
         department
       } = this.data;
+      let type;
+      switch (testType) {
+        case 0:
+          type = 'face';
+          break;
+        case 1:
+          type = 'pen';
+          break;
+        case 2:
+          type = 'test';
+          break;
+      }
       wx.cloud.callFunction({
         name: "chooseExam",
         data: {
           _id: event.currentTarget.dataset.id,
           name: name,
-          department
+          department,
+          type
         }
       }).then(res => {
         if (typeof (res.result.text) !== 'undefined') {

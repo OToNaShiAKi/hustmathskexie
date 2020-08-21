@@ -18,8 +18,8 @@
 		</van-tab>
 		<van-tab title="联系管理">
 			<view class="homepage">
-				<view class="welcome">科协联系人qq：</view>
-				<view class="welcome">媒体部qq：</view>
+				<view class="welcome">科协联系人qq：1220708497(吴洛昀)</view>
+				<view class="welcome">策划部qq：602198589(郭开轩)</view>
 			</view>
 		</van-tab>
 	</van-tabs>

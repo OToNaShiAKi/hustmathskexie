@@ -9,12 +9,21 @@ exports.main = async (event, context) => {
   const book_lists = db.collection('bookroom_book');
   const _ = db.command;
   var duplicate = false;
+  let index;
+  await book_lists.get().then(res => {
+    if(res.data.length==0){
+       index=0;
+       return;
+    }
+    index = res.data.pop().index;
+  })
   for (item of event.booklists) {
     result = await book_lists.add({
       data: {
         name: item.name,
         totalNum: item.totalNum,
         borrowNum: 0,
+        index: ++index,
         status: 1
       }
     }).then(res => {
@@ -34,5 +43,7 @@ exports.main = async (event, context) => {
     }
   }
 
-  return {msg:"添加完毕"}
+  return {
+    msg: "添加完毕"
+  }
 }

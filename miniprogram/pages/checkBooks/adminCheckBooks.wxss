@@ -27,9 +27,16 @@
   min-height: 50rpx;
   margin-top: 10rpx;
   font-size: normal;
-  /* background-color: #F8F9FA; */
+  height: fit-content;
 }
 
 .booklists[span="3"]{
   background-color: tan;
+}
+.buttonlike{
+  border:1px solid #000000;
+}
+.buttonlike:hover{
+  background-color: black;
+  color: white;
 }

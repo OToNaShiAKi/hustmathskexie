@@ -1,15 +1,15 @@
 <!--miniprogram/pages/userCheckBooks/userCheckBooks.wxml-->
 <view class="container" style="height:{{height}}px;">
-<view class="header">
-<view class="userInfo">
-		<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-		<view class="userinfo-nickname">{{userInfo.nickName}}</view>
+	<view class="header">
+		<view class="userInfo">
+			<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			<view class="userinfo-nickname">{{userInfo.nickName}}</view>
+		</view>
+		<view class="search">
+			<van-search value="{{ value }}" data-key="value" background="#F8F9FA" bind:change="changeData" placeholder="请输入搜索关键词" bind:search="onSearch" />
+		</view>
 	</view>
-	<view class="search">
-		<van-search value="{{ value }}" data-key="value" background="#F8F9FA" bind:change="changeData" placeholder="请输入搜索关键词" bind:search="onSearch" />
-	</view>
-</view>
-	
+
 	<view class="booklists">
 		<van-row style="text-align:center;">
 			<van-col span="3">#</van-col>
@@ -39,25 +39,24 @@
 </van-popup>
 <van-dialog use-slot show="{{ dialog }}" customStyle="padding-top:20rpx">
 	<view>
-		<van-row style="text-align:center;">
-			<van-col span="6">书籍</van-col>
+		<van-row style="text-align:center;font-size:16px">
+			<van-col span="12">书籍</van-col>
 			<van-col span="6">借出日期</van-col>
-			<van-col span="6">归还日期</van-col>
 			<van-col span="6">当前状态</van-col>
 		</van-row>
 	</view>
 	<view wx:for="{{borrowBooklists}}" wx:key="index">
-		<van-row style="text-align:center;">
-			<van-col span="6">{{item.name}}</van-col>
-			<van-col span="6">{{item.borrowTime}}</van-col>
-			<van-col span="6">{{item.expiredTime}}</van-col>
-			<van-col span="6">{{status}}</van-col>
+		<van-row style="text-align:center;font-size:12px">
+			<van-col span="12">{{item.bookname}}</van-col>
+			<van-col span="6">{{item.date}}</van-col>
+			<van-col span="6">{{item.status==1?'未归还':'已归还'}}</van-col>
 		</van-row>
 	</view>
 </van-dialog>
 
 <van-dialog use-slot id="van-dialog">
 	<van-cell-group>
-		<van-field label="管理员密码" data-key="confirm" bind:input="changeData" value="{{ confirm }}" type="password" />
+		<van-field label="{{label}}" data-key="confirm" bind:input="changeData" value="{{ confirm }}" type="{{type}}" required/>
+		<van-field wx:if="{{label=='真实姓名'}}" placeholder="此项必填" label="QQ" data-key="qq" bind:input="changeData" value="{{ qq }}" type="{{type}}" required/>
 	</van-cell-group>
 </van-dialog>

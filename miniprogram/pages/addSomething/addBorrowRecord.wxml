@@ -1,0 +1,21 @@
+<!--miniprogram/pages/addSomething/addBorrowRecord.wxml-->
+<view>
+		<view class="title">借阅列表</view>
+	<view class="lists">
+		<van-button size="small" color="#007bff" bind:tap="addBook">批量添加人员</van-button>
+	</view>
+	<view wx:for="{{ userlists }}" wx:key="index">
+		<view class="place">
+			<text>借阅记录{{ index + 1}}</text>
+			<text class="iconfont icon-close" data-index="{{ index }}" bind:tap="close">取消</text>
+		</view>
+		<van-field label="姓名" data-key="name" placeholder="pp" data-index="{{ index }}" value="{{ item.name }}" bind:change="changeForm" />
+		<van-field label="书籍id" data-key="bookname" data-index="{{ index }}" value="{{ item.bookname }}" bind:change="changeForm" />
+		<van-field label="数量" data-key="totalNum" data-index="{{ index }}" value="{{ item.totalNum }}" bind:change="changeForm" />
+	</view>
+</view>
+
+
+<view class="submit">
+	<van-button bind:tap="submit" color="#007bff" block round>添加</van-button>
+</view>

@@ -4,7 +4,7 @@
 	<van-tabs animated color="#007BFF">
 		<van-tab title="管理图书">
 			<view class="search">
-				<van-search value="{{ value }}" bind:change="onChange" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+				<van-search value="{{ value1 }}" bind:change="onChange" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
 					<view slot="action" style="background-color:#007bff;color:white;padding:0 32rpx;border-radius:8%/14%;" bind:tap="addBook">添加</view>
 				</van-search>
 			</view>
@@ -18,7 +18,7 @@
 			</view>
 			<view class="booklists" wx:for="{{booklists}}" wx:key="index">
 				<van-row custom-class="booklists" style="text-align:center;">
-					<van-col span="3">{{index+1}}</van-col>
+					<van-col span="3">{{item.index}}</van-col>
 					<van-col span="15">{{item.name}}</van-col>
 					<van-col span="3">{{item.totalNum}}</van-col>
 					<van-col span="3">{{item.totalNum-item.borrowNum}}</van-col>
@@ -26,6 +26,26 @@
 			</view>
 		</van-tab>
 		<van-tab title="管理借阅人员">
+			<view>
+				<view class="search">
+					<van-search value="{{ value2 }}" bind:change="changeName" placeholder="请输入人名" use-action-slot bind:search="searchPeople">
+						<view slot="action" style="background-color:#007bff;color:white;padding:0 32rpx;border-radius:8%/14%;" bind:tap="addBorrowRecord">添加</view>
+					</van-search>
+				</view>
+				<van-row style="text-align:center;">
+					<van-col span="3">姓名</van-col>
+					<van-col span="12">书籍</van-col>
+					<van-col span="6">借出时间</van-col>
+				</van-row>
+			</view>
+			<view class="booklists" wx:for="{{userlists}}" wx:key="index">
+				<van-row custom-class="booklists" style="text-align:center;">
+					<van-col span="3">{{item.name}}</van-col>
+					<van-col span="12">{{item.bookname}}</van-col>
+					<van-col span="6">{{item.displayDate}}</van-col>
+					<van-col span="3"><view class="buttonlike" catchtap="returnBook"  data-bookname="{{item.bookname}}" data-num="{{item.num}}" data-_id="{{item._id}}" data-name="{{item.name}}">归还</view></van-col>
+				</van-row>
+			</view>
 		</van-tab>
 	</van-tabs>
 	<view class="address">本系统由one-echo开发</view>

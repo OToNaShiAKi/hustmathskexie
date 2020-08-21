@@ -10,9 +10,13 @@ Page({
   data: {
     show: false,
     dialog: false,
-    booklists:[],
-    borrowBooklists:[],
+    label: "",
+    type: "",
+    name: "",
+    booklists: [],
+    borrowBooklists: [],
     confirm: '',
+    qq: '',
     value: ''
   },
 
@@ -23,13 +27,38 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true,
-      height:wx.getSystemInfoSync().windowHeight
+      height: wx.getSystemInfoSync().windowHeight
+    })
+    console.log(this.data.userInfo)
+    wx.cloud.callFunction({
+      name: "getName",
+      data: {
+        name: this.data.userInfo.nickName
+      }
+    }).then(res => {
+      if (!res.result) {
+        this.userSignIn();
+      } else {
+        this.setData({
+          name: res.result
+        })
+      }
     })
     wx.cloud.callFunction({
-      name:"getBooks"
-    }).then(res=>{
+      name: "getBooks",
+    }).then(res => {
       this.setData({
-        booklists:res.result.data
+        booklists: res.result.data
+      })
+    })
+    wx.cloud.callFunction({
+      name: "getBorrowBooks",
+      data: {
+        name: this.data.name
+      }
+    }).then(res => {
+      this.setData({
+        borrowBooklists: res.result
       })
     })
   },
@@ -38,18 +67,18 @@ Page({
     const {
       value
     } = this.data;
-    var reg_value=".*";
-    for(let i=0;i<value.length;i++){
-      reg_value+=value[i]+".*";
+    var reg_value = ".*";
+    for (let i = 0; i < value.length; i++) {
+      reg_value += value[i] + ".*";
     }
     wx.cloud.callFunction({
-      name:"getBooks",
-      data:{
-        name:reg_value
+      name: "getBooks",
+      data: {
+        name: reg_value
       }
-    }).then(res=>{
+    }).then(res => {
       this.setData({
-        booklists:res.result.data
+        booklists: res.result.data
       })
     })
   },
@@ -65,22 +94,72 @@ Page({
       show: false
     })
   },
+
   showBorrowBook: function () {
-    if(this.data.borrowBooklists.length===0){
-      wx.showToast({
-        title: '书籍已全部归还',
-        duration:800,
-        icon:'none'
-      })
+    if (this.data.name === "") {
+      this.userSignIn();
       return;
     }
-    this.setData({
-      dialog: true
-    });
+    wx.cloud.callFunction({
+      name: "getBorrowBooks",
+      data: {
+        name: this.data.name
+      }
+    }).then(res => {
+      let userlists = res.result.result.data;
+      for (let i = 0; i < userlists.length; i++) {
+        userlists[i].date = userlists[i].date.slice(0, userlists[i].date.indexOf('T'));
+      }
+      this.setData({
+        borrowBooklists: userlists
+      })
+      if (this.data.borrowBooklists.length === 0) {
+        wx.showToast({
+          title: '书籍已全部归还',
+          duration: 800,
+          icon: 'none'
+        })
+        return;
+      }
+      this.setData({
+        dialog: true
+      });
+    })
   },
-  adminSignIn: function () {
+
+  userSignIn: function () {
+    this.setData({
+      label: "真实姓名",
+      type: "text"
+    })
     Dialog.confirm({
-        title: '管理员验证',
+      title: '君の名は？'
+    }).then(res => {
+      const {
+        confirm,
+        qq
+      } = this.data;
+      wx.cloud.callFunction({
+        name: "setName",
+        data: {
+          name: this.data.userInfo.nickName,
+          realName: confirm,
+          qq
+        }
+      })
+      this.setData({
+        name: confirm
+      })
+    }).catch(e => {})
+  },
+
+  adminSignIn: function () {
+    this.setData({
+      label: "管理员验证",
+      type: "password"
+    })
+    Dialog.confirm({
+        title: '管理员验证'
       })
       .then(() => {
         const {
@@ -100,15 +179,15 @@ Page({
     this.setData({
       [key]: event.detail
     });
-    if(event.detail==''){
+    if (event.detail == '') {
       wx.cloud.callFunction({
-        name:"getBooks"
-      }).then(res=>{
+        name: "getBooks"
+      }).then(res => {
         this.setData({
-          booklists:res.result.data
+          booklists: res.result.data
         })
       })
     }
   },
-  
+
 })

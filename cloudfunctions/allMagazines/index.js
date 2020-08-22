@@ -17,7 +17,7 @@ exports.main = async (event, context) => {
 
     return {
       status: 200,
-      lists
+      lists:lists.sort((a,b)=>b.issue-a.issue)
     }
   }).catch(err => ({
     status: err.status || 505,

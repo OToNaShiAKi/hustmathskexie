@@ -18,8 +18,9 @@
 		</van-tab>
 		<van-tab title="联系管理">
 			<view class="homepage">
-				<view class="welcome">科协联系人qq：1220708497(吴洛昀)</view>
-				<view class="welcome">策划部qq：602198589(郭开轩)</view>
+				<view class="welcome" style="font-size:10px;color:black;margin-top:100rpx">长按即可复制号码</view>
+				<view class="welcome">科协联系人qq：<view style="display:inline" catchlongpress="clipQQ" data-qq="1220708497">1220708497</view>(吴洛昀)</view>
+				<view class="welcome">策划部qq：<view style="display:inline" catchlongpress="clipQQ" data-qq="602198589">602198589</view>(郭开轩)</view>
 			</view>
 		</van-tab>
 	</van-tabs>

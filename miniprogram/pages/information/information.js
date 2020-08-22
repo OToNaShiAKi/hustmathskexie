@@ -78,11 +78,9 @@ Page({
       if (wish) {
         department[key] = lists[key]
         if (wish === FirstWish) {
-          // status.push(lists[key].name+0);
           status[lists[key].name] = 0;
           department[key].wish = "第一志愿";
         } else if (wish === SecontWish) {
-          // status.push(lists[key].name+0);
           status[lists[key].name] = 0;
           department[key].wish = "第二志愿";
         }

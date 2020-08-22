@@ -16,15 +16,14 @@ Page({
       desc: "学霸笔记网罗于此",
       color: "green"
     }, {
-      title: "问题列表",
+      title: "公房借用",
       desc: "数学不会做？来问！",
       color: "blue"
     }, {
       title: "物理实验数据处理",
       desc: "省去计算烦恼，让发丝更飘逸",
       color: "red",
-      icon: "physical",
-      link:'physical'
+      icon: "physical"
     }, {
       title: "期刊杂志",
       desc: "学术&文艺尽在掌握",

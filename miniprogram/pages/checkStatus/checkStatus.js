@@ -8,6 +8,7 @@ const Query = (data, call) => {
     name: "signStatus",
     data
   }).then(res => {
+    console.log(res)
     if (res.result.status !== 200) throw res.result;
     wx.showToast({
       title: '查询成功'
@@ -164,6 +165,9 @@ Page({
         steps
       } = this.data;
       for (let item in department) {
+        if(isNaN(status[department[item].name])){
+          status[department[item].name]=0;
+        }
         if (status[department[item].name] % 2 == 1) {
           status[department[item].name] = Math.ceil(status[department[item].name] / 2);
           let s = status[department[item].name];

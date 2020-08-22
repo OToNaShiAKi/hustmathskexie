@@ -3,11 +3,9 @@
     "pages/home/home",
     "pages/checkBooks/adminCheckBooks",
     "pages/bookroom/bookroom",
-    "pages/physical/try/physical",
     "pages/departInfor/departInfor",
     "pages/register/register",
     "pages/addSomething/addBooks",
-    "pages/datetest/datetest",
     "pages/adminTest/adminTest",
     "pages/checkStatus/checkStatus",
     "pages/selectTestTime/selectTestTime",
@@ -22,8 +20,7 @@
     "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent",
     "pages/interest/interest",
-    "pages/addSomething/addBorrowRecord",
-    "pages/addSomething/j"
+    "pages/addSomething/addBorrowRecord"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f1f1f1",

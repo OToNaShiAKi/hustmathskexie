@@ -1,5 +1,5 @@
 <!--miniprogram/pages/userCheckBooks/userCheckBooks.wxml-->
-<view class="container" style="height:{{height}}px;">
+<view class="container" style="min-height:{{height}}px;">
 	<view class="header">
 		<view class="userInfo">
 			<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>

@@ -52,6 +52,13 @@ Page({
         })
         return
       }
+      if (isNaN(item.totalNum)) {
+        wx.showToast({
+          title: '请检查好书的数量必须为数字',
+          icon: 'none'
+        })
+        return
+      }
     }
     wx.cloud.callFunction({
       name: "addBooks",

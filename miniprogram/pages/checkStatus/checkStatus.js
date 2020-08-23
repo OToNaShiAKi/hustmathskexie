@@ -134,7 +134,7 @@ Page({
       return
     }
 
-    if (!PhoneRule.test(phone) && phone != 1234) {
+    if (!PhoneRule.test(phone)) {
       wx.showToast({
         title: '电话不符合规范',
         icon: 'none'

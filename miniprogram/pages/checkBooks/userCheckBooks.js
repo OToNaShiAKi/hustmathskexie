@@ -165,8 +165,17 @@ Page({
         const {
           confirm
         } = this.data;
-        if (confirm != 1234)
+        if (confirm != 'August010'){
+          wx.showToast({
+            title: '密码错误',
+            duration:500,
+            icon: "none"
+          })
+          this.setData({
+            confirm:''
+          })
           return;
+        }
         wx.navigateTo({
           url: 'adminCheckBooks',
         })

@@ -7,6 +7,7 @@ Page({
   data: {
     value1: '',
     value2: '',
+    current_id:'',
     booklists: [],
     userlists: [],
   },
@@ -145,7 +146,12 @@ Page({
       num,
       _id
     } = event.currentTarget.dataset;
-    console.log(_id)
+    if(this.data.current_id==_id){
+      return
+    }
+    this.setData({
+      current_id:_id
+    })
     wx.cloud.callFunction({
       name: "removeBorrowRecord",
       data: {

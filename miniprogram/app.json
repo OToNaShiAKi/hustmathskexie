@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/register/register",
     "pages/home/home",
+    "pages/test",
     "pages/checkBooks/adminCheckBooks",
     "pages/bookroom/bookroom",
     "pages/departInfor/departInfor",
-    "pages/register/register",
     "pages/addSomething/addBooks",
     "pages/adminTest/adminTest",
     "pages/checkStatus/checkStatus",

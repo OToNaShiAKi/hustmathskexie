@@ -155,7 +155,7 @@ Page({
 
   onInput(event) {
     this.setData({
-      currentDate: event.detail,
+      // currentDate: event.detail,
     });
   },
   onDisplay(event) {
@@ -183,7 +183,7 @@ Page({
   },
   onConfirm(event) {
     const lists = this.data.lists;
-    console.log(lists,event.currentTarget);
+    console.log(lists,event);
     lists[event.currentTarget.dataset.id].date = this.formatDate(event.detail);
     this.setData({
       show: false,

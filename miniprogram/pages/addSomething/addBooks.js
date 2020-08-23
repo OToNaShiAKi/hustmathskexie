@@ -45,6 +45,13 @@ Page({
         })
         return
       }
+      if (item.totalNum < 0) {
+        wx.showToast({
+          title: '请检查好书的数量不能为负数',
+          icon: 'none'
+        })
+        return
+      }
     }
     wx.cloud.callFunction({
       name: "addBooks",

@@ -1,0 +1,8 @@
+<!--miniprogram/pages/test.wxml-->
+<van-datetime-picker
+  type="datetime"
+  value="{{ currentDate }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  bind:input="onInput"
+/>

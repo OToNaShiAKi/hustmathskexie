@@ -152,12 +152,7 @@ Page({
       url: '/pages/adminTest/adminTest?department=' + this.data.depart.key,
     })
   },
-
-  onInput(event) {
-    this.setData({
-      // currentDate: event.detail,
-    });
-  },
+  
   onDisplay(event) {
     console.log(event.currentTarget.dataset);
     var currentIndex=event.currentTarget.dataset.index;

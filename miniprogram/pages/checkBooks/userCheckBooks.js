@@ -91,7 +91,7 @@ Page({
   },
 
   getBooks: function (event) {
-    if (this.loading) {
+    if (this.loading || this.data.value) {
       return;
     }
     wx.showLoading({

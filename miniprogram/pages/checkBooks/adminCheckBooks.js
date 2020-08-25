@@ -23,7 +23,7 @@ Page({
   },
 
   getBooks: function (event) {
-    if (this.loading) {
+    if (this.loading || this.data.value1) {
       return;
     }
     wx.showLoading({

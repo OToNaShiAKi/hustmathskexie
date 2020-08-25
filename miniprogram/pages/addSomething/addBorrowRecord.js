@@ -34,8 +34,26 @@ Page({
       userlists
     });
   },
+  
+  close(event) {
+    const index = event.currentTarget.dataset.index;
+    const userlists = this.data.userlists;
+    if (userlists.length === 1) {
+      wx.showToast({
+        title: '至少添加一本书籍',
+        icon: 'none'
+      })
+      return;
+    }
+    userlists.splice(index, 1);
+    this.setData({
+      userlists
+    })
+  },
 
+  onceClick: false,
   submit: function () {
+    if (this.onceClick) return;
     const {
       userlists
     } = this.data;

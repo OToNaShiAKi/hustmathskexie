@@ -32,6 +32,23 @@ Page({
       booklists
     });
   },
+
+  close(event) {
+    const index = event.currentTarget.dataset.index;
+    const booklists = this.data.booklists;
+    if (booklists.length === 1) {
+      wx.showToast({
+        title: '至少添加一本书籍',
+        icon: 'none'
+      })
+      return;
+    }
+    booklists.splice(index, 1);
+    this.setData({
+      booklists
+    })
+  },
+
   onceClick: false,
   submit: function () {
     if (this.onceClick) return;
@@ -80,10 +97,4 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
 })

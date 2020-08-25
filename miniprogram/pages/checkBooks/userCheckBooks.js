@@ -19,7 +19,8 @@ Page({
     qq: '',
     value: ''
   },
-
+  bookIndex: 0,
+  loading: false,
   /**
    * 生命周期函数--监听页面加载
    */
@@ -27,9 +28,9 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true,
-      height: wx.getSystemInfoSync().windowHeight
+      height: wx.getSystemInfoSync().windowHeight,
+      scrollHeight: wx.getSystemInfoSync().windowHeight - (wx.getSystemInfoSync().windowWidth / 750) * 270
     })
-    console.log(this.data.userInfo)
     wx.cloud.callFunction({
       name: "getName",
       data: {
@@ -46,7 +47,13 @@ Page({
     })
     wx.cloud.callFunction({
       name: "getBooks",
+      data: {
+        name: ".*",
+        limit: 40,
+        index: 0
+      },
     }).then(res => {
+      this.bookIndex = res.result.data[res.result.data.length - 1].index;
       this.setData({
         booklists: res.result.data
       })
@@ -80,6 +87,54 @@ Page({
       this.setData({
         booklists: res.result.data
       })
+    })
+  },
+
+  getBooks: function (event) {
+    if (this.loading) {
+      return;
+    }
+    wx.showLoading({
+      title: 'Loading',
+      mask: true,
+      complete: () => {
+        this.loading = true;
+      }
+    })
+    wx.cloud.callFunction({
+      name: "getBooks",
+      data: {
+        name: ".*",
+        limit: 20,
+        index: this.bookIndex
+      }
+    }).then(res => {
+      let booklists = res.result.data;
+      if (booklists.length == 0) {
+        wx.hideLoading({
+          complete: () => {
+            this.loading = false;
+          }
+        });
+        wx.showToast({
+          title: '书库已经被你个无聊鬼翻完了!',
+          icon: "none",
+          duration: 1000
+        })
+        return
+      }
+      this.bookIndex = booklists[booklists.length - 1].index;
+      booklists = this.data.booklists.concat(booklists);
+      this.setData({
+        booklists
+      })
+      setTimeout(() => {
+        wx.hideLoading({
+          complete: () => {
+            this.loading = false;
+          }
+        });
+      }, 1500)
     })
   },
 
@@ -165,14 +220,14 @@ Page({
         const {
           confirm
         } = this.data;
-        if (confirm != 'August010'){
+        if (confirm != 'August010') {
           wx.showToast({
             title: '密码错误',
-            duration:500,
+            duration: 500,
             icon: "none"
           })
           this.setData({
-            confirm:''
+            confirm: ''
           })
           return;
         }
@@ -190,8 +245,14 @@ Page({
     });
     if (event.detail == '') {
       wx.cloud.callFunction({
-        name: "getBooks"
+        name: "getBooks",
+        data: {
+          name: ".*",
+          limit: 40,
+          index: 0
+        },
       }).then(res => {
+        this.bookIndex = res.result.data[res.result.data.length - 1].index;
         this.setData({
           booklists: res.result.data
         })

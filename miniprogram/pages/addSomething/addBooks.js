@@ -32,11 +32,15 @@ Page({
       booklists
     });
   },
-
+  onceClick: false,
   submit: function () {
+    if (this.onceClick) return;
     const {
       booklists
     } = this.data;
+    if (!this.onceClick) {
+      this.onceClick = true;
+    }
     for (let item of booklists) {
       if (item.name == "") {
         wx.showToast({

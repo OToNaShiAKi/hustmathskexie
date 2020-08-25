@@ -16,14 +16,16 @@
 					<van-col span="3">剩余</van-col>
 				</van-row>
 			</view>
-			<view class="booklists" wx:for="{{booklists}}" wx:key="index">
-				<van-row custom-class="booklists" style="text-align:center;">
-					<van-col span="3">{{item.index}}</van-col>
-					<van-col span="15">{{item.name}}</van-col>
-					<van-col span="3">{{item.totalNum}}</van-col>
-					<van-col span="3">{{item.totalNum-item.borrowNum}}</van-col>
-				</van-row>
-			</view>
+			<scroll-view style="height:{{scrollHeight}}px;" scroll-y="{{true}}" bindscrolltolower="getBooks">
+				<view class="booklists" wx:for="{{booklists}}" wx:key="index">
+					<van-row custom-class="booklists" style="text-align:center;">
+						<van-col span="3">{{item.index}}</van-col>
+						<van-col span="15">{{item.name}}</van-col>
+						<van-col span="3">{{item.totalNum}}</van-col>
+						<van-col span="3">{{item.totalNum-item.borrowNum}}</van-col>
+					</van-row>
+				</view>
+			</scroll-view>
 		</van-tab>
 		<van-tab title="管理借阅人员">
 			<view>
@@ -43,7 +45,9 @@
 					<van-col span="3">{{item.name}}</van-col>
 					<van-col span="12">{{item.bookname}}</van-col>
 					<van-col span="6">{{item.displayDate}}</van-col>
-					<van-col span="3"><view class="buttonlike" catchtap="returnBook"  data-bookname="{{item.bookname}}" data-num="{{item.num}}" data-_id="{{item._id}}" data-name="{{item.name}}">归还</view></van-col>
+					<van-col span="3">
+						<view class="buttonlike" catchtap="returnBook" data-bookname="{{item.bookname}}" data-num="{{item.num}}" data-_id="{{item._id}}" data-name="{{item.name}}">归还</view>
+					</van-col>
 				</van-row>
 			</view>
 		</van-tab>

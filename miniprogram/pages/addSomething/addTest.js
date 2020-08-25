@@ -143,8 +143,6 @@ Page({
         wx.navigateBack();
       })
     }
-
-
   },
 
   adminTest: function (event) {
@@ -154,7 +152,6 @@ Page({
   },
   
   onDisplay(event) {
-    console.log(event.currentTarget.dataset);
     var currentIndex=event.currentTarget.dataset.index;
     this.setData({
       currentIndex,

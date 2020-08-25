@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
   const _ = db.command;
   var duplicate = false;
   let index;
-  await book_lists.get().then(res => {
+  await book_lists.orderBy("index","desc").limit(1).get().then(res => {
     if(res.data.length==0){
        index=0;
        return;

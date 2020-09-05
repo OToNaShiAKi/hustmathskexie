@@ -10,7 +10,7 @@
 
 #content{
   border-radius:1.5em;
-  box-shadow: 1px 1px 0 0 #b2bec3;
+  box-shadow: 0 8px 12px #ebedf0;
   border:1px solid #dfe6e9;
   margin: 30rpx;
   padding: 20rpx;

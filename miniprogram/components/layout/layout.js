@@ -23,16 +23,62 @@ Component({
    */
   methods: {
     linkTo() {
-      const link = this.data.link;
-      if (link) 
-        wx.navigateTo({
-          url: `/pages/${link}/${link}`
+      if (this.data.title == "公房借用") {
+        wx.showModal({
+          title: '公房借用系统网址',
+          content: 'http://hustmaths.top/manage',
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.setClipboardData({
+                data: 'http://hustmaths.top/manage'
+              }).then(res => {
+                wx.showToast({
+                  title: "已复制到剪切板",
+                  duration: 500
+                })
+              }).catch(err => {
+                wx.showToast({
+                  title: '复制失败',
+                });
+              });
+            }
+          }
         })
-      else 
-        wx.showToast({
-          title: '该功能尚未整合，请从官网使用',
-          icon: 'none'
+      } else if (this.data.title == "物理实验数据处理") {
+        wx.showModal({
+          title: '物理实验数据处理系统网址',
+          content: 'http://hustmaths.top/physics/1/',
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              wx.setClipboardData({
+                data: 'http://hustmaths.top/physics/1/'
+              }).then(res => {
+                wx.showToast({
+                  title: "已复制到剪切板",
+                  duration: 500
+                })
+              }).catch(err => {
+                wx.showToast({
+                  title: '复制失败',
+                });
+              });
+            }
+          }
         })
+      } else {
+        const link = this.data.link;
+        if (link)
+          wx.navigateTo({
+            url: `/pages/${link}/${link}`
+          })
+        else
+          wx.showToast({
+            title: '该功能尚未整合，请从官网使用',
+            icon: 'none'
+          })
+      }
     }
   }
 })

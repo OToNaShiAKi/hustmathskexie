@@ -1,5 +1,5 @@
 <!--miniprogram/pages/userCheckBooks/userCheckBooks.wxml-->
-<view class="container" style="height:{{height}}px;">
+<view class="container" style="min-height:{{height}}px;">
 	<view class="header">
 		<view class="userInfo">
 			<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -9,7 +9,12 @@
 			<van-search value="{{ value }}" data-key="value" background="#F8F9FA" bind:change="changeData" placeholder="请输入搜索关键词" bind:search="onSearch" />
 		</view>
 	</view>
-
+	<view style="display:flex;justify-content:space-around;">
+		<view>
+			<van-icon name="eye-o" color="green" />可借阅</view>
+		<view>
+			<van-icon name="close" color="red" />可预约</view>
+	</view>
 	<view class="booklists">
 		<van-row style="text-align:center;">
 			<van-col span="3">#</van-col>
@@ -17,13 +22,18 @@
 			<van-col span="6">状态</van-col>
 		</van-row>
 	</view>
-	<view class="booklists" wx:for="{{booklists}}" wx:key="index">
-		<van-row style="text-align:center;">
-			<van-col span="3">{{index+1}}</van-col>
-			<van-col span="15">{{item.name}}</van-col>
-			<van-col span="6">{{item.totalNum>item.borrowNum?'可借阅':'可预约'}}</van-col>
-		</van-row>
-	</view>
+	<scroll-view style="height:{{scrollHeight}}px;" scroll-y="{{true}}" bindscrolltolower="getBooks">
+		<view class="booklists" wx:for="{{booklists}}" wx:key="index">
+			<van-row style="text-align:center;">
+				<van-col span="3">{{item.index}}</van-col>
+				<van-col span="15">{{item.name}}</van-col>
+				<van-col span="6">
+					<van-icon name="eye-o" color="green" wx:if="{{item.totalNum>item.borrowNum}}" />
+					<van-icon name="close" color="red" wx:else />
+				</van-col>
+			</van-row>
+		</view>
+	</scroll-view>
 </view>
 <van-popup show="{{ show }}" position="left" custom-style="width: 40%;height:100%;" bind:close="onClose">
 	<view class="userInfo">
@@ -56,7 +66,7 @@
 
 <van-dialog use-slot id="van-dialog">
 	<van-cell-group>
-		<van-field label="{{label}}" data-key="confirm" bind:input="changeData" value="{{ confirm }}" type="{{type}}" required/>
-		<van-field wx:if="{{label=='真实姓名'}}" placeholder="此项必填" label="QQ" data-key="qq" bind:input="changeData" value="{{ qq }}" type="{{type}}" required/>
+		<van-field label="{{label}}" data-key="confirm" bind:input="changeData" value="{{ confirm }}" type="{{type}}" required />
+		<van-field wx:if="{{label=='真实姓名'}}" placeholder="此项必填" label="QQ" data-key="qq" bind:input="changeData" value="{{ qq }}" type="{{type}}" required />
 	</van-cell-group>
 </van-dialog>

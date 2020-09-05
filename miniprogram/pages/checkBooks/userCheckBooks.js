@@ -19,7 +19,8 @@ Page({
     qq: '',
     value: ''
   },
-
+  bookIndex: 0,
+  loading: false,
   /**
    * 生命周期函数--监听页面加载
    */
@@ -27,9 +28,9 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true,
-      height: wx.getSystemInfoSync().windowHeight
+      height: wx.getSystemInfoSync().windowHeight,
+      scrollHeight: wx.getSystemInfoSync().windowHeight - (wx.getSystemInfoSync().windowWidth / 750) * 270
     })
-    console.log(this.data.userInfo)
     wx.cloud.callFunction({
       name: "getName",
       data: {
@@ -38,18 +39,34 @@ Page({
     }).then(res => {
       if (!res.result) {
         this.userSignIn();
+        wx.showModal({
+          content: '本系统只提供查询书籍服务，如需借书请确认书籍状态并于书屋开放时间前往（假如系统显示有但书屋没有请怼管理员',
+          showCancel: false,
+          title: '书屋须知'
+        })
       } else {
         this.setData({
           name: res.result
         })
       }
     })
+    wx.showLoading({
+      title: 'Loading',
+    })
     wx.cloud.callFunction({
       name: "getBooks",
+      data: {
+        name: ".*",
+        limit: 40,
+        index: 0
+      },
     }).then(res => {
+      this.bookIndex = res.result.data[res.result.data.length - 1].index;
       this.setData({
         booklists: res.result.data
       })
+    }).finally(() => {
+      wx.hideLoading()
     })
     wx.cloud.callFunction({
       name: "getBorrowBooks",
@@ -80,6 +97,54 @@ Page({
       this.setData({
         booklists: res.result.data
       })
+    })
+  },
+
+  getBooks: function (event) {
+    if (this.loading || this.data.value) {
+      return;
+    }
+    wx.showLoading({
+      title: 'Loading',
+      mask: true,
+      complete: () => {
+        this.loading = true;
+      }
+    })
+    wx.cloud.callFunction({
+      name: "getBooks",
+      data: {
+        name: ".*",
+        limit: 20,
+        index: this.bookIndex
+      }
+    }).then(res => {
+      let booklists = res.result.data;
+      if (booklists.length == 0) {
+        wx.hideLoading({
+          complete: () => {
+            this.loading = false;
+          }
+        });
+        wx.showToast({
+          title: '书库已经被你个无聊鬼翻完了!',
+          icon: "none",
+          duration: 1000
+        })
+        return
+      }
+      this.bookIndex = booklists[booklists.length - 1].index;
+      booklists = this.data.booklists.concat(booklists);
+      this.setData({
+        booklists
+      })
+      setTimeout(() => {
+        wx.hideLoading({
+          complete: () => {
+            this.loading = false;
+          }
+        });
+      }, 1500)
     })
   },
 
@@ -165,8 +230,17 @@ Page({
         const {
           confirm
         } = this.data;
-        if (confirm != 1234)
+        if (confirm != 'August010') {
+          wx.showToast({
+            title: '密码错误',
+            duration: 500,
+            icon: "none"
+          })
+          this.setData({
+            confirm: ''
+          })
           return;
+        }
         wx.navigateTo({
           url: 'adminCheckBooks',
         })
@@ -181,8 +255,14 @@ Page({
     });
     if (event.detail == '') {
       wx.cloud.callFunction({
-        name: "getBooks"
+        name: "getBooks",
+        data: {
+          name: ".*",
+          limit: 40,
+          index: 0
+        },
       }).then(res => {
+        this.bookIndex = res.result.data[res.result.data.length - 1].index;
         this.setData({
           booklists: res.result.data
         })

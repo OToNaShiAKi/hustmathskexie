@@ -1,6 +1,8 @@
 /* miniprogram/pages/checkBooks/adminCheckBooks.wxss */
 .container {
+  position: relative;
   background-color: white;
+  height:fit-content;
 }
 
 .title {
@@ -11,16 +13,6 @@
   padding-top: 20rpx;
   margin-bottom: 25rpx;
   line-height: 1.2;
-}
-
-.address {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  font-size: 10px;
-  color: #007bff;
-  margin-bottom: 20rpx;
 }
 
 .booklists {

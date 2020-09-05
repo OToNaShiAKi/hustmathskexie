@@ -40,5 +40,22 @@ Page({
     wx.navigateTo({
       url: '/pages/checkBooks/userCheckBooks',
     })
+  },
+  clipQQ:function (event) {
+    console.log(event);
+    wx.setClipboardData({
+      data: event.currentTarget.dataset.qq.toString()
+    }).then(res => {
+      wx.showToast({
+        title: "已复制到剪切板",
+        duration: 800
+      })
+    }).catch(err => {
+      console.log(err);
+      wx.showToast({
+        title: '复制失败',
+      });
+    });
   }
+
 })

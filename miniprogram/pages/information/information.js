@@ -134,8 +134,8 @@ Page({
         qq,
         introduce,
         department,
+        status,
         adjustment,
-        status
       }
     }).then(res => {
       if (res.result.status !== 200) throw res.result;

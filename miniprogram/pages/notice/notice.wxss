@@ -5,10 +5,23 @@
   color: #fbbd5a;
   font-size: 1.5em;
   margin: 0 auto;
+  margin-left: 30rpx;
+}
+
+#content{
+  border-radius:1.5em;
+  box-shadow: 1px 1px 0 0 #b2bec3;
+  border:1px solid #dfe6e9;
+  margin: 30rpx;
+  padding: 20rpx;
+  background-color: white;
 }
 
 #contentBox view{
   margin-top: 12rpx;
   height: auto;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
   font-size: 1.2em;
 }

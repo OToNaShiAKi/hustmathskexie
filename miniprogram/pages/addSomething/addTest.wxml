@@ -30,8 +30,8 @@
 	</view>
 </view>
 
-<van-popup show="{{ show }}" bind:close="onClose" round position="bottom" custom-style="height: 60%" bind:close="onClose">
-	<van-datetime-picker type="datetime" data-id="{{currentIndex}}" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" formatter="{{ formatter }}" show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+<van-popup show="{{ show }}" round position="bottom" custom-style="height: 60%" bind:close="onClose">
+	<van-datetime-picker type="datetime" data-id="{{currentIndex}}" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:input="onInput" formatter="{{ formatter }}" bind:cancel="onClose" bind:confirm="onConfirm" />
 </van-popup>
 
 <view class="submit">

@@ -26,9 +26,8 @@ Page({
     tip: '',
     minHour: 10,
     maxHour: 20,
-    minDate: new Date().getTime(),
-    maxDate: new Date().getTime() + 5184000000, //最多两个月
-    currentDate: new Date().getTime(),
+    maxDate:  5184000000, //最多两个月
+    currentDate: 10000000000,
     formatter(type, value) {
       if (type === 'year') {
         return `${value}年`;
@@ -157,6 +156,8 @@ Page({
     this.setData({
       currentDate: event.detail,
     });
+    console.log(1);
+    
   },
   onDisplay(event) {
     console.log(event.currentTarget.dataset);

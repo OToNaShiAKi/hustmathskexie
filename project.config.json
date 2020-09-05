@@ -17,6 +17,7 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
@@ -24,8 +25,7 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"compileHotReLoad": false
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3145fa2194635dcd",
 	"projectname": "hustmaths",
@@ -136,6 +136,13 @@
 					"id": -1,
 					"name": "部门简介",
 					"pathName": "pages/departInfor/departInfor",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "报名须知",
+					"pathName": "pages/notice/notice",
 					"scene": null
 				}
 			]

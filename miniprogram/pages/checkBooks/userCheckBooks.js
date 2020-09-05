@@ -39,11 +39,10 @@ Page({
     }).then(res => {
       if (!res.result) {
         this.userSignIn();
-        this.wx.showModal({
-          content: '本系统只提供查询书籍服务',
+        wx.showModal({
+          content: '本系统只提供查询书籍服务，如需借书请确认书籍状态并于书屋开放时间前往（假如系统显示有但书屋没有请怼管理员',
           showCancel: false,
-          title: '书屋须知',
-          success: (result) => {},
+          title: '书屋须知'
         })
       } else {
         this.setData({

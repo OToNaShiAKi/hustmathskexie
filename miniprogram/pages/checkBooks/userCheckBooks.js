@@ -39,11 +39,20 @@ Page({
     }).then(res => {
       if (!res.result) {
         this.userSignIn();
+        this.wx.showModal({
+          content: '本系统只提供查询书籍服务',
+          showCancel: false,
+          title: '书屋须知',
+          success: (result) => {},
+        })
       } else {
         this.setData({
           name: res.result
         })
       }
+    })
+    wx.showLoading({
+      title: 'Loading',
     })
     wx.cloud.callFunction({
       name: "getBooks",
@@ -57,6 +66,8 @@ Page({
       this.setData({
         booklists: res.result.data
       })
+    }).finally(() => {
+      wx.hideLoading()
     })
     wx.cloud.callFunction({
       name: "getBorrowBooks",

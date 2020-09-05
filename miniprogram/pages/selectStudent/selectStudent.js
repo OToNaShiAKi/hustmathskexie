@@ -118,7 +118,7 @@ Page({
       })
     }).finally(wx.hideLoading);
   },
-
+  onceclick: [],
   linkto: function (e) {
     const {
       depart
@@ -132,6 +132,11 @@ Page({
       wx.showLoading({
         title: '正在提交',
       })
+      if (this.onceclick.includes(e.currentTarget.dataset.id)) {
+        wx.hideLoading();
+        return;
+      }
+      this.onceclick.push(e.currentTarget.dataset.id);
       wx.cloud.callFunction({
         name: "selectPassOrNot",
         data: {

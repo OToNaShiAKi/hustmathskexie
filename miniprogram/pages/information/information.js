@@ -61,8 +61,12 @@ Page({
       [key]: value
     })
   },
-
+  onceclick: false,
   submitInfo() {
+    if (this.onceclick) {
+      return;
+    }
+    this.onceclick = true;
     const {
       lists,
       name,

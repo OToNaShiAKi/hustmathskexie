@@ -191,11 +191,12 @@ Component({
         data: {
           _id: event.currentTarget.dataset.id
         }
+      }).then(res => {
+        wx.showToast({
+          title: '删除测试成功',
+        });
+        this.showTest();
       });
-      wx.showToast({
-        title: '删除测试成功',
-      });
-      this.showTest();
     }
   }
 })

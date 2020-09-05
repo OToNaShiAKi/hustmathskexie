@@ -3,7 +3,7 @@ import {
   DepartColor
 } from '../../utils/FormatColor';
 import {
- DepartFormat
+  DepartFormat
 } from '../../utils/Format';
 Page({
 
@@ -22,7 +22,7 @@ Page({
       place: "",
       date: ""
     }],
-    currentIndex:0,
+    currentIndex: 0,
     tip: '',
     minHour: 10,
     maxHour: 20,
@@ -108,8 +108,14 @@ Page({
       lists
     })
   },
+  
+  onceclick: false,
 
   submit() {
+    if (this.onceclick) {
+      return;
+    }
+    this.onceclick = true;
     const {
       type,
       lists,
@@ -150,9 +156,9 @@ Page({
       url: '/pages/adminTest/adminTest?department=' + this.data.depart.key,
     })
   },
-  
+
   onDisplay(event) {
-    var currentIndex=event.currentTarget.dataset.index;
+    var currentIndex = event.currentTarget.dataset.index;
     this.setData({
       currentIndex,
       show: true
@@ -175,7 +181,7 @@ Page({
   },
   onConfirm(event) {
     const lists = this.data.lists;
-    console.log(lists,event);
+    console.log(lists, event);
     lists[event.currentTarget.dataset.id].date = this.formatDate(event.detail);
     this.setData({
       show: false,

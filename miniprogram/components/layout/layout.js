@@ -35,10 +35,9 @@ Component({
               }).then(res => {
                 wx.showToast({
                   title: "已复制到剪切板",
-                  duration: 800
+                  duration: 500
                 })
               }).catch(err => {
-                console.log(err);
                 wx.showToast({
                   title: '复制失败',
                 });
@@ -58,10 +57,9 @@ Component({
               }).then(res => {
                 wx.showToast({
                   title: "已复制到剪切板",
-                  duration: 800
+                  duration: 500
                 })
               }).catch(err => {
-                console.log(err);
                 wx.showToast({
                   title: '复制失败',
                 });

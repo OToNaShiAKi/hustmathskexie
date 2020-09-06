@@ -7,7 +7,23 @@ cloud.init()
 exports.main = async (event, context) => {
   const db = cloud.database();
   const recruit = db.collection('recruit');
-
+  if ((event.status.length == 0)) {
+    if (typeof (event.department.workshop) != 'undefined') {
+      event.status["雁祉作坊"] = 0;
+    }
+    if (typeof (event.department.onecho) != 'undefined') {
+      event.status["One Echo"] = 0;
+    }
+    if (typeof (event.department.office) != 'undefined') {
+      event.status["策划部"] = 0;
+    }
+    if (typeof (event.department.editor) != 'undefined') {
+      event.status["编辑部"] = 0;
+    }
+    if (typeof (event.department.media) != 'undefined') {
+      event.status["媒体部"] = 0;
+    }
+  }
   const result = await recruit.where({
     phone: event.phone
   }).get().then(res => {

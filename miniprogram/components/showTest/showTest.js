@@ -108,8 +108,12 @@ Component({
         });
       })
     },
-
+    chooseClick:[],
     chooseTest: function (event) {
+      if(this.chooseClick.includes(event.currentTarget.dataset.id)){
+        return
+      }
+      this.chooseClick.push(event.currentTarget.dataset.id);
       const {
         testType,
         name,
@@ -184,8 +188,12 @@ Component({
       date = date.replace('月', '/');
       date = date.replace('日', '/');
     },
-
+    removeClick: [],
     removeTest(event) {
+      if (this.removeClick.includes(event.currentTarget.dataset.id)) {
+        return
+      }
+      this.removeClick.push(event.currentTarget.dataset.id);
       wx.cloud.callFunction({
         name: "removeTest",
         data: {

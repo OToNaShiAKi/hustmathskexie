@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    group:[],
-    activename:[0,1,2],
-    color:"#30336b"
+    group: [],
+    activename: [0, 1, 2],
+    color: "#30336b"
   },
   onChange(event) {
     this.setData({
@@ -28,13 +28,13 @@ Page({
       this.setData({
         group
       });
-      wx.showToast({
-        title: '查询成功',
-      });
+      wx.hideLoading({
+        success: (res) => {},
+      })
     }).catch(err => {
       console.log(err);
       wx.showToast({
-        title: err.message || "查询失败",
+        title: err.message || "查询失败,请检查网络状态",
         icon: "none"
       });
     })

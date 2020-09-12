@@ -34,7 +34,12 @@
 }
 .list{
   padding:0 20rpx;
+  text-align: center;
   padding-top: 50rpx;
-  font-size: small;
+  font-size: medium;
   color: #007bff;
+}
+.qq{
+  margin-top: 20rpx;
+  text-align: center;
 }

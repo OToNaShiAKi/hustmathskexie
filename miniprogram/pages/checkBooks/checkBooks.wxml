@@ -1,19 +1,13 @@
 <!--miniprogram/pages/userCheckBooks/userCheckBooks.wxml-->
 <view class="container" style="min-height:{{height}}px;">
 	<view class="header">
-		<view class="userInfo">
-			<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-			<view class="userinfo-nickname">{{userInfo.nickName}}</view>
-		</view>
+		<!-- <view class="userInfo">
+			<image bindtap="showInfo" class="userinfo-avatar" src="favicon.png" mode="cover"></image>
+			<view class="userinfo-nickname">点击此处</view>
+		</view> -->
 		<view class="search">
 			<van-search value="{{ value }}" data-key="value" background="#F8F9FA" bind:change="changeData" placeholder="请输入搜索关键词" bind:search="onSearch" />
 		</view>
-	</view>
-	<view style="display:flex;justify-content:space-around;">
-		<view>
-			<van-icon name="eye-o" color="green" />可借阅</view>
-		<view>
-			<van-icon name="close" color="red" />可预约</view>
 	</view>
 	<view class="booklists">
 		<van-row style="text-align:center;">
@@ -22,30 +16,33 @@
 			<van-col span="6">状态</van-col>
 		</van-row>
 	</view>
-	<scroll-view style="height:{{scrollHeight}}px;" scroll-y="{{true}}" bindscrolltolower="getBooks">
+	<scroll-view style="height:{{scrollHeight}}px;" scroll-y="{{true}}" lower-threshold="5" bindscrolltolower="getBooks">
 		<view class="booklists" wx:for="{{booklists}}" wx:key="index">
 			<van-row style="text-align:center;">
 				<van-col span="3">{{item.index}}</van-col>
 				<van-col span="15">{{item.name}}</van-col>
 				<van-col span="6">
-					<van-icon name="eye-o" color="green" wx:if="{{item.totalNum>item.borrowNum}}" />
-					<van-icon name="close" color="red" wx:else />
+					<van-tag plain type="success" wx:if="{{item.totalNum>item.borrowNum}}">可借阅</van-tag>
+					<van-tag plain type="warning" wx:else>可预约</van-tag>
 				</van-col>
 			</van-row>
 		</view>
 	</scroll-view>
+	<view style="text-align:center;line-height:100rpx;height:100rpx;color:skyblue;" bindtap="showInfo">联系入口</view>
 </view>
-<van-popup show="{{ show }}" position="left" custom-style="width: 40%;height:100%;" bind:close="onClose">
-	<view class="userInfo">
+<van-popup show="{{ show }}" position="bottom" custom-style="width: 100%;height:20%;" bind:close="onClose">
+	<!-- <view class="userInfo">
 		<image bindtap="showInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
 		<view class="userinfo-nickname">{{userInfo.nickName}}</view>
-	</view>
-	<view class="list" bindtap="showBorrowBook">
+	</view> -->
+	<!-- <view class="list" bindtap="showBorrowBook">
 		查询已借书籍
-	</view>
+	</view> -->
 	<view class="list" bindtap="adminSignIn">
-		管理员登陆入口
+		<van-icon name="manager-o" />管理员登陆入口
 	</view>
+	<view class="qq">科协联系人qq：<view style="display:inline" catchlongpress="clipQQ" data-qq="1220708497">1220708497</view>(吴洛昀)</view>
+	<view class="qq">策划部qq：<view style="display:inline" catchlongpress="clipQQ" data-qq="602198589">602198589</view>(郭开轩)</view>
 </van-popup>
 <van-dialog use-slot show="{{ dialog }}" customStyle="padding-top:20rpx">
 	<view>

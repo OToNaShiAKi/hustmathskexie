@@ -31,8 +31,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '',
-    phone: '',
+    name: 'cycy',
+    phone: '15616326211',
     department: {},
     onceClick: false,
     steps: {

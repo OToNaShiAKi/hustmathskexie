@@ -1,5 +1,6 @@
 <!--miniprogram/pages/selectStudent/selectStudent.wxml-->
 <text id="title">{{ depart.name }}</text>
+<view style="text-align:center;font-size:10px;">点击姓名即可进入个人资料卡</view>
 <!-- 面试->笔试->实操 -->
 <view class='select'>
 	<view class='select_item'>

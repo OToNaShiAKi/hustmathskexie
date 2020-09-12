@@ -3,6 +3,7 @@
   width:auto;
   height: auto;
   margin: 0 auto;
+  padding: 0 auto;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
 
@@ -15,9 +16,11 @@
   width: auto;
 }
 
-/* .inforSlip_divide{
- 
-} */
+.inforSlip_divide{
+  margin: 0 auto;
+  width: auto;
+}
+
 
 .inforSlip_title{
   /* font-weight: bold; */

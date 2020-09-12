@@ -10,25 +10,60 @@
   margin-top: 50rpx;
   
 }
+
+
 #code{
-  height: 560rpx;
+  height: 600rpx;
   width: 500rpx;
   margin: 0 auto;
 }
 
-#contactInfor{
-  margin-top:100rpx ;
+#contactInfor {
+  margin-top:120rpx ;
+  display: flex;
+  flex-direction: row; 
+justify-content: center;
+  align-items: flex-start;
+}
+
+#inforLeft{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-size: 1em;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fc8a2e;
+}
+
+#inforRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inforFont{
+  display: block;
+ margin-top: 10rpx;
+ margin-bottom: 10rpx;
+  margin-right: 20rpx;
+}
+
+
+.tishi view{
+  width: 550rpx;
+  margin:0 auto;
+  text-align: center;
 }
 
 .tishi{
-  width: 550rpx;
+  width: 750rpx;
   margin:  0 auto;
+  margin-top: 110rpx;
+  position: absolute;
+  bottom: 30rpx;
   color:slategray;
-  text-align: center;
 }
+  
 .codepop{
   display: flex;
   flex-direction: row;

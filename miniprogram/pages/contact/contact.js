@@ -10,7 +10,8 @@ Page({
   data: {
     departContact: [],
     tabActive: 0,
-    showPop: false
+    showPop: false,
+    fontSize:"1em"
   },
   getContacts() {
     wx.showLoading({

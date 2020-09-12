@@ -20,13 +20,17 @@ Component({
       type: String | Number,
       value: "我不可复制"
     },
-    fontColor:{
-      type:String,
-      value:"#fc8a2e"
+    pdXY: {
+      type: String,
+      value: "0"
     },
-    fontSize:{
-      type:String,
-      value:"1.5em"
+    fontColor: {
+      type: String,
+      value: "#fc8a2e"
+    },
+    fontSize: {
+      type: String,
+      value: "1.5em"
     }
   },
 
@@ -46,7 +50,7 @@ Component({
       let timeSet = undefined;
       clearInterval(timeSet);
       let time = 0;
-      
+
       this.setData({
         textColor: "#dfe6e9",
         flag: false
@@ -84,7 +88,7 @@ Component({
         textColor: "unset",
         flag: true
       });
-      
+
     }
   }
 })

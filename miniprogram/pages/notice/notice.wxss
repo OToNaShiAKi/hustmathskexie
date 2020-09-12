@@ -8,14 +8,6 @@
   margin-left: 30rpx;
 }
 
-#content{
-  border-radius:1.5em;
-  box-shadow: 0 8px 12px #ebedf0;
-  border:1px solid #dfe6e9;
-  margin: 30rpx;
-  padding: 20rpx;
-  background-color: white;
-}
 
 #contentBox view{
   margin-top: 12rpx;

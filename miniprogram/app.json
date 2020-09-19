@@ -1,13 +1,14 @@
 {
   "pages": [
+    "pages/register/register",
+    "pages/checkStatus/checkStatus",
     "pages/home/home",
+    "pages/checkBooks/checkBooks",
     "pages/checkBooks/adminCheckBooks",
     "pages/addSomething/addBooks",
     "pages/bookroom/bookroom",
-    "pages/register/register",
     "pages/departInfor/departInfor",
     "pages/adminTest/adminTest",
-    "pages/checkStatus/checkStatus",
     "pages/selectTestTime/selectTestTime",
     "pages/selectStudent/selectStudent",
     "pages/information/information",
@@ -17,7 +18,6 @@
     "pages/manage/manage",
     "pages/infoDetail/infoDetail",
     "pages/magazines/magazines",
-    "pages/checkBooks/userCheckBooks",
     "pages/magazineContent/magazineContent",
     "pages/interest/interest",
     "pages/addSomething/addBorrowRecord"
@@ -72,6 +72,7 @@
     "van-dropdown-item": "@vant/weapp/dropdown-item/index",
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
+    "van-tag": "@vant/weapp/tag/index",
     "van-icon": "@vant/weapp/icon/index"
   }
 }

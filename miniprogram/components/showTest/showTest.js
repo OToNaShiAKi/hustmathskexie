@@ -57,6 +57,10 @@ Component({
           testType = "test";
           break;
       }
+      wx.showLoading({
+        title: '加载中',
+        mask: true
+      })
       wx.cloud.callFunction({
         name: 'selectExams',
         data: {
@@ -106,13 +110,21 @@ Component({
           testList: result,
           name: this.data.name
         });
+        wx.hideLoading();
       })
     },
-    chooseClick:[],
+
     chooseTest: function (event) {
-      if(this.chooseClick.includes(event.currentTarget.dataset.id)){
+      if (typeof (this.chooseClick) == "undefined") {
+        this.chooseClick = [];
+      }
+      if (this.chooseClick.includes(event.currentTarget.dataset.id)) {
         return
       }
+      wx.showLoading({
+        title: '选择中',
+        mask: true
+      })
       this.chooseClick.push(event.currentTarget.dataset.id);
       const {
         testType,
@@ -141,6 +153,7 @@ Component({
         }
       }).then(res => {
         if (typeof (res.result.text) !== 'undefined') {
+          wx.hideLoading();
           wx.showModal({
             title: '友情提示',
             content: res.result.text,
@@ -153,13 +166,17 @@ Component({
             }
           })
         } else {
-          wx.navigateBack({
-            complete: () => {
-              wx.showToast({
-                title: '选择成功',
-                duration: 2000,
+          wx.hideLoading({
+            complete: (res) => {
+              wx.navigateBack({
+                complete: () => {
+                  wx.showToast({
+                    title: '选择成功',
+                    duration: 2000,
+                  })
+                }
               })
-            }
+            },
           });
         }
       });
@@ -190,9 +207,16 @@ Component({
     },
     removeClick: [],
     removeTest(event) {
+      if (typeof (this.removeClick) == "undefined") {
+        this.removeClick = [];
+      }
       if (this.removeClick.includes(event.currentTarget.dataset.id)) {
         return
       }
+      wx.showLoading({
+        title: '删除中',
+        mask: true
+      })
       this.removeClick.push(event.currentTarget.dataset.id);
       wx.cloud.callFunction({
         name: "removeTest",

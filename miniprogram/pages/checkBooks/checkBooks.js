@@ -26,30 +26,30 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userInfo: app.globalData.userInfo,
-      hasUserInfo: true,
+      //   userInfo: app.globalData.userInfo,
+      //   hasUserInfo: true,
       height: wx.getSystemInfoSync().windowHeight,
-      scrollHeight: wx.getSystemInfoSync().windowHeight - (wx.getSystemInfoSync().windowWidth / 750) * 270
+      scrollHeight: wx.getSystemInfoSync().windowHeight - (wx.getSystemInfoSync().windowWidth / 750) * 260
     })
-    wx.cloud.callFunction({
-      name: "getName",
-      data: {
-        name: this.data.userInfo.nickName
-      }
-    }).then(res => {
-      if (!res.result) {
-        this.userSignIn();
-        wx.showModal({
-          content: '本系统只提供查询书籍服务，如需借书请确认书籍状态并于书屋开放时间前往（假如系统显示有但书屋没有请怼管理员',
-          showCancel: false,
-          title: '书屋须知'
-        })
-      } else {
-        this.setData({
-          name: res.result
-        })
-      }
-    })
+    // wx.cloud.callFunction({
+    //   name: "getName",
+    //   data: {
+    //     name: this.data.userInfo.nickName
+    //   }
+    // }).then(res => {
+    //   if (!res.result) {
+    //     this.userSignIn();
+    //     wx.showModal({
+    //       content: '本系统只提供查询书籍服务，如需借书请确认书籍状态并于书屋开放时间前往（假如系统显示有但书屋没有请怼管理员',
+    //       showCancel: false,
+    //       title: '书屋须知'
+    //     })
+    //   } else {
+    //     this.setData({
+    //       name: res.result
+    //     })
+    //   }
+    // })
     wx.showLoading({
       title: 'Loading',
     })
@@ -68,16 +68,16 @@ Page({
     }).finally(() => {
       wx.hideLoading()
     })
-    wx.cloud.callFunction({
-      name: "getBorrowBooks",
-      data: {
-        name: this.data.name
-      }
-    }).then(res => {
-      this.setData({
-        borrowBooklists: res.result
-      })
-    })
+    // wx.cloud.callFunction({
+    //   name: "getBorrowBooks",
+    //   data: {
+    //     name: this.data.name
+    //   }
+    // }).then(res => {
+    //   this.setData({
+    //     borrowBooklists: res.result
+    //   })
+    // })
   },
 
   onSearch: function (event) {
@@ -101,7 +101,7 @@ Page({
   },
 
   getBooks: function (event) {
-    if (this.loading || this.data.value) {
+    if (this.loading || this.data.value || !this.data.booklists) {
       return;
     }
     wx.showLoading({
@@ -254,6 +254,13 @@ Page({
       [key]: event.detail
     });
     if (event.detail == '') {
+      wx.showLoading({
+        title: 'Loading',
+        mask: true,
+        complete: () => {
+          this.loading = true;
+        }
+      })
       wx.cloud.callFunction({
         name: "getBooks",
         data: {
@@ -266,6 +273,14 @@ Page({
         this.setData({
           booklists: res.result.data
         })
+      }).finally(() => {
+        setTimeout(() => {
+          wx.hideLoading({
+            complete: () => {
+              this.loading = false;
+            }
+          });
+        }, 1000)
       })
     }
   },

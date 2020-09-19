@@ -48,12 +48,12 @@ Component({
       } else if (this.data.title == "物理实验数据处理") {
         wx.showModal({
           title: '物理实验数据处理系统网址',
-          content: 'http://hustmaths.top/physics/1/',
+          content: 'http://hustmaths.top/physics/',
           showCancel: false,
           success(res) {
             if (res.confirm) {
               wx.setClipboardData({
-                data: 'http://hustmaths.top/physics/1/'
+                data: 'http://hustmaths.top/physics/'
               }).then(res => {
                 wx.showToast({
                   title: "已复制到剪切板",

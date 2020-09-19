@@ -3,7 +3,7 @@
 	<view class="title">填写信息</view>
 	<van-field value="{{ name }}" data-id="name" bind:input="changeForm" label="姓名" />
 	<van-field value="{{ phone }}" maxlength="11" data-id="phone" bind:input="changeForm" label="电话" />
-	<van-field value="{{ qq }}" data-id="qq" bind:input="changeForm" label="QQ" />
+	<van-field value="{{ qq }}" data-id="qq" maxlength="20" bind:input="changeForm" label="QQ" />
 	<van-field type="textarea" show-confirm-bar="{{ false }}" autosize value="{{ introduce }}" data-id="introduce" bind:input="changeForm" label="自我介绍" />
 </view>
 

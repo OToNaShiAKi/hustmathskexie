@@ -63,10 +63,6 @@ Page({
   },
   onceclick: false,
   submitInfo() {
-    if (this.onceclick) {
-      return;
-    }
-    this.onceclick = true;
     const {
       lists,
       name,
@@ -125,6 +121,10 @@ Page({
     wx.showLoading({
       title: '正在提交信息'
     })
+    if (this.onceclick) {
+      return;
+    }
+    this.onceclick = true;
 
     wx.cloud.callFunction({
       name: "sign",

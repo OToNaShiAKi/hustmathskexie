@@ -8,7 +8,7 @@ const Query = (data, call) => {
     name: "signStatus",
     data
   }).then(res => {
-    console.log(res)
+    // console.log(res)
     if (res.result.status !== 200) throw res.result;
     wx.showToast({
       title: '查询成功'
@@ -31,12 +31,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: 'cycy',
-    phone: '15616326211',
+    name: '',
+    phone: '',
     department: {},
     onceClick: false,
     steps: {
-      'editor': [{
+      'media': [{
           text: '报名成功',
           desc: '等待面试通知',
         },

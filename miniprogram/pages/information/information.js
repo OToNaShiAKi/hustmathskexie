@@ -17,9 +17,9 @@ Page({
     introduce: '',
     adjustment: 'no',
     lists: {
-      editor: {
-        name: "编辑部"
-      },
+      // editor: {
+      //   name: "编辑部"
+      // },
       office: {
         name: "策划部"
       },

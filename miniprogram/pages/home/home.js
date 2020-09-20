@@ -17,7 +17,7 @@ Page({
       color: "green"
     }, {
       title: "公房借用",
-      desc: "数学不会做？来问！",
+      desc: "学生活动场地借用列表",
       color: "blue"
     }, {
       title: "物理实验数据处理",

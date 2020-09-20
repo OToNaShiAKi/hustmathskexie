@@ -26,12 +26,12 @@ Component({
       if (this.data.title == "公房借用") {
         wx.showModal({
           title: '公房借用系统网址',
-          content: 'http://hustmaths.top/manage',
+          content: 'http://hustmaths.top/office',
           showCancel: false,
           success(res) {
             if (res.confirm) {
               wx.setClipboardData({
-                data: 'http://hustmaths.top/manage'
+                data: 'http://hustmaths.top/office'
               }).then(res => {
                 wx.showToast({
                   title: "已复制到剪切板",
